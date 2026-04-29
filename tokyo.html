@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokyo Travel Guide — First-Time Visitor Essentials | TraceGo</title>
+  <meta name="description" content="A practical Tokyo guide for first-time visitors. Transit tips, must-visit neighborhoods, where to stay, and how to plan your trip before you fly.">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Tokyo Travel Guide — First-Time Visitor Essentials">
+  <meta property="og:description" content="A practical Tokyo guide: transit, neighborhoods, day trips, and pre-trip planning tips.">
+  <meta property="og:type" content="article">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+                   "Microsoft JhengHei", sans-serif;
+      color: #1a1a1a;
+      line-height: 1.7;
+      background: #f8fafc;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #be123c 140%);
+      color: white;
+      padding: 70px 20px 90px;
+      text-align: center;
+    }
+    .nav-back {
+      display: inline-block;
+      margin-bottom: 32px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.9em;
+      letter-spacing: 0.3px;
+    }
+    .nav-back:hover { color: white; }
+    .nav-back::before { content: "← "; }
+    .breadcrumb-logo {
+      font-weight: 700;
+      color: white;
+    }
+    .logo-zh { color: #94a3b8; font-weight: 400; margin-left: 6px; font-size: 0.9em; }
+    h1 {
+      font-size: 2.6em;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1.15em;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .meta-row {
+      color: #94a3b8;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+
+    /* Article body */
+    article { padding: 50px 0 30px; }
+    article h2 {
+      font-size: 1.6em;
+      margin: 48px 0 18px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+    article h2:first-child { margin-top: 0; }
+    article h3 {
+      font-size: 1.15em;
+      margin: 28px 0 10px;
+      color: #0f172a;
+    }
+    article p {
+      color: #334155;
+      margin-bottom: 16px;
+      font-size: 1.02em;
+    }
+    article ul {
+      color: #334155;
+      margin: 0 0 20px 24px;
+      font-size: 1.02em;
+    }
+    article ul li { margin-bottom: 8px; }
+    article a {
+      color: #2563eb;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+    }
+    article a:hover { border-bottom-color: #2563eb; }
+
+    /* Highlight callout */
+    .callout {
+      background: white;
+      border-left: 4px solid #3b82f6;
+      padding: 22px 26px;
+      border-radius: 8px;
+      margin: 24px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .callout strong { color: #0f172a; }
+
+    /* Tip card (for Klook + travel tools) */
+    .tip-card {
+      background: white;
+      padding: 28px 30px;
+      border-radius: 14px;
+      margin: 32px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .tip-card .tip-tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.75em;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .tip-card h3 { margin-top: 0; font-size: 1.25em; }
+    .tip-card p { margin-bottom: 14px; }
+    .tip-card .cta {
+      display: inline-block;
+      background: #0f172a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95em;
+      border-bottom: none;
+      transition: background 0.2s;
+    }
+    .tip-card .cta:hover {
+      background: #1e293b;
+      border-bottom: none;
+    }
+    .tip-card .cta::after { content: " →"; }
+    .tip-card .small { color: #94a3b8; font-size: 0.82em; margin-top: 8px; margin-bottom: 0; }
+
+    /* TraceGo callout */
+    .tracego-block {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 36px 32px;
+      border-radius: 14px;
+      margin: 40px 0;
+    }
+    .tracego-block h3 { color: white; margin-top: 0; }
+    .tracego-block p { color: #cbd5e1; }
+    .tracego-block a {
+      color: #93c5fd;
+      border-bottom: 1px solid rgba(147, 197, 253, 0.4);
+    }
+
+    /* Lang divider */
+    .lang-divider {
+      text-align: center;
+      padding: 50px 0 20px;
+      color: #94a3b8;
+      font-size: 0.9em;
+      letter-spacing: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 50px 20px 30px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    footer a { color: #cbd5e1; }
+    .disclosure {
+      background: rgba(255,255,255,0.05);
+      padding: 18px 24px;
+      border-radius: 10px;
+      margin: 30px auto 20px;
+      max-width: 720px;
+      font-size: 0.85em;
+      color: #cbd5e1;
+      line-height: 1.7;
+      text-align: left;
+    }
+    .disclosure strong { color: #f1f5f9; }
+    .copyright { font-size: 0.85em; margin-top: 16px; }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.9em; }
+      .subtitle { font-size: 1em; }
+      header { padding: 50px 20px 70px; }
+      .tip-card, .tracego-block { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============== HEADER / HERO ============== -->
+  <header>
+    <a class="nav-back" href="/">
+      <span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span>
+    </a>
+    <h1>Tokyo: A First-Timer's Guide</h1>
+    <p class="subtitle">
+      Practical tips for navigating Tokyo's transit, neighborhoods, and
+      tourist staples — written for travelers who want to plan ahead.
+    </p>
+    <div class="meta-row">DESTINATION GUIDE · ASIA · JAPAN</div>
+  </header>
+
+  <!-- ============== ARTICLE ============== -->
+  <article class="container">
+
+    <h2>Why Tokyo Rewards Pre-Trip Planning</h2>
+    <p>
+      Tokyo is enormous. The metropolitan area covers more than 2,000 square
+      kilometers, and the train map alone has over 280 stations. First-time
+      visitors who try to "wing it" often spend half their trip lost in
+      transfers — and the other half realizing the place they wanted to see
+      was on the opposite side of the city.
+    </p>
+    <p>
+      This guide focuses on the things you should figure out
+      <em>before</em> you board the plane: how the trains actually work,
+      which neighborhoods to base yourself in, and which attractions need
+      tickets booked in advance.
+    </p>
+
+    <div class="callout">
+      <strong>Quick orientation:</strong> Tokyo is roughly organized around
+      the JR Yamanote Line — a circular train that loops past most major
+      districts (Shibuya, Shinjuku, Tokyo Station, Ueno, Akihabara). If you
+      remember nothing else about Tokyo's geography, remember the loop.
+    </div>
+
+    <h2>Getting Around: Transit Reality Check</h2>
+
+    <h3>The Suica / Pasmo IC Card</h3>
+    <p>
+      Buy a rechargeable IC card at any major station. It works on
+      every train, subway, and bus in the Greater Tokyo area, plus most
+      convenience stores and vending machines. Apple Wallet now supports
+      Suica natively — you can add one straight from your iPhone before
+      you arrive.
+    </p>
+
+    <h3>JR Pass: Probably Not Worth It Anymore</h3>
+    <p>
+      The JR Pass got a major price hike in late 2023. For travelers
+      staying mostly in Tokyo (with maybe one Shinkansen day trip to
+      Kyoto), individual tickets are usually cheaper than the 7-day pass.
+      Run the numbers on each leg before buying.
+    </p>
+
+    <h3>Don't Trust Google Maps Walking Estimates</h3>
+    <p>
+      Tokyo stations are layered, sprawling, and often connect through
+      underground passages. A "5-minute walk" between platforms at
+      Shinjuku Station can become 15 minutes if you take a wrong turn.
+      Allow buffer time, especially during your first two days.
+    </p>
+
+    <h2>Neighborhoods: Where to Base Yourself</h2>
+
+    <h3>Shinjuku — for first-timers</h3>
+    <p>
+      Best balance of transit access, hotel options, and nightlife.
+      You'll be on the Yamanote Line and connected to the Narita Express.
+      Downsides: it's loud, and the station is genuinely confusing.
+    </p>
+
+    <h3>Asakusa — for cultural visits</h3>
+    <p>
+      Older, quieter, and home to Senso-ji Temple. Cheaper hotels and
+      ryokan-style stays. Slower transit to western Tokyo (Shibuya /
+      Harajuku) — budget 30-40 minutes each way.
+    </p>
+
+    <h3>Shibuya — for shopping and food</h3>
+    <p>
+      Younger, busier, more expensive. Great if your trip is mostly about
+      shopping, food, and the famous scramble crossing. Hotels here book
+      out fast in spring (cherry blossom season) and autumn.
+    </p>
+
+    <h2>Day Trips Worth the Train Ride</h2>
+    <p>
+      If you have more than four days in Tokyo, build in at least one day
+      trip. The high-density of the city wears people out — getting some
+      green space or a different rhythm helps.
+    </p>
+    <ul>
+      <li><strong>Kamakura</strong> — 1 hour south, big Buddha statue and coastal temples</li>
+      <li><strong>Nikko</strong> — 2 hours north, mountain shrines and waterfalls</li>
+      <li><strong>Hakone</strong> — 1.5 hours west, hot springs with Mt. Fuji views (weather permitting)</li>
+      <li><strong>Tokyo Disney Resort</strong> — 30 minutes east, easily a full day</li>
+    </ul>
+
+    <!-- ============== Klook Affiliate Tip Card ============== -->
+    <div class="tip-card">
+      <span class="tip-tag">PARTNER PICK</span>
+      <h3>Tokyo Disney Resort 1-Day Pass</h3>
+      <p>
+        Tokyo Disneyland and DisneySea regularly sell out, especially on
+        weekends and Japanese holidays. Tickets bought directly from
+        Disney Japan can be hard to access from overseas (some
+        international cards are rejected at checkout). Klook handles
+        non-Japanese payment methods cleanly and gives you a digital
+        ticket you can scan straight from your phone at the gate.
+      </p>
+      <a class="cta" href="https://affiliate.klook.com/redirect?aid=119869&aff_adid=1265774&k_site=https%3A%2F%2Fwww.klook.com%2Fen-US%2Factivity%2F695-tokyo-disney-resort-1-day-pass-tokyo%2F" target="_blank" rel="sponsored noopener">
+        Check availability on Klook
+      </a>
+      <p class="small">Affiliate link — we may earn a small commission at no cost to you.</p>
+    </div>
+
+    <h2>Things You Probably Won't Plan For (But Should)</h2>
+
+    <h3>Cash, Still</h3>
+    <p>
+      Tokyo is increasingly card-friendly, but small ramen shops, older
+      restaurants, and most temples are still cash-only. Withdraw at
+      7-Eleven ATMs (they reliably accept foreign cards) — convenience
+      store ATMs in Japan are by far the easiest option.
+    </p>
+
+    <h3>Pocket Wi-Fi or eSIM</h3>
+    <p>
+      You will rely on data constantly: maps, train route apps,
+      translation, restaurant queue checks. Pocket Wi-Fi rentals are old
+      school — modern travelers usually pick a travel eSIM that activates
+      before landing. Either way, sort it before you fly.
+    </p>
+
+    <h3>Reservation Anxiety</h3>
+    <p>
+      Many of the highly-ranked sushi and yakiniku restaurants require
+      reservations weeks in advance, often through services like
+      TableCheck or Pocket Concierge. Don't expect to walk in to a
+      famous spot at 7pm on a Saturday.
+    </p>
+
+    <!-- ============== TraceGo block ============== -->
+    <div class="tracego-block">
+      <h3>Planning a Tokyo trip? Visualize before you fly.</h3>
+      <p>
+        TraceGo is an iOS GPS simulator that lets you preview how
+        location-based apps (transit, food, ride-share) behave at your
+        destination — before you ever leave home. Test that your favorite
+        navigation app handles Shinjuku Station's labyrinth, or see what
+        Google Maps shows around your hotel.
+      </p>
+      <p style="margin-bottom: 0;">
+        <a href="/">Learn more about TraceGo →</a>
+      </p>
+    </div>
+
+    <h2>One More Thing: Slow Down</h2>
+    <p>
+      The most common regret first-time visitors have isn't missing a
+      famous attraction — it's running themselves into exhaustion trying
+      to see everything. Pick three things you really want to do per day,
+      build in a long lunch, and leave room for the random alley you
+      stumble into. That's where Tokyo actually lives.
+    </p>
+
+  </article>
+
+  <!-- ============== CHINESE SECTION ============== -->
+  <div class="lang-divider">— 中文版 —</div>
+
+  <article class="container">
+    <h2>東京：第一次自由行的實用指南</h2>
+    <p>
+      東京太大了。光是大都會區就超過 2,000 平方公里，主要的鐵路系統有
+      280+ 個車站。第一次來的旅客如果完全不做功課，常常一半時間在轉車迷路，
+      另一半才驚覺想去的點在城市的另一頭。
+    </p>
+    <p>
+      這篇指南聚焦在<strong>出發前該搞懂的事</strong>：交通卡怎麼買、
+      住哪一區比較順、哪些景點要提前訂票。
+    </p>
+
+    <div class="callout">
+      <strong>方位速記：</strong>東京基本繞著 JR 山手線打轉 — 這條環狀線
+      會經過大部分主要區域（澀谷、新宿、東京車站、上野、秋葉原）。
+      只要記得這個圈，就不會迷失方向。
+    </div>
+
+    <h3 style="margin-top: 36px;">交通卡 Suica / Pasmo</h3>
+    <p>
+      到任何一個大車站都可以買。電車、地鐵、巴士、便利商店、自動販賣機
+      幾乎全部通用。iPhone 用戶可以直接在 Apple Wallet 加一張 Suica，
+      出國前就先設定好。
+    </p>
+
+    <h3>住宿區域選擇</h3>
+    <ul>
+      <li><strong>新宿</strong>：交通最方便，飯店選擇多，第一次來建議的選擇</li>
+      <li><strong>淺草</strong>：氣氛較傳統，價格較親民，但去澀谷區要 30-40 分鐘</li>
+      <li><strong>澀谷</strong>：購物美食重鎮，年輕、熱鬧、價格較高</li>
+    </ul>
+
+    <h3>東京迪士尼門票</h3>
+    <p>
+      東京迪士尼樂園和 DisneySea 假日常常售完。Klook 上面可以買電子票，
+      到入口直接掃碼進場，付款也支援多國信用卡。如果有規劃要去，建議
+      <a href="https://affiliate.klook.com/redirect?aid=119869&aff_adid=1265774&k_site=https%3A%2F%2Fwww.klook.com%2Fzh-TW%2Factivity%2F695-tokyo-disney-resort-1-day-pass-tokyo%2F" target="_blank" rel="sponsored noopener">提前在 Klook 訂購一日票</a>。
+      <span style="color: #94a3b8; font-size: 0.85em;">（合作推廣連結）</span>
+    </p>
+
+    <h3>iOS 用戶補充：行前模擬</h3>
+    <p>
+      如果想在出發前確認當地的 App 體驗（Google Maps、Yahoo 路線、
+      食べログ等等），可以用 <a href="/">TraceGo</a> 把 iPhone 的定位
+      暫時切到東京，看看這些 App 在當地會顯示什麼資訊 — 這樣到了現場
+      就不會手忙腳亂。
+    </p>
+
+  </article>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <div class="container">
+      <div style="font-size: 1.5em; font-weight: 700; color: white;">
+        TraceGo<span class="logo-zh">足跡</span>
+      </div>
+
+      <div class="disclosure">
+        <strong>Affiliate Disclosure / 推廣連結揭露：</strong><br>
+        Some links in this article are affiliate links. If you make a
+        purchase through these links, we may earn a small commission at no
+        additional cost to you. This helps support the development of
+        TraceGo. We only recommend products we genuinely believe are
+        useful for travelers.<br><br>
+        本文部分連結為合作推廣連結。透過連結購買，我們可能會收到少額佣金，
+        但不影響您的價格。我們僅推薦我們認為對旅客真正有幫助的產品。
+      </div>
+
+      <p class="copyright">
+        © 2026 TraceGo (足跡). All rights reserved.<br>
+        <a href="/">← Back to TraceGo home</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

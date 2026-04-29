@@ -160,6 +160,58 @@
     }
     .partner h3 { color: #0f172a; }
     .partner p { color: #64748b; font-size: 0.9em; margin-top: 6px; }
+    .partner.coming-soon { opacity: 0.6; }
+    .soon-tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.65em;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Travel Guides */
+    .guides {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .guide-card {
+      display: block;
+      padding: 24px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .guide-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      border-color: #3b82f6;
+    }
+    .guide-card .guide-flag { font-size: 2em; margin-bottom: 8px; }
+    .guide-card h3 { color: #0f172a; margin-bottom: 6px; }
+    .guide-card p { color: #64748b; font-size: 0.9em; }
+    .guide-card .read-more {
+      display: inline-block;
+      margin-top: 12px;
+      color: #3b82f6;
+      font-size: 0.9em;
+      font-weight: 600;
+    }
+    .guide-card.coming-soon { opacity: 0.55; cursor: default; }
+    .guide-card.coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: #e2e8f0;
+    }
 
     /* FAQ */
     .faq-item {
@@ -315,6 +367,33 @@
     </p>
   </section>
 
+  <!-- ============== TRAVEL GUIDES ============== -->
+  <section class="container">
+    <h2>Travel Guides</h2>
+    <p style="color: #475569; margin-bottom: 12px;">
+      Practical destination guides written for travelers who want to plan ahead —
+      transit, neighborhoods, and what's worth booking before you fly.
+    </p>
+    <div class="guides">
+      <a class="guide-card" href="/tokyo.html">
+        <div class="guide-flag">🇯🇵</div>
+        <h3>Tokyo: A First-Timer's Guide</h3>
+        <p>Transit, neighborhoods, day trips, and the things you should book before you arrive.</p>
+        <span class="read-more">Read guide →</span>
+      </a>
+      <div class="guide-card coming-soon">
+        <div class="guide-flag">🇫🇷</div>
+        <h3>Paris <span class="soon-tag">SOON</span></h3>
+        <p>Navigating the Métro, picking arrondissements, and the museum tickets you need in advance.</p>
+      </div>
+      <div class="guide-card coming-soon">
+        <div class="guide-flag">🇹🇭</div>
+        <h3>Bangkok <span class="soon-tag">SOON</span></h3>
+        <p>BTS vs Grab, where to base yourself, and why pre-trip planning saves you days.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============== AFFILIATE / RECOMMENDED TOOLS ============== -->
   <section class="container">
     <h2>Recommended Travel Tools</h2>
@@ -322,16 +401,16 @@
       We partner with trusted travel and privacy brands to recommend products our users genuinely find useful.
     </p>
     <div class="partners">
-      <div class="partner">
-        <h3>📱 Saily</h3>
+      <div class="partner coming-soon">
+        <h3>📱 Saily <span class="soon-tag">SOON</span></h3>
         <p>Global eSIM with built-in VPN protection. Stay connected and secure across 200+ destinations.</p>
       </div>
-      <div class="partner">
-        <h3>🌐 Airalo</h3>
+      <div class="partner coming-soon">
+        <h3>🌐 Airalo <span class="soon-tag">SOON</span></h3>
         <p>Affordable eSIM data plans for international travelers. Activate before you arrive.</p>
       </div>
-      <div class="partner">
-        <h3>🔒 NordVPN</h3>
+      <div class="partner coming-soon">
+        <h3>🔒 NordVPN <span class="soon-tag">SOON</span></h3>
         <p>Premium VPN service for public Wi-Fi safety and privacy protection while traveling.</p>
       </div>
     </div>
