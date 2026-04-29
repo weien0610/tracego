@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — TraceGo (足跡)</title>
+  <meta name="description" content="TraceGo pricing: Free plan with core features, Premium at NT$149/month with 7-day free trial. Cancel anytime.">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+                   "Microsoft JhengHei", sans-serif;
+      color: #1a1a1a;
+      line-height: 1.7;
+      background: #f8fafc;
+    }
+    .container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 60px 20px 70px;
+      text-align: center;
+    }
+    .logo { font-size: 1.4em; font-weight: 700; margin-bottom: 24px; }
+    .logo a { color: white; text-decoration: none; }
+    .logo-zh { color: #94a3b8; font-weight: 400; margin-left: 8px; font-size: 0.9em; }
+    header h1 { font-size: 2.4em; margin-bottom: 12px; letter-spacing: -0.5px; }
+    header p { color: #cbd5e1; max-width: 580px; margin: 0 auto; font-size: 1.1em; }
+
+    main { padding: 50px 0; }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .plan {
+      padding: 32px;
+      background: white;
+      border-radius: 14px;
+      border: 2px solid #e2e8f0;
+    }
+    .plan.featured {
+      border-color: #3b82f6;
+      position: relative;
+    }
+    .plan.featured::before {
+      content: "Recommended";
+      position: absolute;
+      top: -12px;
+      right: 16px;
+      background: #3b82f6;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.75em;
+      font-weight: 600;
+    }
+    .plan-name { font-size: 1.4em; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+    .plan-price { font-size: 2.2em; font-weight: 700; color: #0f172a; margin: 12px 0; }
+    .plan-price small { font-size: 0.45em; color: #64748b; font-weight: 400; }
+    .plan-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8em;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .plan ul { list-style: none; margin-top: 18px; }
+    .plan ul li {
+      padding: 7px 0;
+      color: #475569;
+      font-size: 0.96em;
+    }
+    .plan ul li::before { content: "✓ "; color: #10b981; font-weight: 700; }
+
+    section { padding: 50px 0; }
+    h2 { font-size: 1.6em; margin-bottom: 20px; color: #0f172a; }
+
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 16px 20px;
+      border-radius: 6px;
+      margin: 16px 0;
+    }
+    .callout p { color: #1e40af; margin: 0; }
+
+    .pricing-detail {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 16px;
+    }
+    .pricing-detail h3 { color: #0f172a; margin-bottom: 8px; font-size: 1.15em; }
+    .pricing-detail p { color: #475569; font-size: 0.95em; }
+
+    .lang-divider {
+      text-align: center;
+      padding: 40px 0 20px;
+      color: #94a3b8;
+      font-size: 0.9em;
+      letter-spacing: 2px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 50px 20px 30px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: white; }
+    .footer-links { margin-bottom: 20px; font-size: 0.9em; }
+    .copyright { font-size: 0.85em; }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.8em; }
+      .pricing { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
+    <h1>Pricing</h1>
+    <p>Simple, transparent pricing. Free to try, easy to cancel.</p>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <div class="pricing">
+        <div class="plan">
+          <span class="plan-tag">Free Forever</span>
+          <div class="plan-name">Free</div>
+          <div class="plan-price">NT$0<small>/forever</small></div>
+          <ul>
+            <li>Single-point teleport</li>
+            <li>2-point routes</li>
+            <li>5 saved bookmarks</li>
+            <li>Built-in landmark library</li>
+            <li>WASD keyboard control</li>
+            <li>iOS 17 / 18 / 26 support</li>
+          </ul>
+        </div>
+
+        <div class="plan featured">
+          <span class="plan-tag">Best Value</span>
+          <div class="plan-name">Premium</div>
+          <div class="plan-price">NT$149<small>/month</small></div>
+          <ul>
+            <li>Everything in Free</li>
+            <li>Unlimited multi-point routes</li>
+            <li>GPX file import</li>
+            <li>Unlimited saved bookmarks</li>
+            <li>Unlimited route library</li>
+            <li>No partner recommendations</li>
+            <li>Priority email support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>✨ 7-day free trial.</strong> Try every Premium feature free for 7 days. Cancel anytime during the trial — you won't be charged.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pricing Details</h2>
+
+      <div class="pricing-detail">
+        <h3>Currency &amp; payment</h3>
+        <p>Pricing is shown in New Taiwan Dollars (NT$). Premium is also available in USD (~$4.99/month) and other supported currencies. Local taxes (VAT, sales tax) are calculated at checkout based on your billing country.</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>Billing cycle</h3>
+        <p>Premium is billed monthly. Your subscription auto-renews on the same day each month. You will receive an email receipt for each charge.</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>Free trial</h3>
+        <p>The 7-day free trial begins when you start your Premium subscription. No charge is made during the trial period. If you do not cancel before the trial ends, your card will be charged for the first month.</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>Cancellation</h3>
+        <p>You can cancel your subscription at any time from your account portal. After cancellation, Premium features remain active until the end of the current billing cycle. No further charges will be made.</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>Refunds</h3>
+        <p>We offer a 14-day money-back guarantee on your first paid month. See our <a href="/refund.html" style="color: #3b82f6;">Refund Policy</a> for full details.</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>Payment processor</h3>
+        <p>Payments are securely processed by <strong>Paddle.com</strong>, our Merchant of Record. Paddle handles billing, taxes, and refunds on our behalf. We do not store any credit card information on our servers.</p>
+      </div>
+    </section>
+
+    <div class="lang-divider">— 中文版 —</div>
+
+    <section>
+      <h2>價格說明</h2>
+
+      <div class="pricing-detail">
+        <h3>免費版 / NT$0</h3>
+        <p>單點傳送、雙點路徑、5 個書籤、內建景點庫、WASD 鍵盤操控、iOS 17/18/26 支援。永久免費。</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>進階版 / NT$149 / 月</h3>
+        <p>包含免費版所有功能 + 多點路徑（無上限）、GPX 匯入、無上限書籤、無上限路徑庫、無合作夥伴推薦、優先 email 支援。</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>7 天免費試用</h3>
+        <p>進階版提供 7 天免費試用，試用期間隨時可取消，不會收費。試用結束前未取消，將自動以月費 NT$149 開始扣款。</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>取消訂閱</h3>
+        <p>可隨時於帳戶頁面取消訂閱。取消後進階功能將持續到當期結束，不會再有後續扣款。</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>退費</h3>
+        <p>首期付款享 14 天無條件退費保證，詳見 <a href="/refund.html" style="color: #3b82f6;">退費政策</a>。</p>
+      </div>
+
+      <div class="pricing-detail">
+        <h3>金流</h3>
+        <p>付款由 <strong>Paddle.com</strong> 處理（我們的 Merchant of Record）。Paddle 負責收款、稅務與退費。我們不會儲存任何信用卡資訊。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo" style="color: white;">TraceGo<span class="logo-zh">足跡</span></div>
+      <div class="footer-links" style="margin-top: 20px;">
+        <a href="/">Home</a> ·
+        <a href="/pricing.html">Pricing</a> ·
+        <a href="/terms.html">Terms of Service</a> ·
+        <a href="/privacy.html">Privacy Policy</a> ·
+        <a href="/refund.html">Refund Policy</a>
+      </div>
+      <p class="copyright">
+        © 2026 TraceGo (足跡). All rights reserved.<br>
+        Made with care in Taiwan 🇹🇼
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
