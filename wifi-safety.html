@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Wi-Fi for Travelers: What's Actually Risky | TraceGo</title>
+  <meta name="description" content="A realistic guide to public Wi-Fi risk for travelers. What HTTPS already protects, what it doesn't, and when a VPN actually helps.">
+
+  <meta property="og:title" content="Public Wi-Fi for Travelers: What's Actually Risky">
+  <meta property="og:description" content="A realistic guide to hotel and airport Wi-Fi safety — what HTTPS protects, what it doesn't, and when VPNs actually help.">
+  <meta property="og:type" content="article">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+                   "Microsoft JhengHei", sans-serif;
+      color: #1a1a1a;
+      line-height: 1.7;
+      background: #f8fafc;
+    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header — teal/secure tech theme (different from Tokyo's red) */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0d9488 140%);
+      color: white;
+      padding: 70px 20px 90px;
+      text-align: center;
+    }
+    .nav-back {
+      display: inline-block;
+      margin-bottom: 32px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.9em;
+      letter-spacing: 0.3px;
+    }
+    .nav-back:hover { color: white; }
+    .nav-back::before { content: "← "; }
+    .breadcrumb-logo {
+      font-weight: 700;
+      color: white;
+    }
+    .logo-zh { color: #94a3b8; font-weight: 400; margin-left: 6px; font-size: 0.9em; }
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .meta-row {
+      color: #94a3b8;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+
+    /* Article body */
+    article { padding: 50px 0 30px; }
+    article h2 {
+      font-size: 1.5em;
+      margin: 44px 0 16px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+    article h2:first-child { margin-top: 0; }
+    article h3 {
+      font-size: 1.1em;
+      margin: 26px 0 8px;
+      color: #0f172a;
+    }
+    article p {
+      color: #334155;
+      margin-bottom: 16px;
+      font-size: 1.02em;
+    }
+    article ul {
+      color: #334155;
+      margin: 0 0 20px 24px;
+      font-size: 1.02em;
+    }
+    article ul li { margin-bottom: 8px; }
+    article a {
+      color: #0d9488;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(13, 148, 136, 0.3);
+    }
+    article a:hover { border-bottom-color: #0d9488; }
+
+    /* TL;DR callout */
+    .tldr {
+      background: white;
+      border-left: 4px solid #0d9488;
+      padding: 22px 26px;
+      border-radius: 8px;
+      margin: 24px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .tldr strong { color: #0f172a; }
+
+    /* Threat box */
+    .threat {
+      background: white;
+      padding: 22px 26px;
+      border-radius: 10px;
+      margin: 16px 0;
+      border: 1px solid #e2e8f0;
+    }
+    .threat h3 {
+      margin-top: 0;
+      color: #0f172a;
+      font-size: 1.05em;
+    }
+    .threat .severity {
+      display: inline-block;
+      font-size: 0.7em;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    .severity.low { background: #dcfce7; color: #166534; }
+    .severity.medium { background: #fef3c7; color: #92400e; }
+    .severity.high { background: #fee2e2; color: #991b1b; }
+
+    /* Tip card (NordVPN partner pick) */
+    .tip-card {
+      background: white;
+      padding: 28px 30px;
+      border-radius: 14px;
+      margin: 36px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .tip-card .tip-tag {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.75em;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 12px;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .tip-card h3 { margin-top: 0; font-size: 1.25em; }
+    .tip-card p { margin-bottom: 14px; }
+    .tip-card .cta {
+      display: inline-block;
+      background: #0f172a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95em;
+      border-bottom: none;
+      transition: background 0.2s;
+    }
+    .tip-card .cta:hover {
+      background: #1e293b;
+      border-bottom: none;
+    }
+    .tip-card .cta::after { content: " →"; }
+    .tip-card .small { color: #94a3b8; font-size: 0.82em; margin-top: 8px; margin-bottom: 0; }
+
+    /* TraceGo callout */
+    .tracego-block {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 32px 28px;
+      border-radius: 14px;
+      margin: 40px 0;
+    }
+    .tracego-block h3 { color: white; margin-top: 0; }
+    .tracego-block p { color: #cbd5e1; }
+    .tracego-block a {
+      color: #93c5fd;
+      border-bottom: 1px solid rgba(147, 197, 253, 0.4);
+    }
+
+    .lang-divider {
+      text-align: center;
+      padding: 50px 0 20px;
+      color: #94a3b8;
+      font-size: 0.9em;
+      letter-spacing: 2px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 50px 20px 30px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    footer a { color: #cbd5e1; }
+    .disclosure {
+      background: rgba(255,255,255,0.05);
+      padding: 18px 24px;
+      border-radius: 10px;
+      margin: 30px auto 20px;
+      max-width: 720px;
+      font-size: 0.85em;
+      color: #cbd5e1;
+      line-height: 1.7;
+      text-align: left;
+    }
+    .disclosure strong { color: #f1f5f9; }
+    .copyright { font-size: 0.85em; margin-top: 16px; }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.7em; }
+      .subtitle { font-size: 1em; }
+      header { padding: 50px 20px 70px; }
+      .tip-card, .tracego-block { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="nav-back" href="/">
+      <span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span>
+    </a>
+    <h1>Public Wi-Fi for Travelers: What's Actually Risky</h1>
+    <p class="subtitle">
+      A realistic look at hotel and airport Wi-Fi — separating the
+      Hollywood myth from the genuine risks.
+    </p>
+    <div class="meta-row">TRAVEL ESSENTIALS · PRIVACY</div>
+  </header>
+
+  <article class="container">
+
+    <div class="tldr">
+      <strong>Short version:</strong> Most public Wi-Fi is safer than it
+      was a decade ago, because almost every site you use is now
+      encrypted by default (HTTPS). The real risks are subtler — DNS
+      manipulation, fake networks, and out-of-date apps that still leak
+      data. A VPN closes most of these gaps with one tap, which is why
+      experienced travelers run one as a habit, not as paranoia.
+    </div>
+
+    <h2>The Hollywood Myth (and Why It's Outdated)</h2>
+    <p>
+      The classic warning goes: <em>"someone on the same Wi-Fi could be
+      reading everything you type."</em> That was true in 2012. It's
+      mostly not true now.
+    </p>
+    <p>
+      The reason is a quiet revolution called <strong>HTTPS Everywhere</strong>.
+      Almost every major website, app, and banking service today encrypts
+      its traffic between your device and their server. Even if a hacker
+      sat next to you in the airport lounge running a packet sniffer,
+      they would see encrypted gibberish — not your password, not your
+      messages, not your card number.
+    </p>
+    <p>
+      So why are people still telling you to be careful?
+      Because the <em>specific</em> risks shifted, but they didn't
+      disappear.
+    </p>
+
+    <h2>What HTTPS Actually Protects</h2>
+    <ul>
+      <li><strong>Your password</strong> as you type it on a login page</li>
+      <li><strong>Your messages</strong> in apps like WhatsApp, Signal, iMessage</li>
+      <li><strong>Your banking transactions</strong> on properly built apps</li>
+      <li><strong>Your search queries</strong> on Google, DuckDuckGo, etc.</li>
+      <li><strong>Your shopping cart and credit card</strong> on legitimate sites</li>
+    </ul>
+    <p>
+      For 95% of normal browsing, HTTPS does the heavy lifting.
+      A coffee shop hacker can't pluck your Gmail password out of the air.
+    </p>
+
+    <h2>What HTTPS Doesn't Protect</h2>
+    <p>
+      Here's where the real risks live — and why the "use a VPN" advice
+      hasn't gone away.
+    </p>
+
+    <div class="threat">
+      <h3>DNS Hijacking <span class="severity medium">MEDIUM</span></h3>
+      <p>
+        When you type "bank.com," your device asks the network's DNS
+        server for the right address. On open Wi-Fi, that DNS server
+        belongs to whoever runs the network — and a malicious operator
+        can quietly redirect you to a fake site. HTTPS will catch most
+        of these (you'll see a certificate warning), but tired travelers
+        click through warnings. <strong>VPNs route DNS through their own
+        servers,</strong> bypassing the local network entirely.
+      </p>
+    </div>
+
+    <div class="threat">
+      <h3>Evil Twin Networks <span class="severity high">HIGH</span></h3>
+      <p>
+        A laptop in the airport advertises a Wi-Fi network called
+        "Free_Airport_WiFi_5G" — looks legit, no password, fast. Except
+        it's not the airport's. It's someone's laptop. Once you connect,
+        they can serve you fake login pages, push fake update prompts,
+        and route your traffic through their tools. HTTPS still protects
+        the basics, but the user-experience signals (familiar names, no
+        password) make these attacks effective.
+      </p>
+    </div>
+
+    <div class="threat">
+      <h3>Captive Portal Injection <span class="severity medium">MEDIUM</span></h3>
+      <p>
+        Hotel and airport portals — the "Accept terms to continue" page —
+        sit between you and the open internet. They're designed to
+        inject HTML into your browser. Most do it for legitimate reasons.
+        Some hotels insert ads into non-HTTPS pages. Bad actors who take
+        over a portal can do worse. A VPN tunnels through the portal
+        once you accept it.
+      </p>
+    </div>
+
+    <div class="threat">
+      <h3>Outdated Apps Leaking <span class="severity medium">MEDIUM</span></h3>
+      <p>
+        Not every app on your phone uses HTTPS perfectly. Older apps,
+        small developers' apps, and certain region-specific apps still
+        send data in cleartext or use broken encryption. You don't know
+        which ones until something leaks. A VPN encrypts everything
+        leaving your device — even from the careless app you forgot you
+        installed three years ago.
+      </p>
+    </div>
+
+    <div class="threat">
+      <h3>Geo-Restrictions & Banking Lockouts <span class="severity low">LOW (annoying, not dangerous)</span></h3>
+      <p>
+        This isn't a security threat, but it's the most common reason
+        travelers actually <em>need</em> a VPN. Your bank app refuses to
+        log in from Bangkok. Your streaming subscription locks you out
+        in Tokyo. Government sites for tax filing only work from your
+        home country. Connecting through a VPN server in your home
+        country fixes all of this.
+      </p>
+    </div>
+
+    <h2>So When Does a VPN Actually Help?</h2>
+    <p>
+      Cutting through the marketing: a VPN gives you four things that
+      matter for travel.
+    </p>
+    <ul>
+      <li><strong>Encrypts every app</strong>, not just well-built websites</li>
+      <li><strong>Routes DNS</strong> through trusted servers, not the hotel's</li>
+      <li><strong>Hides which sites you're visiting</strong> from the network operator</li>
+      <li><strong>Makes you appear in your home country</strong> for banking, streaming, government services</li>
+    </ul>
+    <p>
+      Items 1-3 are the security side. Item 4 is the practical
+      side — and it's the one most travelers feel within the first
+      48 hours abroad.
+    </p>
+
+    <!-- ============== NordVPN Partner Pick ============== -->
+    <div class="tip-card">
+      <span class="tip-tag">PARTNER PICK</span>
+      <h3>NordVPN — what we use ourselves</h3>
+      <p>
+        We've tried four major VPN services over the years. NordVPN is
+        the one we kept renewing — not because it's the cheapest, but
+        because it consistently does the boring things well: it stays
+        connected on flaky airport Wi-Fi, it has a server in basically
+        every country we've needed, and the "auto-connect on untrusted
+        networks" feature is genuinely set-and-forget.
+      </p>
+      <p>
+        One subscription covers up to 10 devices, so your phone, laptop,
+        tablet, and partner's phone are all in. There's a 30-day refund
+        window if it doesn't fit your travel pattern.
+      </p>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146747&url_id=902" target="_blank" rel="sponsored noopener">
+        Check NordVPN pricing
+      </a>
+      <p class="small">Affiliate link — we may earn a small commission at no cost to you. We only recommend it because we use it ourselves.</p>
+    </div>
+
+    <h2>Habits That Help More Than Any VPN</h2>
+    <p>
+      A VPN is one tool. These habits matter just as much.
+    </p>
+    <ul>
+      <li>
+        <strong>Turn off auto-connect to known networks.</strong>
+        Your phone automatically rejoining "Hotel_Free_Wifi" is how
+        evil-twin attacks work — name a network the same and you're in.
+      </li>
+      <li>
+        <strong>Update your phone before you fly.</strong>
+        OS-level patches close the bugs that public Wi-Fi attackers
+        actually exploit. The week before a trip is the right time, not
+        the day you arrive jet-lagged.
+      </li>
+      <li>
+        <strong>Use mobile data for sensitive things when possible.</strong>
+        A travel eSIM gives you home-country-style cellular for a few
+        dollars. Banking, government sites, and 2FA logins go on
+        cellular; everything else can ride Wi-Fi.
+      </li>
+      <li>
+        <strong>Enable 2FA on the accounts that matter</strong> —
+        email, banking, social accounts. Even if a password gets
+        captured, 2FA stops the actual takeover.
+      </li>
+    </ul>
+
+    <!-- TraceGo block -->
+    <div class="tracego-block">
+      <h3>One more travel-tech tip</h3>
+      <p>
+        TraceGo is our other tool — an iOS GPS simulator that lets you
+        preview how location-aware apps behave at your destination
+        before you fly. Useful when you want to know whether your
+        favorite navigation, food, or transit app handles a new city
+        gracefully — without booking the trip first.
+      </p>
+      <p style="margin-bottom: 0;">
+        <a href="/">Learn more about TraceGo →</a>
+      </p>
+    </div>
+
+    <h2>The Honest Bottom Line</h2>
+    <p>
+      Public Wi-Fi in 2026 isn't the wild west it was a decade ago.
+      HTTPS handles a lot of the worst-case scenarios automatically, and
+      most travelers will never personally encounter an evil-twin
+      network. But the tools that close the remaining gaps cost a few
+      dollars a month, work invisibly, and remove an entire category of
+      "did I just leak something?" anxiety from a trip. That trade-off
+      is why most experienced travelers we know just leave a VPN running
+      and stop thinking about it.
+    </p>
+
+  </article>
+
+  <!-- ============== CHINESE SECTION ============== -->
+  <div class="lang-divider">— 中文版 —</div>
+
+  <article class="container">
+    <h2>公共 Wi-Fi 真的危險嗎？旅客版實用解析</h2>
+
+    <div class="tldr">
+      <strong>結論先講：</strong>2026 年的公共 Wi-Fi 比十年前安全多了，
+      因為幾乎所有網站都已經採用 HTTPS 加密。真正剩下的風險比較細緻 —
+      DNS 操控、假基地台、舊版 App 漏洞 — 而 VPN 一鍵就能補上這些缺口。
+      所以有經驗的旅客通常都把 VPN 當習慣，不是因為被害妄想。
+    </div>
+
+    <h3 style="margin-top: 36px;">過時的恐嚇：「隔壁有人在偷看你打字」</h3>
+    <p>
+      這個警告在 2012 年成立，現在大部分情況不成立了。因為 HTTPS 已經
+      普及到幾乎所有網站和 App — 駭客就算坐你旁邊用封包分析工具，
+      看到的也是加密過的亂碼，不是你的密碼。
+    </p>
+
+    <h3>HTTPS 已經保護了什麼</h3>
+    <ul>
+      <li>登入密碼（在登入畫面打的時候）</li>
+      <li>WhatsApp / Signal / iMessage 訊息內容</li>
+      <li>銀行 App 的交易資料</li>
+      <li>Google 搜尋紀錄</li>
+      <li>合法購物網站的信用卡資訊</li>
+    </ul>
+
+    <h3>HTTPS 沒辦法防的事（這就是 VPN 出場的地方）</h3>
+    <ul>
+      <li><strong>DNS 劫持：</strong>飯店網路的 DNS server 可能被改，把你導到假網站。VPN 用自己的 DNS server，繞過本地網路。</li>
+      <li><strong>假 Wi-Fi 基地台：</strong>機場常見「Free_Airport_WiFi_5G」其實是別人的筆電在偽裝。連上去之後對方可以做很多事。</li>
+      <li><strong>飯店登入頁面注入：</strong>飯店「同意條款才能上網」那頁是設計來注入 HTML 的，少數會塞廣告或更糟的東西。VPN 連線後就避開了。</li>
+      <li><strong>舊 App 資料外流：</strong>不是每個 App 都做了完整 HTTPS。VPN 把你裝置出去的所有流量都加密 — 連那些寫得很爛的 App 也涵蓋。</li>
+      <li><strong>銀行/串流被鎖：</strong>這不是安全問題，是實用問題。出國時銀行 App 拒絕登入、Netflix 訂閱被擋 — VPN 切到家鄉伺服器就解開。</li>
+    </ul>
+
+    <h3>VPN 真正能幫你的事</h3>
+    <p>撇開行銷話術，VPN 對旅客來說提供四件事：</p>
+    <ul>
+      <li>加密每個 App 的流量（不只是寫得好的網站）</li>
+      <li>用可信任的 DNS（不是飯店的）</li>
+      <li>對網路供應商隱藏你瀏覽什麼</li>
+      <li>讓銀行 / 串流 / 政府服務以為你還在台灣</li>
+    </ul>
+
+    <h3>我們自己用 NordVPN</h3>
+    <p>
+      試過四家 VPN，最後留下來繼續續訂的是
+      <a href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146747&url_id=902" target="_blank" rel="sponsored noopener">NordVPN</a>。
+      不是因為最便宜，是因為它把無聊的事做穩：機場 Wi-Fi 不掉線、
+      幾乎每個國家都有節點、「連到不可信網路時自動啟動」一鍵設好就忘記它。
+      一個帳號可以同時保護 10 台裝置（手機 + 平板 + 筆電 + 家人裝置都涵蓋），
+      30 天內不滿意可全額退費。
+      <span style="color: #94a3b8; font-size: 0.85em;">（合作推廣連結）</span>
+    </p>
+
+    <h3>除了 VPN，這些習慣同樣重要</h3>
+    <ul>
+      <li>關掉「自動連線到記憶過的 Wi-Fi」— 假基地台靠這個生效</li>
+      <li>出發前一週更新手機系統 — OS patch 修的就是公共 Wi-Fi 攻擊用的漏洞</li>
+      <li>銀行、政府服務優先用行動數據（買 eSIM）— Wi-Fi 用來看影片、查地圖就好</li>
+      <li>重要帳號開啟雙重驗證（2FA）— 萬一密碼真的洩漏，還有第二道關卡</li>
+    </ul>
+
+    <h3>誠實的結論</h3>
+    <p>
+      2026 年的公共 Wi-Fi 已經不是十年前的「蠻荒西部」。HTTPS 自動處理掉
+      大部分最壞情況，多數旅客一輩子也不會真的遇到假基地台。但用幾美元
+      一個月的工具就能把剩下的風險補完、而且完全在背景運作 — 這個 CP 值
+      高到大部分有經驗的旅客就讓 VPN 一直開著，不再去想它。
+    </p>
+
+  </article>
+
+  <footer>
+    <div class="container">
+      <div style="font-size: 1.5em; font-weight: 700; color: white;">
+        TraceGo<span class="logo-zh">足跡</span>
+      </div>
+
+      <div class="disclosure">
+        <strong>Affiliate Disclosure / 推廣連結揭露：</strong><br>
+        Some links in this article are affiliate links. If you make a
+        purchase through these links, we may earn a small commission at
+        no additional cost to you. This helps support the development of
+        TraceGo. We only recommend products we genuinely use and believe
+        are useful for travelers.<br><br>
+        本文部分連結為合作推廣連結。透過連結購買，我們可能會收到少額佣金，
+        但不影響您的價格。我們僅推薦我們自己使用、認為對旅客真正有幫助的產品。
+      </div>
+
+      <p class="copyright">
+        © 2026 TraceGo (足跡). All rights reserved.<br>
+        <a href="/">← Back to TraceGo home</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
