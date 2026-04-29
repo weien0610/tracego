@@ -160,6 +160,23 @@
     }
     .partner h3 { color: #0f172a; }
     .partner p { color: #64748b; font-size: 0.9em; margin-top: 6px; }
+    a.partner {
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    a.partner:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      border-color: #3b82f6;
+    }
+    .partner .visit-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #3b82f6;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
     .partner.coming-soon { opacity: 0.6; }
     .soon-tag {
       display: inline-block;
@@ -409,10 +426,11 @@
         <h3>🌐 Airalo <span class="soon-tag">SOON</span></h3>
         <p>Affordable eSIM data plans for international travelers. Activate before you arrive.</p>
       </div>
-      <div class="partner coming-soon">
-        <h3>🔒 NordVPN <span class="soon-tag">SOON</span></h3>
-        <p>Premium VPN service for public Wi-Fi safety and privacy protection while traveling.</p>
-      </div>
+      <a class="partner" href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146747&url_id=902" target="_blank" rel="sponsored noopener">
+        <h3>🔒 NordVPN</h3>
+        <p>Premium VPN for public Wi-Fi safety and privacy protection while traveling. Encrypt your connection on hotel and airport networks.</p>
+        <span class="visit-link">Get NordVPN →</span>
+      </a>
     </div>
   </section>
 
