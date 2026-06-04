@@ -1,0 +1,443 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>退費政策 — TraceGo</title>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", -apple-system, Segoe UI, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 40px 20px;
+      line-height: 1.7;
+    }
+    .wrap { max-width: 820px; margin: 0 auto; }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #334155;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .brand img {
+      width: 36px; height: 36px; border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(99,102,241,0.25);
+    }
+    .brand span {
+      font-size: 24px; font-weight: 700;
+      background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h1 {
+      font-size: 28px; margin: 0 0 8px;
+      color: #f1f5f9;
+    }
+    .meta {
+      font-size: 13px; color: #94a3b8;
+    }
+    .card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid #334155; border-radius: 12px;
+      padding: 28px 32px; margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 19px; color: #f1f5f9;
+      margin: 0 0 14px; padding-bottom: 10px;
+      border-bottom: 1px solid #334155;
+    }
+    h3 {
+      font-size: 16px; color: #cbd5e1;
+      margin: 18px 0 8px;
+    }
+    p, li { font-size: 14.5px; color: #cbd5e1; }
+    p { margin: 8px 0; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 4px 0; }
+    strong { color: #f1f5f9; }
+    .highlight {
+      background: rgba(251, 191, 36, 0.08);
+      border-left: 3px solid #fbbf24;
+      padding: 12px 16px; margin: 14px 0;
+      border-radius: 4px;
+    }
+    .highlight p { color: #fde68a; margin: 0; }
+    .info-box {
+      background: rgba(96, 165, 250, 0.08);
+      border-left: 3px solid #60a5fa;
+      padding: 12px 16px; margin: 14px 0;
+      border-radius: 4px;
+    }
+    .info-box p { color: #bfdbfe; margin: 0; }
+    .danger-box {
+      background: rgba(239, 68, 68, 0.08);
+      border-left: 3px solid #ef4444;
+      padding: 12px 16px; margin: 14px 0;
+      border-radius: 4px;
+    }
+    .danger-box p { color: #fecaca; margin: 0; }
+    .toc {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid #334155; border-radius: 10px;
+      padding: 16px 24px; margin-bottom: 30px;
+    }
+    .toc h3 { margin-top: 0; color: #94a3b8; font-size: 13px; letter-spacing: 0.1em; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc a { color: #60a5fa; text-decoration: none; font-size: 14px; }
+    .toc a:hover { text-decoration: underline; }
+    .footer {
+      text-align: center; margin-top: 30px;
+      padding-top: 20px; border-top: 1px solid #334155;
+      font-size: 13px; color: #64748b;
+    }
+    .footer a { color: #60a5fa; text-decoration: none; margin: 0 10px; }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      margin: 16px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, #60a5fa 0%, #a78bfa 100%);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 16px;
+      padding-left: 8px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px; top: 6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+    }
+    .timeline-item strong {
+      display: block;
+      color: #f1f5f9;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .timeline-item p {
+      margin: 0;
+      font-size: 13.5px;
+      color: #94a3b8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #334155;
+    }
+    th {
+      background: rgba(15, 23, 42, 0.6);
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+    }
+    td { color: #cbd5e1; }
+    .badge-no {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      background: rgba(239, 68, 68, 0.15);
+      color: #fca5a5;
+      font-size: 12px; font-weight: 600;
+    }
+    .badge-yes {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      background: rgba(34, 197, 94, 0.15);
+      color: #86efac;
+      font-size: 12px; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <img src="/static/tracego_512.png" alt="TraceGo">
+        <span>TraceGo</span>
+      </div>
+      <h1>退費政策</h1>
+      <div class="meta">最後更新：2026 年 4 月 30 日　|　生效日：2026 年 4 月 30 日</div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>請先閱讀：</strong>TraceGo 提供 <strong>7 天試用版（NT$99）</strong>，讓您於購買月卡 / 季卡 / 年卡前可完整體驗 Pro 功能、確認與您之 iOS 裝置相容。基於此預先評估機制，付款後 Pro 授權即時生效，<strong>原則上不予退費</strong>。本政策說明本服務之退費原則、極少數法定例外情形，以及申請方式。</p>
+    </div>
+
+    <div class="toc">
+      <h3>目錄</h3>
+      <ol>
+        <li><a href="#s1">適用範圍</a></li>
+        <li><a href="#s2">數位內容性質聲明</a></li>
+        <li><a href="#s3">原則：不予退費</a></li>
+        <li><a href="#s4">例外退費情形</a></li>
+        <li><a href="#s5">不適用退費情形</a></li>
+        <li><a href="#s6">退費申請方式</a></li>
+        <li><a href="#s7">處理時程與方式</a></li>
+        <li><a href="#s8">爭議處理</a></li>
+        <li><a href="#s9">聯絡方式</a></li>
+      </ol>
+    </div>
+
+    <div class="card" id="s1">
+      <h2>1. 適用範圍</h2>
+      <p>本《退費政策》適用於您透過 TraceGo 官方網站（<a href="https://tracego.tw" style="color:#60a5fa">https://tracego.tw</a>）或本軟體內建之購買流程，向 TraceGo 購買之下列付費方案：</p>
+      <ul>
+        <li>7 天試用版（NT$99）</li>
+        <li>30 天月卡（NT$299）</li>
+        <li>90 天季卡（NT$799）</li>
+        <li>365 天年卡（NT$2,399）</li>
+      </ul>
+      <p><strong>付款處理說明：</strong>本服務之付款由 <strong>Paddle</strong> 作為<strong>記錄商家（Merchant of Record）</strong>處理，以新台幣 (NT$) 計價收款。退費將依本政策規定，由 Paddle 退回至您原付款方式。</p>
+      <p>本政策與《服務條款》第 7 條互為補充。如有衝突，以本政策為準。</p>
+    </div>
+
+    <div class="card" id="s2">
+      <h2>2. 數位內容性質聲明</h2>
+      <p>TraceGo 屬於「<strong>非以有形媒介提供之數位內容</strong>」及「<strong>一經提供即為完成之線上服務</strong>」，依下列規定：</p>
+      <ul>
+        <li><strong>《消費者保護法》第 19 條第 2 項</strong>：通訊交易解除權之合理例外情事得排除 7 日鑑賞期。</li>
+        <li><strong>《通訊交易解除權合理例外情事適用準則》第 2 條第 7 款</strong>：明列數位內容或一經提供即為完成之線上服務，經消費者事先同意始提供者，不適用 7 日鑑賞期之解除權。</li>
+      </ul>
+
+      <div class="highlight">
+        <p><strong>您於下單付款時，已透過勾選同意框明確表示：知悉本服務屬上述數位內容，並同意立即取得授權、放棄 7 日鑑賞期之解除權。</strong></p>
+      </div>
+
+      <p>因此，本服務<strong>原則上不適用 7 天無條件鑑賞期退費</strong>，但仍依本政策第 4 條提供例外退費。</p>
+    </div>
+
+    <div class="card" id="s3">
+      <h2>3. 原則：購買後恕不退費</h2>
+      <p>由於本服務提供 <strong>7 天試用版（NT$99）</strong>讓您於購買長期方案前可完整評估，且授權碼於付款完成後立即發放並啟用 Pro 功能；<strong>購買即視為您已完成試用評估並確認滿意</strong>。下列情形<strong>不受理退費</strong>：</p>
+      <ol>
+        <li>您改變主意、不想用了</li>
+        <li>您未事先試用便購買長期方案，事後發現 iOS 裝置不相容</li>
+        <li>您之網路、電腦環境不符合系統需求</li>
+        <li>您因個人因素（離職、出國、健康等）無法繼續使用</li>
+        <li>您買錯方案（如：買了年卡卻只想用月卡）</li>
+        <li>方案到期、忘記延長（本服務不會自動續訂，到期即降級為免費版）</li>
+        <li>您違反《服務條款》遭終止服務</li>
+        <li>第三方平台（包含但不限於線上服務、社交軟體）採取之封鎖、停權等措施</li>
+      </ol>
+
+      <div class="info-box">
+        <p><strong>建議：</strong>購買長期方案（30 天 / 90 天 / 365 天）前，請務必先購買 <strong>7 天試用版（NT$99）</strong>完整體驗 Pro 功能，確認您的 iPhone 相容、操作流程符合需求後再升級。試用版每個 Google 帳號限購一次，請珍惜這次評估機會。</p>
+      </div>
+    </div>
+
+    <div class="card" id="s4">
+      <h2>4. 例外退費情形</h2>
+      <p>於下列情形，您得申請退費：</p>
+
+      <h3>4.1 系統技術故障</h3>
+      <p>因本服務伺服器、授權系統或核心功能之重大瑕疵，導致您於授權期間內<strong>連續 72 小時以上無法正常使用 Pro 功能</strong>，且我們無法於合理時間內修復者：</p>
+      <ul>
+        <li><strong>優先補償方式</strong>：以延長授權期間之方式補償（按受影響日數加倍延長）</li>
+        <li>若您不接受補償，可申請按剩餘日數比例退款</li>
+      </ul>
+      <p>下列原因<strong>不可歸責於本服務</strong>，不適用本款退費：</p>
+      <ul>
+        <li>您之網路問題、防火牆設定、防毒軟體攔截</li>
+        <li>Apple 推送 iOS 安全更新阻斷 pymobiledevice3 tunnel</li>
+        <li>您之 iPhone / Windows 裝置硬體故障</li>
+        <li>第三方平台（包含但不限於線上服務、定位類應用）對特定地點之偵測機制</li>
+      </ul>
+
+      <h3>4.2 重複扣款</h3>
+      <p>因金流服務商系統錯誤、您之操作異常等因素，導致同一筆訂單<strong>重複扣款</strong>者，我們將全額退還重複扣款部分。</p>
+
+      <h3>4.3 未授權交易</h3>
+      <p>若您主張該筆交易並非由您本人或經您授權之人執行（信用卡盜刷等），請：</p>
+      <ol>
+        <li>先向您之信用卡發卡銀行申請爭議款</li>
+        <li>同步以 <strong>support@tracego.tw</strong> 通知我們</li>
+        <li>我們會配合銀行調閱資料、暫停該訂單之授權</li>
+      </ol>
+
+      <h3>4.4 法定退費權</h3>
+      <p>若依您所在地之強行法規定，您仍享有不可拋棄之法定退費權者，本政策不排除該等權利。</p>
+    </div>
+
+    <div class="card" id="s5">
+      <h2>5. 不適用退費情形</h2>
+      <p>下表列出常見情形之退費適用結果，供您參考：</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>情形</th>
+            <th>是否退費</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>付款後改變主意</td>
+            <td><span class="badge-no">不退費</span></td>
+          </tr>
+          <tr>
+            <td>方案到期未使用完</td>
+            <td><span class="badge-no">不退費</span></td>
+          </tr>
+          <tr>
+            <td>iOS 系統更新後 tunnel 暫時失效</td>
+            <td><span class="badge-no">不退費</span></td>
+          </tr>
+          <tr>
+            <td>第三方平台封鎖、停用、限制您之帳號</td>
+            <td><span class="badge-no">不退費</span></td>
+          </tr>
+          <tr>
+            <td>重複扣款（同一訂單付兩次）</td>
+            <td><span class="badge-yes">全額退費</span></td>
+          </tr>
+          <tr>
+            <td>本服務伺服器故障 48 小時以上</td>
+            <td><span class="badge-yes">按比例退費</span></td>
+          </tr>
+          <tr>
+            <td>信用卡盜刷</td>
+            <td><span class="badge-yes">配合銀行處理</span></td>
+          </tr>
+          <tr>
+            <td>違反《服務條款》遭終止</td>
+            <td><span class="badge-no">不退費</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="danger-box">
+        <p><strong>提醒：</strong>本服務為定位模擬輔助工具。第三方平台（包含但不限於線上服務、定位類應用、社交軟體）採取之偵測、封鎖、停用、停權等措施，係該等平台依其服務條款所為之獨立行為，並非本服務之瑕疵，不構成退費事由。</p>
+      </div>
+    </div>
+
+    <div class="card" id="s6">
+      <h2>6. 退費申請方式</h2>
+      <p>請依下列步驟提出退費申請：</p>
+
+      <h3>6.1 寄送退費申請信</h3>
+      <p>寄信至：<strong>support@tracego.tw</strong></p>
+      <p>主旨建議：「【退費申請】訂單編號 XXXXXXXX」</p>
+
+      <h3>6.2 信件應檢附資料</h3>
+      <ol>
+        <li>您之 Google 登入帳號（電子信箱）</li>
+        <li>金流服務商訂單編號 / 交易序號</li>
+        <li>付款日期與金額</li>
+        <li>退費事由（請對應第 4 條之退費情形）</li>
+        <li>佐證資料（錯誤截圖、銀行對帳單、客服對話紀錄等）</li>
+        <li>退款帳戶資訊（若為非信用卡退款，請提供本人之銀行帳戶）</li>
+      </ol>
+
+      <div class="info-box">
+        <p><strong>注意：</strong>請勿在信件中提供您完整的信用卡卡號、信用卡 CVV、Google 密碼等敏感資料。我們不需要這些資訊即可處理退費。</p>
+      </div>
+    </div>
+
+    <div class="card" id="s7">
+      <h2>7. 處理時程與方式</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>第 1 階段：收件確認（24 小時內）</strong>
+          <p>我們將於工作日 24 小時內回信確認收到您的申請，並告知後續所需資料。</p>
+        </div>
+        <div class="timeline-item">
+          <strong>第 2 階段：審核（3 至 7 個工作日）</strong>
+          <p>我們將核對您的訂單紀錄、佐證資料，並於 3 至 7 個工作日內告知審核結果。若需補件，時程將自您補件完成日重新起算。</p>
+        </div>
+        <div class="timeline-item">
+          <strong>第 3 階段：退款執行（5 至 14 個工作日）</strong>
+          <p>審核通過後，我們將通知金流服務商執行退款。信用卡退款一般於 5 至 14 個工作日內反映於您之信用卡帳單；ATM 轉帳退款一般於 3 至 7 個工作日內入帳。</p>
+        </div>
+        <div class="timeline-item">
+          <strong>第 4 階段：授權回收</strong>
+          <p>退款完成後，您之 Pro 授權將同步回收，帳號降級為免費版。</p>
+        </div>
+      </div>
+
+      <h3>7.1 退款金額計算</h3>
+      <ul>
+        <li><strong>全額退費</strong>（重複扣款、信用卡盜刷）：原金額全額退還，不收手續費。</li>
+        <li><strong>按比例退費</strong>（伺服器故障）：以「方案總天數」為分母，「未能使用之天數」為分子計算退款比例。</li>
+      </ul>
+
+      <h3>7.2 退款方式</h3>
+      <ul>
+        <li>原路退款優先：退至您原付款之信用卡或銀行帳戶</li>
+        <li>若原付款方式已失效（信用卡到期、帳戶關閉），請於申請時提供有效之退款帳戶</li>
+        <li>退款手續費（如有）由我們吸收，不從退款金額中扣除</li>
+      </ul>
+    </div>
+
+    <div class="card" id="s8">
+      <h2>8. 爭議處理</h2>
+      <p>若您對退費結果有異議，請依下列順序處理：</p>
+
+      <h3>8.1 內部申訴</h3>
+      <p>請於收到退費結果通知後 14 日內，以書面（電子郵件即可）向 <strong>support@tracego.tw</strong> 提出申訴，說明異議理由與佐證。我們將於 7 個工作日內覆核。</p>
+
+      <h3>8.2 主管機關申訴</h3>
+      <p>若內部申訴後仍有爭議，您可向下列單位申訴：</p>
+      <ul>
+        <li><strong>1950 全國消費者服務專線</strong>（行政院消費者保護會）</li>
+        <li><strong>各縣市政府消費者服務中心</strong></li>
+        <li>金融消費評議中心（限與付款、信用卡相關之金流爭議）</li>
+      </ul>
+
+      <h3>8.3 訴訟管轄</h3>
+      <p>若仍未能解決爭議，依《服務條款》第 14 條，以<strong>臺灣臺中地方法院</strong>為第一審管轄法院。</p>
+    </div>
+
+    <div class="card" id="s9">
+      <h2>9. 聯絡方式</h2>
+      <p>退費相關問題請透過下列方式聯絡：</p>
+      <ul>
+        <li>營業者：<strong>TraceGo</strong>（負責人：涂偉恩）</li>
+        <li>所在地：台中市</li>
+        <li>客服信箱：<strong>support@tracego.tw</strong></li>
+        <li>服務時間：週一至週五 09:00–18:00（國定假日除外）</li>
+        <li>初次回覆時間：24 小時內（工作日）</li>
+      </ul>
+
+      <div class="info-box">
+        <p>本政策得隨時修訂，修訂後之版本將公告於本頁面。修訂前已成立之訂單，仍適用訂購當時之退費政策。</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2026 TraceGo. 保留一切權利。
+      <br>
+      <a href="/legal/terms">服務條款</a> | <a href="/legal/privacy">隱私權政策</a> | <a href="/legal/refund">退費政策</a>
+    </div>
+  </div>
+</body>
+</html>

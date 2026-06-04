@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 模擬 GPS 移動路徑教學：測試導航與運動 App（iOS 17/18/26）| TraceGo</title>
+  <meta name="description" content="如何在 iPhone 上模擬 GPS 沿路徑移動，測試導航、運動、外送類 App 的路線行為。說明路徑模擬的用途、速度設定，以及免越獄的做法。">
+  <meta property="og:title" content="iPhone 模擬 GPS 移動路徑教學：測試導航與運動 App">
+  <meta property="og:description" content="模擬 iPhone 沿路徑移動，測試導航與運動 App 的方法與注意事項。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://tracego.tw/simulate-gps-route-iphone">
+  <link rel="stylesheet" href="/article.css">
+</head>
+<body>
+
+  <header>
+    <a class="nav-back" href="/"><span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span></a>
+    <h1>iPhone 模擬 GPS 移動路徑教學</h1>
+    <p class="subtitle">
+      只設一個固定座標還不夠——測導航、運動、外送類 App，需要讓 iPhone
+      沿著一條路線「動起來」。這篇說明怎麼模擬 GPS 移動路徑。
+    </p>
+    <div class="meta-row">教學 · iOS · 路徑模擬</div>
+  </header>
+
+  <article class="container">
+
+    <h2>固定定位 vs 路徑移動，差在哪</h2>
+    <p>
+      設定一個<strong>固定座標</strong>，適合測「在某地點 App 顯示什麼」。
+      但很多功能要的是<strong>移動過程</strong>：導航的轉彎提示、運動 App
+      的軌跡與配速、外送的即時位置更新——這些都得讓裝置沿著一條路徑連續
+      改變座標，也就是「路徑模擬」。
+    </p>
+
+    <div class="callout">
+      <strong>白話說：</strong>固定定位是「瞬間移動到某點」，路徑模擬是
+      「沿著畫好的路線一步步走過去」，還能設定走多快。
+    </div>
+
+    <h2>哪些情況需要模擬移動路徑</h2>
+    <ul>
+      <li><strong>導航 App 測試</strong>：驗證轉彎提示、重新規劃、到達判定。</li>
+      <li><strong>運動 / 健身 App</strong>：測試軌跡記錄、距離與配速計算。</li>
+      <li><strong>外送 / 物流</strong>：模擬騎手即時位置在地圖上移動。</li>
+      <li><strong>地理圍欄連續觸發</strong>：沿路徑進出多個圍欄，測 event 順序。</li>
+    </ul>
+
+    <h2>怎麼模擬 iPhone 沿路徑移動</h2>
+    <p>以 TraceGo 的路徑模擬為例：</p>
+    <ol>
+      <li><strong>USB 連線</strong>：原廠線接上電腦，解鎖、信任此電腦。</li>
+      <li><strong>畫路線</strong>：在地圖上依序點出路徑的多個點（起點 → 中繼 → 終點）。</li>
+      <li><strong>設速度</strong>：選擇移動速度（例如步行、騎車、開車的不同 km/h）。</li>
+      <li><strong>開始移動</strong>：iPhone 的定位就會沿著路線連續更新，App 看到的就是「正在移動」。</li>
+    </ol>
+    <p>
+      路徑模擬也支援匯入 GPX 路線檔，把現成的路線直接拿來重播——對需要
+      <strong>可重現測試</strong>的 QA 特別實用。
+    </p>
+
+    <h2>iOS 17 之後的相容性提醒</h2>
+    <p>
+      跟一般定位修改一樣，路徑模擬也走 iOS 的開發者通道。iOS 17 把通訊
+      改到 RemoteXPC，舊工具會連不上。要在 iOS 17 / 18 / 26 上做路徑模擬，
+      工具必須支援新的連線方式。
+    </p>
+
+    <!-- Klook -->
+    <div class="tip-card">
+      <span class="tip-tag">合作推薦</span>
+      <h3>規劃旅遊路線？順道把行程訂起來</h3>
+      <p>
+        有些人用路徑模擬預先「走一遍」旅遊路線。真的成行的話，沿途的票券、
+        一日遊先在 Klook 上看，常有早鳥優惠，也免去當天海外卡刷不過。
+      </p>
+      <a class="cta" href="https://affiliate.klook.com/redirect?aid=119869&aff_adid=1265774&k_site=https%3A%2F%2Fwww.klook.com%2Fzh-TW%2F" target="_blank" rel="sponsored noopener">到 Klook 看看行程</a>
+      <p class="small">合作連結 — 透過此連結訂購，我們可能獲得少量佣金，您不會多付任何費用。</p>
+    </div>
+
+    <div class="tracego-block">
+      <h3>用 TraceGo 模擬 GPS 路徑移動</h3>
+      <p>
+        TraceGo 支援多點路徑規劃、自訂步行 / 騎行速度、GPX 路徑檔匯入，透過
+        USB 在你自己的 iPhone 上模擬沿路線移動，原生支援 iOS 17 / 18 / 26。
+        免越獄，並提供 7 天試用版先確認相容。
+      </p>
+      <p style="margin-bottom: 0;"><a href="/">了解更多 TraceGo →</a></p>
+    </div>
+
+    <h2 class="faq">常見問題</h2>
+    <div class="faq">
+      <h3>路徑模擬可以設定移動速度嗎？</h3>
+      <p>可以。TraceGo 能設定不同 km/h，模擬步行、騎車、開車等速度。</p>
+      <h3>可以匯入現成的 GPX 路線嗎？</h3>
+      <p>可以，匯入 GPX 後直接重播該路線，方便做可重現的測試。</p>
+      <h3>需要越獄嗎？</h3>
+      <p>不需要。透過 USB 開發者通道進行，不改動 iOS。</p>
+    </div>
+
+    <p style="margin-top:30px"><strong>延伸閱讀：</strong>
+      <a href="/change-iphone-location">iPhone 定位修改教學：免越獄修改 GPS</a> ·
+      <a href="/ios-location-testing-developers">開發者如何測試 iOS 定位功能</a>
+    </p>
+
+  </article>
+
+  <footer>
+    <div class="disclosure">
+      <strong>關於本文。</strong>本文含合作推廣連結（Klook）。TraceGo 為 iOS 定位
+      模擬工具，供測試、隱私、無障礙與旅遊規劃等合法用途使用，請在您自己擁有的
+      裝置上、並遵守相關 App 服務條款下使用。
+    </div>
+    <p><a href="/">← 回到 TraceGo 首頁</a></p>
+    <p class="copyright">© 2026 TraceGo 足跡</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 假定位怎麼用？虛擬定位設定教學（免越獄，iOS 17/18/26）| TraceGo</title>
+  <meta name="description" content="iPhone 假定位（虛擬定位）完整教學：什麼是模擬 GPS、合法用途、為什麼舊工具在 iOS 17 後失效，以及免越獄設定虛擬定位的方法。">
+  <meta property="og:title" content="iPhone 假定位怎麼用？虛擬定位設定教學（免越獄）">
+  <meta property="og:description" content="iPhone 虛擬定位完整教學：合法用途、iOS 17 後的變化、免越獄設定方法。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://tracego.tw/fake-gps-iphone">
+  <link rel="stylesheet" href="/article.css">
+</head>
+<body>
+
+  <header>
+    <a class="nav-back" href="/"><span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span></a>
+    <h1>iPhone 假定位怎麼用？虛擬定位設定教學</h1>
+    <p class="subtitle">
+      「假定位」聽起來很技術，其實就是給 iPhone 設定一個模擬 GPS 座標。
+      這篇說明它的合法用途、運作原理，以及免越獄的設定方法。
+    </p>
+    <div class="meta-row">教學 · iOS · 虛擬定位</div>
+  </header>
+
+  <article class="container">
+
+    <h2>什麼是 iPhone 假定位 / 虛擬定位？</h2>
+    <p>
+      所謂「假定位」或「虛擬定位」，就是讓 iPhone 的定位類 App 讀到一個
+      <strong>你指定的模擬座標</strong>，而不是手機 GPS 偵測到的真實位置。
+      它不是駭客手法，也不需要改動 iOS——本質上跟 App 開發者用 Xcode
+      測試定位功能是同一件事。
+    </p>
+
+    <div class="callout">
+      <strong>名詞釐清：</strong>假定位、虛擬定位、模擬定位、GPS spoofing
+      指的都是同一件事——把一個自訂座標餵給裝置。差別只在不同工具的說法。
+    </div>
+
+    <h2>哪些情況會用到虛擬定位（合法用途）</h2>
+    <ul>
+      <li><strong>App 開發 / 測試</strong>：驗證地理圍欄、門市搜尋、導航、
+          外送範圍等功能，不必親自跑到每個地點。</li>
+      <li><strong>隱私保護</strong>：不想讓每個 App 都拿到你的真實座標。</li>
+      <li><strong>旅遊規劃</strong>：出國前先看目的地的地圖、交通、店家資訊。</li>
+      <li><strong>展示與教學</strong>：在受控環境示範定位相關功能。</li>
+    </ul>
+    <p>
+      要強調的是：虛擬定位是工具，用途由使用者決定。請在自己擁有的裝置上、
+      並遵守你所使用的每個 App 服務條款的前提下使用。
+    </p>
+
+    <h2>iPhone 設定假定位的常見方法</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th>方法</th><th>要越獄？</th><th>iOS 17/18/26</th><th>難易度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>越獄 + 定位外掛</td><td class="no">要</td><td class="no">不穩</td><td class="no">高 + 風險</td></tr>
+        <tr><td>Xcode 模擬定位</td><td class="yes">不用</td><td class="mid">部分</td><td class="no">需 Mac + 開發設定</td></tr>
+        <tr><td>USB 桌面工具</td><td class="yes">不用</td><td class="yes">支援</td><td class="yes">低（接線即用）</td></tr>
+      </tbody>
+    </table>
+    <p>
+      多數人想要的是「不越獄、又能用」，那答案就是 USB 桌面工具：用一般
+      傳輸線把 iPhone 接上電腦，軟體建立跟 Xcode 一樣的開發者通道，把
+      模擬座標送到手機。手機端不裝任何東西。
+    </p>
+
+    <h2>為什麼很多假定位 App 在 iOS 17 後不能用了</h2>
+    <p>
+      iOS 17 把裝置通訊搬到新的安全通道（RemoteXPC），舊版工具仰賴的
+      Developer Disk Image 方式整個失效。所以你會看到很多舊的假定位 App
+      卡在「連線中」、或只敢標榜支援 iOS 16 以下。要支援 iOS 17、18、26，
+      工具必須把連線層重寫。
+    </p>
+
+    <h2>免越獄設定虛擬定位的步驟</h2>
+    <p>以 TraceGo 為例：</p>
+    <ol>
+      <li>用原廠線把 iPhone 接上 Windows 電腦，解鎖、按「信任此電腦」。</li>
+      <li>在地圖點選地點，或輸入 <code>緯度, 經度</code>。</li>
+      <li>按傳送，定位類 App 就會讀到新座標。</li>
+      <li>拔線或按暫停，iPhone 回到真實 GPS。</li>
+    </ol>
+
+    <!-- Klook -->
+    <div class="tip-card">
+      <span class="tip-tag">合作推薦</span>
+      <h3>用虛擬定位「踩點」目的地？票券先訂起來</h3>
+      <p>
+        很多人會先用虛擬定位逛逛要去的城市。如果之後真的成行，熱門景點、
+        樂園、一日遊常常要先訂，當天用海外卡也不一定刷得過。Klook 對非當地
+        付款方式支援度高，給的是可直接掃描的電子票券。
+      </p>
+      <a class="cta" href="https://affiliate.klook.com/redirect?aid=119869&aff_adid=1265774&k_site=https%3A%2F%2Fwww.klook.com%2Fzh-TW%2F" target="_blank" rel="sponsored noopener">到 Klook 看看行程</a>
+      <p class="small">合作連結 — 透過此連結訂購，我們可能獲得少量佣金，您不會多付任何費用。</p>
+    </div>
+
+    <h2>虛擬定位安全嗎？會被封嗎？</h2>
+    <p>
+      透過官方開發者通道設定模擬定位，<strong>不改動 iOS、不需要 Apple ID
+      密碼、手機端不裝任何東西</strong>，這比越獄安全得多。至於「會不會被
+      某個 App 封」——那取決於該 App 自己的服務條款與偵測機制，跟設定虛擬
+      定位的技術本身無關。使用任何 App 前，請先了解並遵守它的規則。
+    </p>
+
+    <!-- NordVPN -->
+    <div class="tip-card">
+      <span class="tip-tag">合作推薦</span>
+      <h3>NordVPN — 公共網路的隱私防護</h3>
+      <p>
+        在意定位隱私的人，通常也在意網路隱私。NordVPN 在公共 Wi-Fi 上加密
+        連線，一個訂閱可涵蓋 10 台裝置。我們自己也在用。
+      </p>
+      <a class="cta" href="https://go.nordvpn.net/aff_c?offer_id=15&aff_id=146747&url_id=902" target="_blank" rel="sponsored noopener">看 NordVPN 方案</a>
+      <p class="small">合作連結 — 透過此連結訂購，我們可能獲得少量佣金，您不會多付任何費用。</p>
+    </div>
+
+    <div class="tracego-block">
+      <h3>免越獄設定 iPhone 虛擬定位 — TraceGo</h3>
+      <p>
+        TraceGo 是 Windows 桌面工具，透過 USB 在你自己的 iPhone 上設定模擬
+        GPS。免越獄、手機端不裝東西，原生支援 iOS 17 / 18 / 26，並提供 7 天
+        試用版讓你先確認相容。
+      </p>
+      <p style="margin-bottom: 0;"><a href="/">了解更多 TraceGo →</a></p>
+    </div>
+
+    <h2 class="faq">常見問題</h2>
+    <div class="faq">
+      <h3>假定位需要越獄嗎？</h3>
+      <p>不需要。USB 桌面工具在原廠 iPhone 上就能用，不改動 iOS。</p>
+      <h3>iOS 18 / iOS 26 還能設虛擬定位嗎？</h3>
+      <p>可以，前提是工具已支援新版連線層（RemoteXPC）。舊工具會卡連線。</p>
+      <h3>需要 Mac 嗎？</h3>
+      <p>TraceGo 在 Windows 上跑，不需要 Mac、Xcode 或開發者帳號。</p>
+      <h3>會不會被某個 App 偵測到？</h3>
+      <p>偵測與否取決於各 App 自己的政策。請務必遵守你使用的 App 服務條款。</p>
+    </div>
+
+    <p style="margin-top:30px"><strong>延伸閱讀：</strong>
+      <a href="/change-iphone-location">iPhone 定位修改教學：免越獄修改 GPS</a>
+    </p>
+
+  </article>
+
+  <footer>
+    <div class="disclosure">
+      <strong>合作揭露。</strong>本文含合作推廣連結（Klook、NordVPN）。若您透過
+      這些連結訂購或訂閱，我們可能獲得少量佣金，您不會多付任何費用。我們只推薦
+      自己也會使用的工具。TraceGo 僅供合法用途——在您自己擁有的裝置上進行測試、
+      隱私保護、無障礙與旅遊規劃。使用任何第三方 App 或平台時，請遵守其服務條款。
+    </div>
+    <p><a href="/">← 回到 TraceGo 首頁</a></p>
+    <p class="copyright">© 2026 TraceGo 足跡</p>
+  </footer>
+
+</body>
+</html>

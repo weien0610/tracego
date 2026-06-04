@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 官網核心頁 -->
+  <url>
+    <loc>https://tracego.tw/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 法律文件 -->
+  <url><loc>https://tracego.tw/legal/terms</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://tracego.tw/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://tracego.tw/legal/refund</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+
+</urlset>

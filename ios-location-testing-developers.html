@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS 定位功能測試教學：開發者如何模擬 GPS 測試 App（iOS 17/18/26）| TraceGo</title>
+  <meta name="description" content="App 開發者如何在 iPhone 上模擬 GPS 位置，測試地理圍欄、門市搜尋、導航等定位功能。比較 Xcode 與 USB 工具的差異，以及 iOS 17 後的注意事項。">
+  <meta property="og:title" content="iOS 定位功能測試教學：開發者如何模擬 GPS 測試 App">
+  <meta property="og:description" content="開發者測試定位功能的方法：Xcode vs USB 工具，地理圍欄與導航測試實務。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://tracego.tw/ios-location-testing-developers">
+  <link rel="stylesheet" href="/article.css">
+</head>
+<body>
+
+  <header>
+    <a class="nav-back" href="/"><span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span></a>
+    <h1>iOS 定位功能測試：開發者如何模擬 GPS</h1>
+    <p class="subtitle">
+      做地理圍欄、門市搜尋、導航類功能，總不能每次都開車到現場測。
+      這篇整理 iPhone 上模擬 GPS 位置的幾種方法，以及 iOS 17 後的變化。
+    </p>
+    <div class="meta-row">開發實務 · iOS · 定位測試</div>
+  </header>
+
+  <article class="container">
+
+    <h2>為什麼定位功能難測</h2>
+    <p>
+      只要 App 用到位置，QA 就會遇到一個老問題：<strong>真實位置只有一個，
+      但要測的場景有很多</strong>。地理圍欄要進、要出；門市搜尋要在不同城市；
+      導航要從 A 到 B；外送範圍要跨界。靠實機帶著到處跑既慢又不可重現。
+    </p>
+
+    <div class="callout">
+      <strong>核心需求：</strong>在不離開辦公桌的前提下，把 iPhone 的定位
+      設成任意座標，而且要能在 iOS 17 / 18 / 26 等新版本上穩定運作。
+    </div>
+
+    <h2>方法一：Xcode 的 Simulate Location</h2>
+    <p>
+      Xcode 內建「Simulate Location」，連上實機後可以指定預設地點或丟 GPX
+      檔模擬路徑。優點是官方、免費；缺點也明顯：
+    </p>
+    <ul>
+      <li>需要 <strong>Mac + Xcode + 開發者設定</strong>，Windows 團隊用不了。</li>
+      <li>偏向「跑你自己的 debug build」情境，要測<strong>正式版 App</strong>
+          或第三方 App 的定位行為就不方便。</li>
+      <li>斷線後位置就重置，無法長時間維持。</li>
+    </ul>
+
+    <h2>方法二：USB 桌面定位工具</h2>
+    <p>
+      另一種做法是用桌面工具，透過 USB 跟 Xcode 一樣的開發者通道把座標送進
+      裝置。優點是<strong>不限 Mac、不必跑 debug build</strong>，地圖點選或
+      輸入座標就能改變整支手機讀到的位置，適合 QA 測任何定位類 App。
+    </p>
+
+    <h2>iOS 17 之後一定要注意的事</h2>
+    <p>
+      iOS 17 把裝置通訊改到新的安全通道（RemoteXPC），舊的 Developer Disk
+      Image 流程失效。這影響的不只第三方工具——有些團隊的自動化測試腳本也
+      因此要調整。選工具或寫腳本時，<strong>務必確認支援 iOS 17 / 18 / 26
+      的新連線方式</strong>，否則會卡在連線階段。
+    </p>
+
+    <h2>測定位功能的實務清單</h2>
+    <ul>
+      <li><strong>地理圍欄</strong>：測「進入」與「離開」兩個 event，邊界附近多點測。</li>
+      <li><strong>門市 / 據點搜尋</strong>：跨城市、跨國切換座標，確認排序與距離計算。</li>
+      <li><strong>導航 / 路線</strong>：用路徑模擬走一條線，看 ETA 與重新規劃。</li>
+      <li><strong>權限狀態</strong>：測「永不 / 使用 App 時 / 精確位置關閉」各種組合。</li>
+    </ul>
+
+    <div class="tracego-block">
+      <h3>用 TraceGo 在 Windows 上測 iOS 定位</h3>
+      <p>
+        TraceGo 是 Windows 桌面工具，透過 USB 在實機上設定模擬 GPS，原生
+        支援 iOS 17 / 18 / 26。地圖點選或輸入精確座標，也能用路徑模擬走一條
+        路線測導航。不必 Mac、不必跑 debug build，QA 測正式 App 也適用。
+        提供 7 天試用版先確認與你的測試機相容。
+      </p>
+      <p style="margin-bottom: 0;"><a href="/">了解更多 TraceGo →</a></p>
+    </div>
+
+    <h2 class="faq">常見問題</h2>
+    <div class="faq">
+      <h3>一定要有 Mac 才能測 iOS 定位嗎？</h3>
+      <p>Xcode 那條路要 Mac；USB 桌面工具（如 TraceGo）在 Windows 上就能做。</p>
+      <h3>能測正式版 App，不是只有自己的 debug build？</h3>
+      <p>可以。USB 工具改的是整支裝置讀到的座標，任何定位類 App 都會跟著變。</p>
+      <h3>iOS 18 / 26 的相容性要注意什麼？</h3>
+      <p>確認工具或腳本支援 RemoteXPC 新連線層，否則會連線失敗。</p>
+    </div>
+
+    <p style="margin-top:30px"><strong>延伸閱讀：</strong>
+      <a href="/change-iphone-location">iPhone 定位修改教學：免越獄修改 GPS</a> ·
+      <a href="/iphone-location-changer-comparison">定位工具怎麼選？比較指南</a>
+    </p>
+
+  </article>
+
+  <footer>
+    <div class="disclosure">
+      <strong>關於本文。</strong>TraceGo 為 iOS 定位模擬工具，供開發測試、隱私、
+      無障礙與旅遊規劃等合法用途使用，請在您自己擁有的裝置上、並遵守相關 App
+      服務條款的前提下使用。
+    </div>
+    <p><a href="/">← 回到 TraceGo 首頁</a></p>
+    <p class="copyright">© 2026 TraceGo 足跡</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects
+# 舊 Paddle 時代的英文法律頁 → 新台灣版（中文）
+/terms.html      /legal/terms     301
+/privacy.html    /legal/privacy   301
+/refund.html     /legal/refund    301
+
+# 老的定價頁不再單獨存在，導回首頁
+/pricing.html    /                301
