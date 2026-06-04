@@ -139,7 +139,7 @@
 
       <h3>2.3 我們不蒐集的資料</h3>
       <ul>
-        <li>❌ 您的信用卡完整號碼（由 Paddle 獨立處理）</li>
+        <li>❌ 您的信用卡完整號碼（由 金流服務商 獨立處理）</li>
         <li>❌ Google 帳號密碼（OAuth 完全不會看到）</li>
         <li>❌ 您 iPhone 內的個人資料、照片、聯絡人</li>
         <li>❌ 您電腦其他軟體的使用紀錄</li>
@@ -151,7 +151,7 @@
       <ol>
         <li><strong>提供服務</strong>：身份驗證、Pro 方案啟用、傳送座標至 iOS 裝置</li>
         <li><strong>計次與抗濫用</strong>：管理免費版每日配額、廣告解鎖配額、試用版限購</li>
-        <li><strong>付款處理</strong>：與 Paddle 交換訂單資訊以完成交易</li>
+        <li><strong>付款處理</strong>：與 金流服務商 交換訂單資訊以完成交易</li>
         <li><strong>客戶服務</strong>：回覆您的詢問、處理退費、解決技術問題</li>
         <li><strong>品質改善</strong>：分析錯誤日誌以修復 bug、優化效能</li>
         <li><strong>安全防護</strong>：監控授權狀態、防止未經授權的存取</li>
@@ -167,7 +167,7 @@
         <tr><th>資料類別</th><th>儲存位置</th><th>說明</th></tr>
         <tr><td>License、配額、設備綁定</td><td>Cloudflare Workers KV</td><td>全球邊緣節點分散式儲存</td></tr>
         <tr><td>書籤資料（僅 Pro）</td><td>Cloudflare D1 (SQLite, APAC 地區)</td><td>免費用戶之書籤僅存於本機 localStorage，不上傳雲端</td></tr>
-        <tr><td>付款紀錄</td><td>Paddle 系統</td><td>由 Paddle 依其全球資料中心政策儲存</td></tr>
+        <tr><td>付款紀錄</td><td>金流服務商 系統</td><td>由 金流服務商 依其全球資料中心政策儲存</td></tr>
         <tr><td>Crash log</td><td>本機(您的電腦)</td><td>除非主動回報，否則不上傳</td></tr>
       </table>
       <p>由於 Cloudflare 為全球網路服務，您的資料可能會於我國境外處理，但僅以提供本服務之必要範圍為限。</p>
@@ -179,7 +179,7 @@
       <table>
         <tr><th>服務商</th><th>用途</th><th>傳送之資料</th></tr>
         <tr><td><a href="https://policies.google.com/privacy" style="color:#60a5fa">Google</a></td><td>OAuth 登入</td><td>身份驗證 token</td></tr>
-        <tr><td><a href="https://www.paddle.com/legal/privacy" style="color:#60a5fa">Paddle</a></td><td>付款處理</td><td>訂單金額、Email、設備綁定碼</td></tr>
+        <tr><td>第三方金流服務商</td><td>付款處理</td><td>訂單金額、Email、設備綁定碼</td></tr>
         <tr><td><a href="https://www.cloudflare.com/privacypolicy/" style="color:#60a5fa">Cloudflare</a></td><td>後端、KV、DNS、網路防護</td><td>API 請求、IP 位址、KV 資料</td></tr>
       </table>
       <p>我們僅將完成服務所需之最少資料傳送予前述服務商，不另行授權其用於其他用途。</p>
@@ -233,7 +233,7 @@
         <li>所有 API 通訊採 HTTPS / TLS 1.2+ 加密</li>
         <li>Cloudflare DDoS 防護與 WAF（Web 應用防火牆）</li>
         <li>License 採 Ed25519 數位簽章驗證，無法偽造</li>
-        <li>付款流程完全交由 Paddle 處理，我們不接觸信用卡資料</li>
+        <li>付款流程完全交由 金流服務商 處理，我們不接觸信用卡資料</li>
         <li>Google OAuth 不接觸密碼</li>
       </ul>
       <p>儘管我們已盡力保護，但網際網路本質上無法保證 100% 安全。若發生資料外洩事件，我們將依法於 72 小時內通知您及主管機關。</p>
