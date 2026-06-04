@@ -1,0 +1,4 @@
+# Cloudflare Pages headers
+# LINE 客服 widget 不快取，改版後立即生效
+/line-widget.js
+  Cache-Control: public, max-age=0, must-revalidate
