@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- 官網核心頁 -->
-  <url>
-    <loc>https://tracego.tw/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url><loc>https://tracego.tw/faq.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tracego.tw/compare.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- 核心頁 -->
+  <url><loc>https://tracego.tw/</loc><lastmod>2026-06-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tracego.tw/pricing.html</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tracego.tw/compare.html</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tracego.tw/faq.html</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tracego.tw/guides</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- 教學 / 內容文章（長尾主力）-->
+  <url><loc>https://tracego.tw/change-iphone-location</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tracego.tw/fake-gps-iphone</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tracego.tw/simulate-gps-route-iphone</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tracego.tw/ios-location-testing-developers</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tracego.tw/iphone-location-tool-ios17-not-working</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tracego.tw/iphone-location-privacy</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tracego.tw/iphone-location-changer-comparison</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- 法律文件 -->
-  <url><loc>https://tracego.tw/legal/terms</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://tracego.tw/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://tracego.tw/legal/refund</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://tracego.tw/legal/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tracego.tw/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tracego.tw/legal/refund</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
 </urlset>
