@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS 定位模擬工具比較 2026｜TraceGo vs AnyTo vs iAnyGo vs Dr.Fone</title>
+  <meta name="description" content="2026 最新 iOS GPS 位置模擬工具完整比較。TraceGo 繁體中文原生介面、WiFi 無線連線、WASD 鍵盤操控、永久免費版，對比 iMyFone AnyTo、Tenorshare iAnyGo、Dr.Fone Virtual Location、iToolab AnyGo 的價格、iOS 相容性與功能差異。">
+  <link rel="canonical" href="https://tracego.tw/compare.html">
+  <meta property="og:title" content="iOS 定位模擬工具比較 2026 — TraceGo 與主流工具完整對照">
+  <meta property="og:description" content="繁中原生、WiFi 無線、WASD 操控、永久免費版。一張表看懂 TraceGo 與 AnyTo / iAnyGo / Dr.Fone 的差異。">
+  <meta property="og:url" content="https://tracego.tw/compare.html">
+  <meta property="og:type" content="website">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
+                   "Microsoft JhengHei", sans-serif;
+      color: #1a1a1a; line-height: 1.7; background: #f8fafc;
+    }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white; padding: 60px 20px 70px; text-align: center;
+    }
+    .logo { font-size: 1.4em; font-weight: 700; margin-bottom: 24px; }
+    .logo a { color: white; text-decoration: none; }
+    .logo-zh { color: #94a3b8; font-weight: 400; margin-left: 8px; font-size: 0.9em; }
+    header h1 { font-size: 2.3em; margin-bottom: 14px; letter-spacing: -0.5px; line-height: 1.3; }
+    header p { color: #cbd5e1; max-width: 640px; margin: 0 auto; font-size: 1.1em; }
+    .updated { color: #64748b; font-size: 0.85em; margin-top: 16px; }
+
+    main { padding: 50px 0; }
+    .lead {
+      background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 18px 22px;
+      border-radius: 8px; margin-bottom: 36px; font-size: 1.05em; color: #5b21b6;
+    }
+    h2 { font-size: 1.6em; margin: 44px 0 18px; color: #0f172a; }
+
+    .table-wrap { overflow-x: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    table { width: 100%; border-collapse: collapse; background: white; min-width: 760px; }
+    th, td { padding: 13px 14px; text-align: center; border-bottom: 1px solid #e2e8f0; font-size: 0.92em; }
+    th { background: #0f172a; color: white; font-weight: 600; position: sticky; top: 0; }
+    th:first-child, td:first-child { text-align: left; font-weight: 600; color: #334155; }
+    .col-us { background: #faf5ff; }
+    th.col-us { background: #7c3aed; }
+    tr:hover td { background: #f8fafc; }
+    tr:hover td.col-us { background: #f3e8ff; }
+    .yes { color: #16a34a; font-weight: 700; }
+    .no { color: #cbd5e1; }
+    .mid { color: #d97706; }
+    .badge { display: inline-block; background: #7c3aed; color: white; font-size: 0.7em; padding: 2px 7px; border-radius: 10px; margin-left: 4px; vertical-align: middle; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 20px 0; }
+    .card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; }
+    .card h3 { color: #0f172a; font-size: 1.15em; margin-bottom: 8px; }
+    .card p { color: #475569; font-size: 0.95em; }
+    .card .ico { font-size: 1.6em; margin-bottom: 6px; }
+
+    .who { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin: 20px 0; }
+    .who ul { list-style: none; }
+    .who li { padding: 7px 0; color: #334155; }
+    .who li::before { content: "✓ "; color: #16a34a; font-weight: 700; }
+
+    .cta { text-align: center; padding: 44px 20px; background: linear-gradient(135deg,#1e293b,#0f172a); border-radius: 16px; margin: 44px 0; }
+    .cta h2 { color: white; margin-top: 0; }
+    .cta p { color: #cbd5e1; margin-bottom: 22px; }
+    .cta-btn {
+      display: inline-block; background: #7c3aed; color: white; text-decoration: none;
+      padding: 15px 40px; border-radius: 10px; font-size: 1.1em; font-weight: 700;
+    }
+    .cta-btn:hover { background: #6d28d9; }
+    .cta-note { color: #64748b; font-size: 0.85em; margin-top: 14px; }
+
+    footer { background: #0f172a; color: #94a3b8; padding: 40px 20px 30px; margin-top: 40px; text-align: center; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: white; }
+    .footnote { color: #475569; font-size: 0.8em; margin-top: 18px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 640px) { header h1 { font-size: 1.7em; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
+    <h1>iOS 定位模擬工具完整比較 2026</h1>
+    <p>市面上主流的 iPhone GPS 位置模擬工具，價格、iOS 相容性、連線方式、語言介面差很多。這篇用一張表幫你看懂差異，選對工具。</p>
+    <div class="updated">最後更新：2026 年 6 月</div>
+  </header>
+
+  <main class="container">
+
+    <div class="lead">
+      <strong>結論先講：</strong>多數同類工具是中國團隊開發、繁中為機器翻譯、且都需要 USB 連線。TraceGo 是少數<strong>繁體中文原生介面、支援 WiFi 無線連線、提供永久免費版</strong>的選擇，並原生支援最新 iOS 17 / 18 / 26。
+    </div>
+
+    <h2>📊 主流工具一覽比較</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th class="col-us">TraceGo <span class="badge">本站</span></th>
+            <th>iMyFone AnyTo</th>
+            <th>Tenorshare iAnyGo</th>
+            <th>iToolab AnyGo</th>
+            <th>Dr.Fone 定位</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>付費起價</td>
+            <td class="col-us"><strong>30 天 NT$299</strong><br><small>7 天試用 NT$99</small></td>
+            <td>月 ≈ NT$480</td>
+            <td>月 ≈ NT$415</td>
+            <td>月 ≈ NT$320</td>
+            <td>月 ≈ NT$320</td>
+          </tr>
+          <tr>
+            <td>永久免費版</td>
+            <td class="col-us yes">✓ 永久可用<br><small>每日 5 次傳送</small></td>
+            <td class="mid">限次數</td>
+            <td class="mid">限 1 小時</td>
+            <td class="mid">部分功能</td>
+            <td class="no">✕ 僅 demo</td>
+          </tr>
+          <tr>
+            <td>完整時間制試用</td>
+            <td class="col-us yes">✓ 7 天完整 Pro</td>
+            <td class="no">✕</td>
+            <td class="no">✕</td>
+            <td class="no">✕</td>
+            <td class="no">✕</td>
+          </tr>
+          <tr>
+            <td>iOS 17 / 18 / 26</td>
+            <td class="col-us yes">✓ 原生支援</td>
+            <td class="mid">陸續跟進</td>
+            <td class="mid">陸續跟進</td>
+            <td class="mid">陸續跟進</td>
+            <td class="no">✕ 已停更</td>
+          </tr>
+          <tr>
+            <td>WiFi 無線連線</td>
+            <td class="col-us yes">✓ 獨家</td>
+            <td class="no">✕ 需 USB</td>
+            <td class="no">✕ 需 USB</td>
+            <td class="no">✕ 需 USB</td>
+            <td class="no">✕ 需 USB</td>
+          </tr>
+          <tr>
+            <td>WASD 鍵盤操控</td>
+            <td class="col-us yes">✓ 獨家</td>
+            <td class="no">✕</td>
+            <td class="no">✕</td>
+            <td class="no">✕</td>
+            <td class="no">✕</td>
+          </tr>
+          <tr>
+            <td>繁體中文介面</td>
+            <td class="col-us yes">✓ 原生</td>
+            <td class="mid">機器翻譯</td>
+            <td class="mid">機器翻譯</td>
+            <td class="mid">機器翻譯</td>
+            <td class="mid">機器翻譯</td>
+          </tr>
+          <tr>
+            <td>付款方式</td>
+            <td class="col-us yes">信用卡/超商/ATM</td>
+            <td>信用卡</td>
+            <td>信用卡</td>
+            <td>信用卡</td>
+            <td>信用卡</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="color:#94a3b8;font-size:0.82em;">※ 價格以各官網公告為準，外幣以 1 USD ≈ NT$32 換算，僅供參考；功能與相容性以實際版本為準。</p>
+
+    <h2>🎯 怎麼選？看你在意什麼</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="ico">💸</div>
+        <h3>想先免費試用再決定</h3>
+        <p>TraceGo 免費版<strong>永久可用、不限使用天數</strong>：每天 5 次傳送（看廣告可達 10 次）、<strong>WASD 鍵盤移動不限次數</strong>。其他工具的「免費試用」多半是功能受限版或限時 1 小時，用一下就鎖。</p>
+      </div>
+      <div class="card">
+        <div class="ico">📶</div>
+        <h3>不想一直插著 USB 線</h3>
+        <p>TraceGo 支援 <strong>WiFi 無線連線</strong>：首次以 USB 配對一次後，手機與電腦連同一個 WiFi 即可無線使用，同類工具目前都需要全程接著 USB。<small style="color:#94a3b8;">（部分公司／學校／公共 WiFi 會封鎖裝置互連，這類環境可隨時改回 USB 連線。）</small></p>
+      </div>
+      <div class="card">
+        <div class="ico">🍎</div>
+        <h3>用的是最新 iOS</h3>
+        <p>TraceGo 原生支援 <strong>iOS 17 / 18 / 26</strong>，新版推出後持續更新。部分老牌工具升級較慢，Dr.Fone 的定位功能更已於 2024 年停止更新。</p>
+      </div>
+      <div class="card">
+        <div class="ico">🛡️</div>
+        <h3>在意安全與信任</h3>
+        <p>TraceGo 由<strong>台灣團隊公開營運</strong>、繁中原生、支援超商/ATM/信用卡在地付款，不需要把資料交給匿名或境外團隊。</p>
+      </div>
+      <div class="card">
+        <div class="ico">⌨️</div>
+        <h3>想要更順手的操控</h3>
+        <p>獨家 <strong>WASD 鍵盤操控</strong>，移動定位像玩遊戲一樣直覺，比滑鼠拖搖桿精準。</p>
+      </div>
+      <div class="card">
+        <div class="ico">🗺️</div>
+        <h3>重視介面體驗</h3>
+        <p>乾淨的 Leaflet 地圖介面，繁中原生、無多餘工具箱雜訊，新手也能秒上手。</p>
+      </div>
+    </div>
+
+    <h2>👥 TraceGo 適合這些人</h2>
+    <div class="who">
+      <ul>
+        <li>App / 網站開發者，需要測試定位相關功能</li>
+        <li>想保護隱私、不想暴露真實所在地的人</li>
+        <li>規劃旅行行程、想預先演練路線的人</li>
+        <li>用最新 iPhone、被舊工具相容性搞煩的人</li>
+        <li>偏好繁體中文、在地付款與客服的台灣用戶</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <h2>先免費試試，再決定要不要付費</h2>
+      <p>免費版永久可用、不限使用天數，不需註冊、不綁信用卡。</p>
+      <a href="https://github.com/weien0610/tracego/releases/download/v1.1.8/TraceGo-Setup-1.1.8.exe" class="cta-btn" rel="noopener">⬇️ 免費下載 TraceGo</a>
+      <div class="cta-note">Windows 10 / 11 · 支援 iOS 17 / 18 / 26 · <a href="/" style="color:#a78bfa;">看完整功能與方案</a></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo" style="color:white;">TraceGo<span class="logo-zh">足跡</span></div>
+      <div style="margin-top:18px;font-size:0.9em;">
+        <a href="/">首頁</a> ·
+        <a href="/compare.html">工具比較</a> ·
+        <a href="/faq.html">常見問題</a> ·
+        <a href="/legal/terms">服務條款</a> ·
+        <a href="/legal/privacy">隱私權政策</a> ·
+        <a href="https://line.me/R/ti/p/@163ksdcg" style="color:#06C755;" target="_blank" rel="noopener">💬 LINE 客服</a>
+      </div>
+      <p class="footnote">
+        本頁為功能與價格之客觀比較，所列競品名稱與商標均屬各該公司所有，僅供識別與比較參考之用。資料以各官方公告為準，如有更新請以官網為主。TraceGo 為合法 GPS 位置模擬與開發測試工具，請於符合各平台服務條款與當地法律的前提下使用。
+      </p>
+      <p style="margin-top:14px;font-size:0.82em;">© 2026 TraceGo (足跡). Made with care in Taiwan 🇹🇼</p>
+    </div>
+  </footer>
+
+  <script src="/line-widget.js?v=2" defer></script>
+</body>
+</html>
