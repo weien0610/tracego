@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
@@ -45,334 +45,178 @@
   }
   </script>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
-                   "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-      color: #1a1a1a;
-      line-height: 1.7;
-      background: #f8fafc;
+    :root{
+      --bg:#f5f8fc; --surface:#ffffff; --ink:#0d1424; --ink-2:#46566e; --ink-3:#7c8ca6;
+      --line:#e7edf5; --teal:#14b8a6; --cyan:#22d3ee; --blue:#2563eb; --link:#0d9488;
+      --brand:linear-gradient(135deg,#2dd4bf 0%,#2563eb 100%);
+      --brand-soft:linear-gradient(135deg,rgba(45,212,191,.14),rgba(37,99,235,.12));
+      --night:#0a0f1d; --radius:16px;
+      --shadow:0 1px 2px rgba(13,20,36,.04),0 10px 30px rgba(13,20,36,.06);
+      --shadow-lg:0 24px 60px rgba(13,20,36,.14);
+      --f-display:'Sora','Noto Sans TC',sans-serif;
+      --f-body:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;
+      --f-mono:'Space Mono',ui-monospace,monospace;
     }
-    .container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-    .container-wide { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f-body);color:var(--ink);line-height:1.75;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:920px;margin:0 auto;padding:0 22px}
+    .container-wide{max-width:1180px;margin:0 auto;padding:0 22px}
+    a{color:var(--link)}
 
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white;
-      padding: 80px 20px 100px;
-      text-align: center;
-    }
-    .logo {
-      font-size: 1.5em;
-      font-weight: 700;
-      margin-bottom: 40px;
-      letter-spacing: 0.5px;
-    }
-    .logo-zh { color: #94a3b8; font-weight: 400; margin-left: 8px; font-size: 0.9em; }
-    h1 {
-      font-size: 2.6em;
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
-      line-height: 1.3;
-    }
-    .subtitle {
-      font-size: 1.15em;
-      color: #cbd5e1;
-      max-width: 640px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-    .badges {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-    .badge {
-      background: rgba(255,255,255,0.1);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85em;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    /* 下載 CTA */
-    .download-cta { margin-top: 36px; }
-    .download-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #c084fc, #8b5cf6);
-      color: #fff;
-      font-size: 1.08em;
-      font-weight: 700;
-      padding: 15px 38px;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(139,92,246,0.4);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(139,92,246,0.5); }
-    .download-note { font-size: 0.8em; color: #94a3b8; margin-top: 12px; }
-    /* LINE 客服 CTA */
-    .line-cta {
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      flex-wrap: wrap;
-      background: #f0fdf4; border: 1.5px solid #06C755; border-radius: 12px;
-      padding: 20px 24px; margin-top: 24px;
-    }
-    .line-cta-text { color: #166534; font-size: 0.95em; line-height: 1.6; }
-    .line-btn {
-      display: inline-block; background: #06C755; color: #fff; font-weight: 700;
-      padding: 12px 28px; border-radius: 10px; text-decoration: none; white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(6,199,85,0.3); transition: transform .15s;
-    }
-    .line-btn:hover { transform: translateY(-1px); }
+    /* ============ HERO ============ */
+    header{position:relative;overflow:hidden;background:var(--night);color:#fff}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-grid{position:absolute;inset:0;
+      background-image:linear-gradient(rgba(120,160,220,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.07) 1px,transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(ellipse 78% 62% at 50% 32%,#000 38%,transparent 100%);
+      mask-image:radial-gradient(ellipse 78% 62% at 50% 32%,#000 38%,transparent 100%)}
+    .hero-glow{position:absolute;left:50%;top:-14%;width:min(920px,120%);height:620px;transform:translateX(-50%);
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.20),rgba(37,99,235,.14) 36%,transparent 70%);filter:blur(8px)}
+    .hero-inner{position:relative;max-width:1080px;margin:0 auto;padding:60px 22px 84px;display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center;text-align:left}
+    @media(max-width:880px){.hero-inner{grid-template-columns:1fr;gap:38px;text-align:center;padding:50px 22px 60px}}
+    .hero-text>*{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .hero-text>*:nth-child(1){animation-delay:.04s}
+    .hero-text>*:nth-child(2){animation-delay:.12s}
+    .hero-text>*:nth-child(3){animation-delay:.20s}
+    .hero-text>*:nth-child(4){animation-delay:.28s}
+    .hero-text>*:nth-child(5){animation-delay:.36s}
+    .hero-text>*:nth-child(6){animation-delay:.44s}
+    .hero-visual{opacity:0;transform:translateY(18px) scale(.98);animation:rise .85s .32s cubic-bezier(.2,.7,.2,1) forwards}
+    @keyframes rise{to{opacity:1;transform:none}}
+    .brand{display:inline-flex;align-items:center;gap:9px;margin-bottom:30px;font-family:var(--f-display);font-weight:800;font-size:1.35rem;letter-spacing:.3px}
+    .brand .pin{width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);box-shadow:0 0 18px rgba(34,211,238,.55);position:relative}
+    .brand .pin::after{content:"";position:absolute;inset:6px;border-radius:50%;background:#0a0f1d}
+    .logo-zh{color:#8499b8;font-weight:400;margin-left:6px;font-size:.82em}
+    .coord-chip{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-mono);font-size:.76rem;letter-spacing:.4px;color:#a7bbd8;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+    .coord-chip .ping{width:7px;height:7px;border-radius:50%;background:#22d3ee;animation:ping 2.2s infinite}
+    @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,211,238,.5)}70%{box-shadow:0 0 0 7px rgba(34,211,238,0)}100%{box-shadow:0 0 0 0 rgba(34,211,238,0)}}
+    header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(2.1rem,5.2vw,3.25rem);line-height:1.16;letter-spacing:-1px;margin-bottom:18px;
+      background:linear-gradient(180deg,#fff 30%,#bcd0ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{color:#a6b7d2;font-size:1.08rem;max-width:500px;margin:0 0 26px;line-height:1.8}
+    .badges{display:flex;gap:9px;justify-content:flex-start;flex-wrap:wrap;margin-bottom:30px}
+    @media(max-width:880px){.subtitle{margin-left:auto;margin-right:auto}.badges{justify-content:center}}
+    .badge{font-family:var(--f-mono);font-size:.74rem;color:#c2d2ea;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);padding:7px 13px;border-radius:999px}
+    .download-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:1.05rem;color:#05131f;
+      background:linear-gradient(135deg,#3fe3cb,#5aa6ff);padding:15px 36px;border-radius:14px;text-decoration:none;
+      box-shadow:0 12px 34px rgba(34,211,238,.34);transition:transform .16s,box-shadow .16s}
+    .download-btn:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(34,211,238,.46)}
+    .download-note{color:#8094b2;font-size:.8rem;margin-top:14px;font-family:var(--f-mono);letter-spacing:.2px}
+    /* App preview (hero visual) */
+    .app-preview{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 0 1px rgba(34,211,238,.08);background:#0e1626;max-width:520px;margin:0 auto}
+    .ap-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#101b2e;border-bottom:1px solid rgba(255,255,255,.06)}
+    .ap-bar i{width:10px;height:10px;border-radius:50%;display:block}
+    .ap-bar i:nth-child(1){background:#ff5f57}.ap-bar i:nth-child(2){background:#febc2e}.ap-bar i:nth-child(3){background:#28c840}
+    .ap-search{margin-left:10px;flex:1;font-family:var(--f-mono);font-size:.72rem;color:#7e93b3;background:rgba(255,255,255,.06);border-radius:7px;padding:6px 12px}
+    .ap-map{position:relative;height:308px;background:radial-gradient(120% 90% at 70% 20%,rgba(34,211,238,.10),transparent 45%),linear-gradient(180deg,#0d1a2e,#0a1422);overflow:hidden}
+    .ap-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(120,160,220,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.10) 1px,transparent 1px);background-size:34px 34px}
+    .ap-block{position:absolute;background:rgba(125,150,200,.08);border:1px solid rgba(125,150,200,.06);border-radius:4px}
+    .ap-park{position:absolute;background:rgba(45,212,191,.09);border:1px solid rgba(45,212,191,.12);border-radius:10px}
+    .ap-route{position:absolute;inset:0;width:100%;height:100%}
+    .ap-pin{position:absolute;left:54%;top:46%;width:26px;height:26px;border-radius:50% 50% 50% 0;transform:translate(-50%,-100%) rotate(-45deg);background:var(--brand);box-shadow:0 10px 22px rgba(34,211,238,.5)}
+    .ap-pin::after{content:"";position:absolute;inset:7px;border-radius:50%;background:#0a1422}
+    .ap-radar{position:absolute;left:54%;top:46%;width:14px;height:14px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(34,211,238,.32);animation:radar 2.6s infinite}
+    @keyframes radar{0%{box-shadow:0 0 0 0 rgba(34,211,238,.42)}100%{box-shadow:0 0 0 52px rgba(34,211,238,0)}}
+    .ap-coord{position:absolute;left:14px;bottom:14px;font-family:var(--f-mono);font-size:.68rem;color:#cfe0f5;background:rgba(8,16,30,.72);border:1px solid rgba(255,255,255,.12);padding:5px 10px;border-radius:8px}
+    .ap-zoom{position:absolute;right:14px;bottom:14px;display:flex;flex-direction:column;gap:6px}
+    .ap-zoom b{width:30px;height:30px;display:grid;place-items:center;background:rgba(8,16,30,.72);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#cfe0f5;font-family:var(--f-mono);font-size:.95rem}
+    @media(prefers-reduced-motion:reduce){.ap-radar{animation:none}}
 
-    /* Sections */
-    section { padding: 60px 0; }
-    h2 {
-      font-size: 1.8em;
-      margin-bottom: 32px;
-      color: #0f172a;
-    }
-    h3 { font-size: 1.15em; color: #0f172a; margin-bottom: 8px; }
+    /* ============ SECTIONS ============ */
+    section{padding:72px 0}
+    h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.5rem,3.2vw,2rem);letter-spacing:-.5px;color:var(--ink);position:relative;padding-bottom:16px;margin-bottom:30px}
+    h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:3px;border-radius:2px;background:var(--brand)}
+    h3{font-family:var(--f-display);font-size:1.06rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+    .lead{color:var(--ink-2);margin-bottom:22px;font-size:1rem}
+
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
 
     /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-    @media (max-width: 760px) {
-      .features { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 440px) {
-      .features { grid-template-columns: 1fr; }
-    }
-    .feature {
-      padding: 24px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .feature-icon { font-size: 2em; margin-bottom: 12px; }
-    .feature p { color: #475569; font-size: 0.95em; }
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    @media(max-width:760px){.features{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:440px){.features{grid-template-columns:1fr}}
+    .feature{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 22px;transition:transform .18s,box-shadow .18s,border-color .18s}
+    .feature:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#cfe2f6}
+    .feature-icon{font-size:1.55rem;width:52px;height:52px;display:grid;place-items:center;border-radius:14px;background:var(--brand-soft);margin-bottom:15px}
+    .feature p{color:var(--ink-2);font-size:.92rem;line-height:1.7}
 
-    /* Use Cases */
-    .use-cases {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-    .use-cases li {
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      border-left: 4px solid #c084fc;
-    }
-    .use-cases strong { display: block; margin-bottom: 4px; color: #0f172a; }
-    .use-cases span { color: #64748b; font-size: 0.95em; }
+    /* Use cases */
+    .use-cases{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    @media(max-width:760px){.use-cases{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:440px){.use-cases{grid-template-columns:1fr}}
+    .use-cases li{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:12px;padding:20px 22px;box-shadow:var(--shadow)}
+    .use-cases strong{display:block;margin-bottom:5px;color:var(--ink);font-family:var(--f-display);font-weight:700}
+    .use-cases span{color:var(--ink-2);font-size:.94rem}
 
-    /* Pricing — 4 階 */
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      margin-top: 24px;
-    }
-    @media (max-width: 900px) {
-      .pricing { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-      .pricing { grid-template-columns: 1fr; }
-    }
-    .plan {
-      padding: 24px 20px;
-      background: white;
-      border-radius: 14px;
-      border: 2px solid #e2e8f0;
-      position: relative;
-    }
-    .plan.featured {
-      border-color: #c084fc;
-      box-shadow: 0 8px 24px rgba(192, 132, 252, 0.18);
-    }
-    .plan.featured::before {
-      content: "推薦";
-      position: absolute;
-      top: -12px;
-      right: 16px;
-      background: linear-gradient(90deg, #c084fc, #a78bfa);
-      color: white;
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 0.78em;
-      font-weight: 600;
-    }
-    .plan.best::before {
-      content: "最划算";
-      position: absolute;
-      top: -12px;
-      right: 16px;
-      background: #10b981;
-      color: white;
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 0.78em;
-      font-weight: 600;
-    }
-    .plan-name { font-size: 1.1em; font-weight: 700; margin-bottom: 4px; color: #0f172a; }
-    .plan-tag { font-size: 0.8em; color: #64748b; margin-bottom: 14px; }
-    .plan-price { font-size: 1.8em; font-weight: 700; color: #0f172a; margin: 8px 0 4px; }
-    .plan-price small { font-size: 0.55em; color: #64748b; font-weight: 400; }
-    .plan-period { font-size: 0.85em; color: #94a3b8; margin-bottom: 14px; }
-    .plan ul { list-style: none; margin-top: 14px; padding: 0; }
-    .plan ul li {
-      padding: 5px 0;
-      color: #475569;
-      font-size: 0.88em;
-      line-height: 1.5;
-    }
-    .plan ul li::before { content: "✓ "; color: #10b981; font-weight: 700; }
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px}
+    @media(max-width:900px){.pricing{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.pricing{grid-template-columns:1fr}}
+    .plan{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:26px 20px;position:relative;transition:transform .18s,box-shadow .18s}
+    .plan:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+    .plan.featured{border-color:#2dd4bf;box-shadow:0 14px 38px rgba(45,212,191,.2)}
+    .plan.featured::before{content:"推薦";position:absolute;top:-12px;right:16px;background:var(--brand);color:#fff;padding:4px 13px;border-radius:999px;font-size:.74rem;font-weight:700;font-family:var(--f-display)}
+    .plan.best::before{content:"最划算";position:absolute;top:-12px;right:16px;background:#0ea5e9;color:#fff;padding:4px 13px;border-radius:999px;font-size:.74rem;font-weight:700;font-family:var(--f-display)}
+    .plan-name{font-family:var(--f-display);font-size:1.08rem;font-weight:700;color:var(--ink);margin-bottom:4px}
+    .plan-tag{font-size:.78rem;color:var(--ink-3);margin-bottom:14px}
+    .plan-price{font-family:var(--f-display);font-size:1.85rem;font-weight:800;color:var(--ink);margin:8px 0 2px}
+    .plan-period{font-size:.82rem;color:var(--ink-3);margin-bottom:12px;font-family:var(--f-mono)}
+    .plan ul{list-style:none;margin-top:12px}
+    .plan ul li{padding:5px 0 5px 20px;color:var(--ink-2);font-size:.86rem;line-height:1.5;position:relative}
+    .plan ul li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
 
-    .pricing-note {
-      margin-top: 28px;
-      padding: 16px 20px;
-      background: #fef3c7;
-      border-left: 4px solid #f59e0b;
-      border-radius: 8px;
-      font-size: 0.92em;
-      color: #78350f;
-      line-height: 1.7;
-    }
-    .pricing-note strong { color: #78350f; }
+    .pricing-note{margin-top:28px;padding:18px 22px;background:#fff7ec;border:1px solid #fde4b8;border-left:4px solid #f59e0b;border-radius:12px;font-size:.92rem;color:#7a4a10;line-height:1.8}
+    .pricing-note strong{color:#7a4a10}
 
-    /* Affiliate */
-    .partners {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .partner {
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      border: 1px solid #e2e8f0;
-    }
-    .partner h3 { color: #0f172a; }
-    .partner p { color: #64748b; font-size: 0.9em; margin-top: 6px; }
-    a.partner {
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-    a.partner:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-      border-color: #c084fc;
-    }
-    .partner .visit-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #c084fc;
-      font-size: 0.85em;
-      font-weight: 600;
-    }
-    .partner.coming-soon { opacity: 0.6; }
-    .soon-tag {
-      display: inline-block;
-      background: #fef3c7;
-      color: #92400e;
-      font-size: 0.65em;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 10px;
-      letter-spacing: 0.5px;
-      margin-left: 8px;
-      vertical-align: middle;
-    }
+    /* LINE CTA */
+    .line-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#effdf4;border:1.5px solid #06C755;border-radius:14px;padding:22px 24px;margin-top:24px}
+    .line-cta-text{color:#15803d;font-size:.95rem;line-height:1.65}
+    .line-btn{display:inline-block;background:#06C755;color:#fff;font-weight:700;padding:12px 28px;border-radius:11px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(6,199,85,.3);transition:transform .15s}
+    .line-btn:hover{transform:translateY(-1px)}
 
-    /* Travel Guides */
-    .guides {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .guide-card {
-      display: block;
-      padding: 24px;
-      background: white;
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-    .guide-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-      border-color: #c084fc;
-    }
-    .guide-card .guide-flag { font-size: 2em; margin-bottom: 8px; }
-    .guide-card h3 { color: #0f172a; margin-bottom: 6px; }
-    .guide-card p { color: #64748b; font-size: 0.9em; }
-    .guide-card .read-more {
-      display: inline-block;
-      margin-top: 12px;
-      color: #c084fc;
-      font-size: 0.9em;
-      font-weight: 600;
-    }
-    .guide-card.coming-soon { opacity: 0.55; cursor: default; }
-    .guide-card.coming-soon:hover {
-      transform: none;
-      box-shadow: none;
-      border-color: #e2e8f0;
-    }
+    /* Partners & Guides */
+    .partners,.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:24px}
+    .partner,.guide-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s}
+    a.partner:hover,a.guide-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#7fdfd2}
+    .partner p,.guide-card p{color:var(--ink-2);font-size:.9rem;margin-top:6px}
+    .visit-link,.read-more{display:inline-block;margin-top:12px;color:var(--link);font-size:.88rem;font-weight:700;font-family:var(--f-display)}
+    .guide-flag{font-size:1.9rem;margin-bottom:8px}
+    .coming-soon{opacity:.55}
+    a.coming-soon:hover{transform:none;box-shadow:var(--shadow);border-color:var(--line)}
+    .soon-tag{display:inline-block;background:#eef4ff;color:#2563eb;font-size:.62rem;font-weight:700;font-family:var(--f-mono);padding:3px 8px;border-radius:999px;letter-spacing:.5px;margin-left:8px;vertical-align:middle}
 
     /* FAQ */
-    .faq-item {
-      background: white;
-      padding: 20px 24px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-    }
-    .faq-item strong { display: block; margin-bottom: 8px; color: #0f172a; }
-    .faq-item p { color: #475569; font-size: 0.95em; }
+    .faq-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:12px;box-shadow:var(--shadow)}
+    .faq-item strong{display:block;margin-bottom:8px;color:var(--ink);font-family:var(--f-display);font-weight:700}
+    .faq-item p{color:var(--ink-2);font-size:.94rem;line-height:1.8}
+
+    /* About card */
+    .about-card{background:var(--surface);padding:24px;border-radius:var(--radius);margin-top:24px;border:1px solid var(--line);box-shadow:var(--shadow)}
 
     /* Footer */
-    footer {
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 50px 20px 30px;
-      margin-top: 60px;
-      text-align: center;
-    }
-    footer a { color: #cbd5e1; }
-    .disclosure {
-      background: rgba(255,255,255,0.05);
-      padding: 18px 24px;
-      border-radius: 10px;
-      margin: 30px auto 20px;
-      max-width: 720px;
-      font-size: 0.85em;
-      color: #cbd5e1;
-      line-height: 1.7;
-      text-align: left;
-    }
-    .disclosure strong { color: #f1f5f9; }
-    .copyright { font-size: 0.85em; margin-top: 16px; }
+    footer{background:var(--night);color:#8ea0bd;padding:54px 20px 34px;margin-top:64px;text-align:center}
+    footer .logo{font-family:var(--f-display);font-weight:800;font-size:1.3rem;color:#fff;display:inline-block;margin-bottom:8px}
+    footer a{color:#c0cee2}
+    .disclosure{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:18px 24px;border-radius:12px;margin:28px auto 20px;max-width:720px;font-size:.84rem;color:#aebed6;line-height:1.75;text-align:left}
+    .disclosure strong{color:#e7eefa}
+    .foot-links{margin:20px 0 12px;font-size:.9rem}
+    .foot-links a{margin:0 8px;text-decoration:none}
+    .copyright{font-size:.84rem;margin-top:16px;color:#6f819e;font-family:var(--f-mono)}
 
-    /* Responsive */
-    @media (max-width: 640px) {
-      h1 { font-size: 1.9em; }
-      .subtitle { font-size: 1em; }
-      header { padding: 60px 20px 80px; }
+    @media(max-width:640px){
+      section{padding:56px 0}
+      .hero-inner{padding:52px 22px 72px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .hero-inner>*{animation:none;opacity:1;transform:none}
+      .coord-chip .ping{animation:none}
     }
   </style>
 </head>
@@ -380,21 +224,49 @@
 
   <!-- ============== HEADER / HERO ============== -->
   <header>
-    <div class="logo">TraceGo<span class="logo-zh">足跡</span></div>
-    <h1>精準模擬你的 iPhone 定位</h1>
-    <p class="subtitle">
-      Windows 上的專業級 iOS GPS 定位模擬桌面工具。<br>
-      原生支援 iOS 17 / 18 / 26，無需越獄、無需修改系統。
-    </p>
-    <div class="badges">
-      <span class="badge">🍎 iOS 17 / 18 / 26 原生支援</span>
-      <span class="badge">📡 WiFi 無線連線</span>
-      <span class="badge">🔓 免越獄</span>
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
     </div>
-    <div class="download-cta">
-      <!-- 直連最新 release 安裝檔，點擊直接下載（不跳 GitHub 頁）。⚠️ 新版上傳後改這裡的版本號 -->
-      <a href="https://github.com/weien0610/tracego/releases/download/v1.1.10/TraceGo-Setup-1.1.10.exe" class="download-btn" rel="noopener">⬇️ 下載 TraceGo</a>
-      <div class="download-note">Windows 10 / 11 · 免費版永久使用 · 支援 iOS 17 / 18 / 26</div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="brand"><span class="pin"></span>TraceGo<span class="logo-zh">足跡</span></div>
+        <div class="coord-chip"><span class="ping"></span>即時定位模擬 · 25.0330° N · 121.5654° E</div>
+        <h1>精準模擬你的 iPhone 定位</h1>
+        <p class="subtitle">
+          Windows 上的專業級 iOS GPS 定位模擬桌面工具。原生支援 iOS 17 / 18 / 26，無需越獄、無需修改系統。
+        </p>
+        <div class="badges">
+          <span class="badge">🍎 iOS 17 / 18 / 26</span>
+          <span class="badge">📡 WiFi 無線連線</span>
+          <span class="badge">🔓 免越獄</span>
+        </div>
+        <div class="download-cta">
+          <!-- 直連最新 release 安裝檔，點擊直接下載（不跳 GitHub 頁）。⚠️ 新版上傳後改這裡的版本號 -->
+          <a href="https://github.com/weien0610/tracego/releases/download/v1.1.10/TraceGo-Setup-1.1.10.exe" class="download-btn" rel="noopener">⬇️ 下載 TraceGo</a>
+          <div class="download-note">Windows 10 / 11 · 免費版永久使用 · 支援 iOS 17 / 18 / 26</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="app-preview">
+          <div class="ap-bar"><i></i><i></i><i></i><div class="ap-search">輸入地址 / 座標…</div></div>
+          <div class="ap-map">
+            <div class="ap-grid"></div>
+            <span class="ap-block" style="left:7%;top:16%;width:62px;height:38px"></span>
+            <span class="ap-block" style="left:63%;top:11%;width:50px;height:60px"></span>
+            <span class="ap-block" style="left:18%;top:60%;width:78px;height:44px"></span>
+            <span class="ap-park" style="left:69%;top:58%;width:74px;height:56px"></span>
+            <svg class="ap-route" viewBox="0 0 400 308" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M72,242 C150,214 176,150 216,142" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-dasharray="7 8" stroke-linecap="round"/>
+              <circle cx="72" cy="242" r="6" fill="#5aa6ff" stroke="#0a1422" stroke-width="2"/>
+            </svg>
+            <span class="ap-radar"></span>
+            <span class="ap-pin"></span>
+            <div class="ap-coord">📍 模擬位置已啟用</div>
+            <div class="ap-zoom"><b>+</b><b>−</b></div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -451,7 +323,7 @@
   <!-- ============== PRICING — 4 階 ============== -->
   <section class="container-wide">
     <h2>方案與定價</h2>
-    <p style="color: #475569; margin-bottom: 12px;">
+    <p class="lead">
       所有付費方案皆為 <strong>天數方案</strong>，不會自動續訂、不會自動扣款。到期後可再次購買。
     </p>
     <div class="pricing">
@@ -536,14 +408,14 @@
       • 本商品為 <strong>數位內容服務</strong>，依《消費者保護法》第 19 條第 2 項及《通訊交易解除權合理例外情事適用準則》第 5 條規定，
       經消費者於購買時主動同意「提前提供且開始下載 / 使用後不得解除契約」者，無 7 天鑑賞期。<br>
       • 7 天試用版僅限同一帳號 / 同一裝置首次購買。<br>
-      • 退費條件詳見 <a href="/legal/refund" style="color: #b45309; text-decoration: underline;">退費政策</a>。
+      • 退費條件詳見 <a href="/legal/refund">退費政策</a>。
     </div>
   </section>
 
   <!-- ============== TRAVEL GUIDES ============== -->
   <section class="container">
     <h2>旅遊景點導覽</h2>
-    <p style="color: #475569; margin-bottom: 12px;">
+    <p class="lead">
       為計畫出遊的旅人撰寫的實用城市導覽 — 交通、住宿選擇、必訂門票，行前一次掌握。
     </p>
     <div class="guides">
@@ -569,7 +441,7 @@
   <!-- ============== TRAVEL ESSENTIALS ============== -->
   <section class="container">
     <h2>旅遊實用知識</h2>
-    <p style="color: #475569; margin-bottom: 12px;">
+    <p class="lead">
       旅人最常遇到的實用主題 — 網路連線、安全防護、出國前的關鍵小決定。
     </p>
     <div class="guides">
@@ -595,7 +467,7 @@
   <!-- ============== AFFILIATE ============== -->
   <section class="container">
     <h2>推薦旅遊工具</h2>
-    <p style="color: #475569; margin-bottom: 12px;">
+    <p class="lead">
       我們與信譽良好的旅遊與隱私品牌合作，推薦對使用者真正有幫助的服務。以下連結為合作推廣連結，透過此處購買，您不會多付任何費用。
     </p>
     <div class="partners">
@@ -636,12 +508,12 @@
 
     <div class="faq-item">
       <strong>定位資料會上傳到你們的伺服器嗎？</strong>
-      <p>不會。TraceGo 完全在你本機 Windows 電腦上運作，我們不會蒐集、傳輸、儲存任何定位資料。詳見<a href="/legal/privacy" style="color: #c084fc;">隱私權政策</a>。</p>
+      <p>不會。TraceGo 完全在你本機 Windows 電腦上運作，我們不會蒐集、傳輸、儲存任何定位資料。詳見<a href="/legal/privacy">隱私權政策</a>。</p>
     </div>
 
     <div class="faq-item">
       <strong>我可以申請退費嗎？</strong>
-      <p>本商品為數位內容服務，依《消費者保護法》第 19 條第 2 項規定，於下載 / 使用後原則上不適用 7 天無條件退費。但若遇技術問題（如功能無法使用）或當期未啟用，可依退費政策辦理退款。完整條款請見<a href="/legal/refund" style="color: #c084fc;">退費政策</a>。</p>
+      <p>本商品為數位內容服務，依《消費者保護法》第 19 條第 2 項規定，於下載 / 使用後原則上不適用 7 天無條件退費。但若遇技術問題（如功能無法使用）或當期未啟用，可依退費政策辦理退款。完整條款請見<a href="/legal/refund">退費政策</a>。</p>
     </div>
 
     <div class="faq-item">
@@ -663,17 +535,17 @@
   <!-- ============== ABOUT ============== -->
   <section class="container">
     <h2>關於我們</h2>
-    <p style="color: #475569;">
+    <p style="color:#46566e">
       TraceGo（足跡）由獨立開發者於台灣開發。我們的目標是讓專業級的 iOS GPS 模擬技術，能夠以簡潔易用的桌面 App 形式，
       提供給旅行者、App 開發者、以及重視隱私的使用者，無需具備命令列或進階技術背景即可上手。
     </p>
-    <div style="background: white; padding: 24px; border-radius: 12px; margin-top: 24px; border: 1px solid #e2e8f0;">
-      <h3 style="margin-bottom: 12px;">📋 商家資訊</h3>
-      <p style="color: #475569; font-size: 0.95em; line-height: 2;">
+    <div class="about-card">
+      <h3 style="margin-bottom:12px">📋 商家資訊</h3>
+      <p style="color:#46566e;font-size:.95rem;line-height:2">
         <strong>商店名稱：</strong>TraceGo（足跡）<br>
         <strong>負責人：</strong>涂偉恩<br>
         <strong>所在地：</strong>台中市<br>
-        <strong>客服信箱：</strong><a href="mailto:support@tracego.tw" style="color: #c084fc;">support@tracego.tw</a><br>
+        <strong>客服信箱：</strong><a href="mailto:support@tracego.tw">support@tracego.tw</a><br>
         <strong>客服時間：</strong>週一至週五 10:00–18:00（國定假日除外）
       </p>
     </div>
@@ -682,7 +554,7 @@
   <!-- ============== FOOTER ============== -->
   <footer>
     <div class="container">
-      <div class="logo" style="color: white;">TraceGo<span class="logo-zh">足跡</span></div>
+      <div class="logo">TraceGo<span class="logo-zh">足跡</span></div>
 
       <div class="disclosure">
         <strong>合作推廣連結揭露 / Affiliate Disclosure：</strong><br>
@@ -693,22 +565,22 @@
         at no extra cost to you. We only recommend products we genuinely find useful.
       </div>
 
-      <p style="margin: 20px 0 12px; font-size: 0.9em;">
-        <a href="/guides" style="margin: 0 8px;">使用教學</a> ·
-        <a href="/compare.html" style="margin: 0 8px;">工具比較</a> ·
-        <a href="/faq.html" style="margin: 0 8px;">常見問題</a> ·
-        <a href="/legal/terms" style="margin: 0 8px;">服務條款</a> ·
-        <a href="/legal/privacy" style="margin: 0 8px;">隱私權政策</a> ·
-        <a href="/legal/refund" style="margin: 0 8px;">退費政策</a>
+      <p class="foot-links">
+        <a href="/guides">使用教學</a> ·
+        <a href="/compare.html">工具比較</a> ·
+        <a href="/faq.html">常見問題</a> ·
+        <a href="/legal/terms">服務條款</a> ·
+        <a href="/legal/privacy">隱私權政策</a> ·
+        <a href="/legal/refund">退費政策</a>
       </p>
 
-      <p style="margin: 8px 0 0; font-size: 0.85em; color: #94a3b8;">
-        客服信箱：<a href="mailto:support@tracego.tw" style="color: #cbd5e1;">support@tracego.tw</a>　|
-        <a href="https://line.me/R/ti/p/@163ksdcg" style="color: #06C755;" target="_blank" rel="noopener">💬 LINE 客服</a>　|
+      <p style="margin:8px 0 0;font-size:.85rem">
+        客服信箱：<a href="mailto:support@tracego.tw">support@tracego.tw</a>　|
+        <a href="https://line.me/R/ti/p/@163ksdcg" style="color:#06C755" target="_blank" rel="noopener">💬 LINE 客服</a>　|
         負責人：涂偉恩　|　所在地：台中市
       </p>
 
-      <p class="copyright" style="margin-top: 16px;">
+      <p class="copyright">
         © 2026 TraceGo（足跡）. 保留所有權利。<br>
         Made with care in Taiwan 🇹🇼
       </p>
