@@ -128,6 +128,43 @@
     .ap-zoom{position:absolute;right:14px;bottom:14px;display:flex;flex-direction:column;gap:6px}
     .ap-zoom b{width:30px;height:30px;display:grid;place-items:center;background:rgba(8,16,30,.72);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#cfe0f5;font-family:var(--f-mono);font-size:.95rem}
     @media(prefers-reduced-motion:reduce){.ap-radar{animation:none}}
+    /* Free tier highlight */
+    .free-section{padding-top:0!important}
+    .free-card{position:relative;z-index:3;margin-top:-46px;background:#fff;border:1.5px solid #c8ece4;border-radius:20px;padding:28px 30px 24px;box-shadow:0 24px 56px rgba(13,20,36,.13)}
+    @media(max-width:880px){.free-card{margin-top:-30px}}
+    .free-pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:.72rem;font-weight:700;color:#0d9488;background:#e7faf6;border:1px solid #bfeae3;padding:5px 13px;border-radius:999px}
+    .free-pill .d{width:7px;height:7px;border-radius:50%;background:#14b8a6;animation:ping 2.2s infinite}
+    .free-title{font-family:var(--f-display);font-size:clamp(1.3rem,2.6vw,1.6rem);font-weight:800;color:var(--ink);margin:14px 0 0;padding:0}
+    .free-title::after{content:none}
+    .free-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+    @media(max-width:760px){.free-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:420px){.free-grid{grid-template-columns:1fr}}
+    .free-item{background:#f6fbfc;border:1px solid #e6edf4;border-radius:13px;padding:16px}
+    .fi-ic{font-size:1.4rem;margin-bottom:7px}
+    .free-item b{display:block;font-family:var(--f-display);font-weight:700;color:var(--ink);font-size:.95rem;margin-bottom:3px}
+    .free-item span{color:var(--ink-2);font-size:.82rem;line-height:1.55}
+    .free-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px dashed #d6e6e1}
+    .download-btn-sm{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:700;font-size:.96rem;color:#05131f;background:linear-gradient(135deg,#3fe3cb,#5aa6ff);padding:12px 26px;border-radius:12px;text-decoration:none;box-shadow:0 10px 26px rgba(34,211,238,.28);transition:transform .15s}
+    .download-btn-sm:hover{transform:translateY(-2px)}
+    .free-up{color:var(--ink-2);font-size:.9rem}
+    .free-up strong{color:var(--ink)}
+    .free-up a{font-weight:700;white-space:nowrap}
+    .free-sub{color:var(--ink-2);font-size:.95rem;margin:8px 0 0}
+    .cmp{width:100%;border-collapse:collapse;margin-top:20px;font-size:.93rem}
+    .cmp th,.cmp td{padding:11px 14px;text-align:center;border-bottom:1px solid #eef2f7}
+    .cmp th:first-child,.cmp td:first-child{text-align:left;color:var(--ink)}
+    .cmp thead th{font-family:var(--f-display);font-size:.86rem;color:var(--ink-3);font-weight:700;border-bottom:2px solid #e6ecf3}
+    .cmp thead th.pro{color:#0d9488;font-size:.98rem;background:#effbf9;border-radius:10px 10px 0 0}
+    .cmp td.free{color:var(--ink-2);font-weight:500}
+    .cmp td.pro{background:#effbf9;color:#0d6e63;font-weight:700;font-family:var(--f-display)}
+    .cmp tbody tr:last-child td.pro{border-radius:0 0 10px 10px}
+    .cmp .yes{color:#14b8a6;font-weight:800;font-size:1.05rem}
+    .cmp .no{color:#c2ccda}
+    .cmp-col{width:30%}
+    .free-up-link{font-family:var(--f-display);font-weight:700;color:var(--link);text-decoration:none;font-size:.95rem;white-space:nowrap}
+    .cmp-note{display:block;font-size:.76rem;color:var(--ink-3);margin-top:2px;font-weight:400}
+    .free-note{margin-top:16px;font-size:.88rem;color:#0d6e63;background:#f0fbf9;border:1px solid #cdeee7;border-radius:11px;padding:11px 15px;line-height:1.6}
+    .free-note strong{color:#0a564e}
 
     /* ============ SECTIONS ============ */
     section{padding:72px 0}
@@ -269,6 +306,36 @@
       </div>
     </div>
   </header>
+
+  <!-- ============== FREE TIER ============== -->
+  <section class="container free-section">
+    <div class="free-card">
+      <span class="free-pill"><span class="d"></span>永久免費 · 無需註冊</span>
+      <h2 class="free-title">免費版能做什麼？</h2>
+      <p class="free-sub">下載就能用，以下功能完全免費、無需註冊；需要更多時再升級 Pro。</p>
+      <table class="cmp">
+        <thead>
+          <tr><th>功能</th><th class="cmp-col">免費版</th><th class="pro cmp-col">Pro</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>每日傳送次數</td><td class="free">每天 3 次<span class="cmp-note">每天 00:00 重置 · 看廣告 +3</span></td><td class="pro">無限</td></tr>
+          <tr><td>雙點路徑模擬</td><td class="free"><span class="yes">✓</span></td><td class="pro"><span class="yes">✓</span></td></tr>
+          <tr><td>WASD 鍵盤即時操控</td><td class="free"><span class="yes">✓</span></td><td class="pro"><span class="yes">✓</span></td></tr>
+          <tr><td>收藏位置</td><td class="free">5 個</td><td class="pro">無限</td></tr>
+          <tr><td>移動速度</td><td class="free">固定 60 km/h</td><td class="pro">自由調速</td></tr>
+          <tr><td>多點路線規劃</td><td class="free"><span class="no">—</span></td><td class="pro"><span class="yes">✓</span></td></tr>
+          <tr><td>路線自動巡航</td><td class="free"><span class="no">—</span></td><td class="pro"><span class="yes">✓</span></td></tr>
+          <tr><td>GPX 路徑匯入</td><td class="free"><span class="no">—</span></td><td class="pro"><span class="yes">✓</span></td></tr>
+          <tr><td>同時登入裝置</td><td class="free">1 台</td><td class="pro">5 台</td></tr>
+        </tbody>
+      </table>
+      <p class="free-note">✦ 免費額度<strong>每天 00:00（台灣時間）自動重置</strong> — 不是一次性試用，是真正能天天用的免費版。</p>
+      <div class="free-foot">
+        <a href="https://github.com/weien0610/tracego/releases/download/v1.1.10/TraceGo-Setup-1.1.10.exe" class="download-btn-sm" rel="noopener">⬇️ 免費下載 TraceGo</a>
+        <a href="/pricing" class="free-up-link">看 Pro 方案與定價 →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ============== FEATURES ============== -->
   <section class="container">
