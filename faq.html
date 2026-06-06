@@ -36,66 +36,92 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
-                   "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-      color: #1a1a1a; line-height: 1.7; background: #f8fafc;
+    :root{
+      --bg:#f5f8fc; --surface:#ffffff; --ink:#0d1424; --ink-2:#46566e; --ink-3:#7c8ca6;
+      --line:#e7edf5; --teal:#14b8a6; --blue:#2563eb; --link:#0d9488;
+      --brand:linear-gradient(135deg,#2dd4bf 0%,#2563eb 100%);
+      --brand-soft:linear-gradient(135deg,rgba(45,212,191,.14),rgba(37,99,235,.12));
+      --night:#0a0f1d; --radius:16px;
+      --shadow:0 1px 2px rgba(13,20,36,.04),0 10px 30px rgba(13,20,36,.06);
+      --shadow-lg:0 24px 60px rgba(13,20,36,.14);
+      --f-display:'Sora','Noto Sans TC',sans-serif;
+      --f-body:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;
+      --f-mono:'Space Mono',ui-monospace,monospace;
     }
-    .container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white; padding: 56px 20px 64px; text-align: center;
-    }
-    .logo { font-size: 1.4em; font-weight: 700; margin-bottom: 20px; }
-    .logo a { color: white; text-decoration: none; }
-    .logo-zh { color: #94a3b8; font-weight: 400; margin-left: 8px; font-size: 0.9em; }
-    header h1 { font-size: 2.2em; margin-bottom: 10px; letter-spacing: -0.5px; }
-    header .sub { color: #cbd5e1; font-size: 1.05em; }
-    main { padding: 48px 0; }
-    .faq-cat { margin-bottom: 36px; }
-    .faq-cat h2 {
-      font-size: 1.3em; color: #0f172a; margin-bottom: 16px;
-      padding-bottom: 8px; border-bottom: 2px solid #e2e8f0;
-    }
-    .faq-q {
-      background: white; border-radius: 12px; padding: 18px 22px;
-      margin-bottom: 12px; border: 1px solid #e2e8f0;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-    }
-    .faq-q .q { display: block; color: #0f172a; font-size: 1.02em; font-weight: 700; margin-bottom: 8px; }
-    .faq-q .a { color: #475569; font-size: 0.96em; margin: 0; }
-    .faq-q .a a { color: #8b5cf6; }
-    .faq-q .a strong { color: #0f172a; }
-    .help-cta {
-      display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
-      background: #f0fdf4; border: 1.5px solid #06C755; border-radius: 12px;
-      padding: 20px 24px; margin-top: 32px;
-    }
-    .help-cta .t { color: #166534; font-size: 0.96em; line-height: 1.6; }
-    .help-cta a {
-      display: inline-block; background: #06C755; color: #fff; font-weight: 700;
-      padding: 12px 26px; border-radius: 10px; text-decoration: none; white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(6,199,85,0.3);
-    }
-    footer {
-      background: #0f172a; color: #94a3b8; padding: 44px 20px 28px;
-      margin-top: 50px; text-align: center; font-size: 0.9em;
-    }
-    footer a { color: #cbd5e1; text-decoration: none; }
-    .footer-links { margin-bottom: 16px; }
-    .footer-links a { margin: 0 8px; }
-    .copyright { font-size: 0.85em; margin-top: 14px; color: #64748b; }
-    @media (max-width: 640px) { header h1 { font-size: 1.7em; } }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f-body);color:var(--ink);line-height:1.75;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:820px;margin:0 auto;padding:0 22px}
+    a{color:var(--link)}
+
+    /* Hero */
+    header{position:relative;overflow:hidden;background:var(--night);color:#fff;text-align:center}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-grid{position:absolute;inset:0;
+      background-image:linear-gradient(rgba(120,160,220,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.07) 1px,transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%);
+      mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%)}
+    .hero-glow{position:absolute;left:50%;top:-30%;width:min(900px,120%);height:520px;transform:translateX(-50%);
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.18),rgba(37,99,235,.12) 36%,transparent 70%);filter:blur(8px)}
+    .hero-inner{position:relative;max-width:680px;margin:0 auto;padding:56px 22px 64px}
+    .brand{display:inline-flex;align-items:center;gap:9px;margin-bottom:24px;font-family:var(--f-display);font-weight:800;font-size:1.3rem}
+    .brand a{color:#fff;text-decoration:none}
+    .brand .pin{width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);box-shadow:0 0 16px rgba(34,211,238,.5);position:relative}
+    .brand .pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#0a0f1d}
+    .logo-zh{color:#8499b8;font-weight:400;margin-left:6px;font-size:.82em}
+    header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,4.5vw,2.7rem);letter-spacing:-.5px;margin-bottom:14px;
+      background:linear-gradient(180deg,#fff 30%,#bcd0ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+    header .sub{color:#a6b7d2;font-size:1.05rem;max-width:520px;margin:0 auto}
+
+    main{padding:56px 0}
+
+    /* FAQ category */
+    .faq-cat{margin-bottom:48px}
+    h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem);letter-spacing:-.5px;color:var(--ink);position:relative;padding-bottom:14px;margin-bottom:24px}
+    h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;border-radius:2px;background:var(--brand)}
+
+    /* FAQ cards */
+    .faq-q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:14px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s}
+    .faq-q:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);border-color:#bdeae2}
+    .faq-q .q{display:block;font-family:var(--f-display);color:var(--ink);font-size:1.05rem;font-weight:700;margin-bottom:8px}
+    .faq-q .a{color:var(--ink-2);font-size:.96rem;line-height:1.8;margin:0}
+    .faq-q .a a{color:var(--link);font-weight:500}
+    .faq-q .a strong{color:var(--ink)}
+
+    /* Help CTA */
+    .help-cta{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+      background:var(--brand-soft);border:1px solid #cdeee7;border-radius:14px;padding:22px 26px;margin-top:36px}
+    .help-cta .t{color:#0d6e63;font-size:.97rem;line-height:1.7}
+    .help-cta .t strong{color:#0a564e}
+    .help-cta a{display:inline-block;background:#06C755;color:#fff;font-family:var(--f-display);font-weight:700;
+      padding:13px 28px;border-radius:12px;text-decoration:none;white-space:nowrap;box-shadow:0 8px 22px rgba(6,199,85,.3);transition:transform .16s,box-shadow .16s}
+    .help-cta a:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(6,199,85,.42)}
+
+    /* Footer */
+    footer{background:var(--night);color:#8ea0bd;padding:50px 20px 32px;margin-top:50px;text-align:center;font-size:.9rem}
+    footer a{color:#c0cee2;text-decoration:none}
+    .footer-links{margin-bottom:14px}
+    .footer-links a{margin:0 8px}
+    .copyright{font-size:.84rem;margin-top:16px;color:#6f819e;font-family:var(--f-mono)}
+
+    @media(max-width:640px){main{padding:44px 0}.hero-inner{padding:46px 22px 54px}}
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo"><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
-    <h1>常見問題</h1>
-    <div class="sub">安裝、連線、購買、退費 — 一次解答</div>
+    <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
+    <div class="hero-inner">
+      <div class="brand"><span class="pin"></span><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
+      <h1>常見問題</h1>
+      <p class="sub">安裝、連線、購買、退費 — 一次解答</p>
+    </div>
   </header>
 
   <main class="container">

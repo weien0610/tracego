@@ -13,81 +13,130 @@
   <meta property="og:url" content="https://tracego.tw/compare.html">
   <meta property="og:type" content="website">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
-                   "Microsoft JhengHei", sans-serif;
-      color: #1a1a1a; line-height: 1.7; background: #f8fafc;
+    :root{
+      --bg:#f5f8fc; --surface:#ffffff; --ink:#0d1424; --ink-2:#46566e; --ink-3:#7c8ca6;
+      --line:#e7edf5; --teal:#14b8a6; --blue:#2563eb; --link:#0d9488;
+      --brand:linear-gradient(135deg,#2dd4bf 0%,#2563eb 100%);
+      --brand-soft:linear-gradient(135deg,rgba(45,212,191,.14),rgba(37,99,235,.12));
+      --night:#0a0f1d; --radius:16px;
+      --shadow:0 1px 2px rgba(13,20,36,.04),0 10px 30px rgba(13,20,36,.06);
+      --shadow-lg:0 24px 60px rgba(13,20,36,.14);
+      --f-display:'Sora','Noto Sans TC',sans-serif;
+      --f-body:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;
+      --f-mono:'Space Mono',ui-monospace,monospace;
     }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white; padding: 60px 20px 70px; text-align: center;
-    }
-    .logo { font-size: 1.4em; font-weight: 700; margin-bottom: 24px; }
-    .logo a { color: white; text-decoration: none; }
-    .logo-zh { color: #94a3b8; font-weight: 400; margin-left: 8px; font-size: 0.9em; }
-    header h1 { font-size: 2.3em; margin-bottom: 14px; letter-spacing: -0.5px; line-height: 1.3; }
-    header p { color: #cbd5e1; max-width: 640px; margin: 0 auto; font-size: 1.1em; }
-    .updated { color: #64748b; font-size: 0.85em; margin-top: 16px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f-body);color:var(--ink);line-height:1.75;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:1000px;margin:0 auto;padding:0 22px}
+    a{color:var(--link)}
 
-    main { padding: 50px 0; }
-    .lead {
-      background: #f5f3ff; border-left: 4px solid #8b5cf6; padding: 18px 22px;
-      border-radius: 8px; margin-bottom: 36px; font-size: 1.05em; color: #5b21b6;
-    }
-    h2 { font-size: 1.6em; margin: 44px 0 18px; color: #0f172a; }
+    /* Hero */
+    header{position:relative;overflow:hidden;background:var(--night);color:#fff;text-align:center}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-grid{position:absolute;inset:0;
+      background-image:linear-gradient(rgba(120,160,220,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.07) 1px,transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%);
+      mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%)}
+    .hero-glow{position:absolute;left:50%;top:-30%;width:min(900px,120%);height:520px;transform:translateX(-50%);
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.18),rgba(37,99,235,.12) 36%,transparent 70%);filter:blur(8px)}
+    .hero-inner{position:relative;max-width:720px;margin:0 auto;padding:56px 22px 64px}
+    .brand{display:inline-flex;align-items:center;gap:9px;margin-bottom:24px;font-family:var(--f-display);font-weight:800;font-size:1.3rem}
+    .brand a{color:#fff;text-decoration:none}
+    .brand .pin{width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);box-shadow:0 0 16px rgba(34,211,238,.5);position:relative}
+    .brand .pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#0a0f1d}
+    .logo-zh{color:#8499b8;font-weight:400;margin-left:6px;font-size:.82em}
+    header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,4.5vw,2.7rem);letter-spacing:-.5px;margin-bottom:14px;line-height:1.25;
+      background:linear-gradient(180deg,#fff 30%,#bcd0ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+    header .sub{color:#a6b7d2;font-size:1.05rem;max-width:640px;margin:0 auto}
+    .updated{color:#6f819e;font-size:.85rem;margin-top:16px;font-family:var(--f-mono)}
 
-    .table-wrap { overflow-x: auto; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
-    table { width: 100%; border-collapse: collapse; background: white; min-width: 760px; }
-    th, td { padding: 13px 14px; text-align: center; border-bottom: 1px solid #e2e8f0; font-size: 0.92em; }
-    th { background: #0f172a; color: white; font-weight: 600; position: sticky; top: 0; }
-    th:first-child, td:first-child { text-align: left; font-weight: 600; color: #334155; }
-    .col-us { background: #faf5ff; }
-    th.col-us { background: #7c3aed; }
-    tr:hover td { background: #f8fafc; }
-    tr:hover td.col-us { background: #f3e8ff; }
-    .yes { color: #16a34a; font-weight: 700; }
-    .no { color: #cbd5e1; }
-    .mid { color: #d97706; }
-    .badge { display: inline-block; background: #7c3aed; color: white; font-size: 0.7em; padding: 2px 7px; border-radius: 10px; margin-left: 4px; vertical-align: middle; }
+    main{padding:56px 0}
+    h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.4rem,3vw,1.85rem);letter-spacing:-.5px;color:var(--ink);position:relative;padding-bottom:14px;margin:48px 0 22px}
+    h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;border-radius:2px;background:var(--brand)}
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 20px 0; }
-    .card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; }
-    .card h3 { color: #0f172a; font-size: 1.15em; margin-bottom: 8px; }
-    .card p { color: #475569; font-size: 0.95em; }
-    .card .ico { font-size: 1.6em; margin-bottom: 6px; }
+    /* Lead callout */
+    .lead{background:var(--brand-soft);border:1px solid #cdeee7;border-radius:14px;padding:18px 22px;margin-bottom:36px;font-size:1.02rem;line-height:1.75;color:#0d6e63}
+    .lead strong{color:#0a564e}
 
-    .who { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin: 20px 0; }
-    .who ul { list-style: none; }
-    .who li { padding: 7px 0; color: #334155; }
-    .who li::before { content: "✓ "; color: #16a34a; font-weight: 700; }
+    /* Comparison table */
+    .table-wrap{overflow-x:auto;margin:20px 0;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow)}
+    table{width:100%;border-collapse:collapse;background:var(--surface);min-width:760px}
+    th,td{padding:14px 14px;text-align:center;border-bottom:1px solid var(--line);font-size:.92rem}
+    th{background:var(--night);color:#e8eef8;font-weight:600;font-family:var(--f-display);position:sticky;top:0}
+    th:first-child,td:first-child{text-align:left;font-weight:600;color:var(--ink)}
+    td:first-child{color:var(--ink-2)}
+    .col-us{background:rgba(20,184,166,.07)}
+    th.col-us{background:linear-gradient(135deg,#14b8a6,#0ea5e9);color:#fff}
+    td.col-us{border-left:1px solid rgba(20,184,166,.18);border-right:1px solid rgba(20,184,166,.18)}
+    tbody tr:last-child td.col-us{border-bottom:2px solid rgba(20,184,166,.35)}
+    tr:hover td{background:#f3f7fc}
+    tr:hover td.col-us{background:rgba(20,184,166,.13)}
+    td small{color:var(--ink-3);font-family:var(--f-mono);font-size:.78em}
+    .yes{color:var(--teal);font-weight:700}
+    .no{color:#c2cedd}
+    .mid{color:#d97706}
+    .badge{display:inline-block;background:rgba(255,255,255,.22);color:#fff;font-size:.7em;padding:2px 8px;border-radius:999px;margin-left:4px;vertical-align:middle;font-family:var(--f-mono)}
+    .table-note{color:var(--ink-3);font-size:.82rem;margin-top:6px}
 
-    .cta { text-align: center; padding: 44px 20px; background: linear-gradient(135deg,#1e293b,#0f172a); border-radius: 16px; margin: 44px 0; }
-    .cta h2 { color: white; margin-top: 0; }
-    .cta p { color: #cbd5e1; margin-bottom: 22px; }
-    .cta-btn {
-      display: inline-block; background: #7c3aed; color: white; text-decoration: none;
-      padding: 15px 40px; border-radius: 10px; font-size: 1.1em; font-weight: 700;
-    }
-    .cta-btn:hover { background: #6d28d9; }
-    .cta-note { color: #64748b; font-size: 0.85em; margin-top: 14px; }
+    /* Reason cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:20px 0}
+    .card{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+    .card .ico{font-size:1.7em;margin-bottom:8px}
+    .card h3{font-family:var(--f-display);color:var(--ink);font-size:1.12rem;font-weight:700;margin-bottom:8px}
+    .card p{color:var(--ink-2);font-size:.93rem;line-height:1.7}
+    .card strong{color:var(--ink)}
 
-    footer { background: #0f172a; color: #94a3b8; padding: 40px 20px 30px; margin-top: 40px; text-align: center; }
-    footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: white; }
-    .footnote { color: #475569; font-size: 0.8em; margin-top: 18px; max-width: 720px; margin-left: auto; margin-right: auto; }
-    @media (max-width: 640px) { header h1 { font-size: 1.7em; } }
+    /* Who */
+    .who{background:var(--surface);border:1.5px solid var(--line);border-radius:var(--radius);padding:26px 28px;margin:20px 0;box-shadow:var(--shadow)}
+    .who ul{list-style:none}
+    .who li{padding:8px 0 8px 26px;color:var(--ink-2);position:relative;line-height:1.6}
+    .who li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
+
+    /* CTA */
+    .cta{text-align:center;padding:48px 22px;background:var(--night);border-radius:var(--radius);margin:48px 0;position:relative;overflow:hidden}
+    .cta::before{content:"";position:absolute;left:50%;top:-40%;width:min(640px,110%);height:420px;transform:translateX(-50%);pointer-events:none;
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.2),rgba(37,99,235,.12) 38%,transparent 72%);filter:blur(6px)}
+    .cta h2{color:#fff;margin:0 auto 12px;padding:0;max-width:640px}
+    .cta h2::after{display:none}
+    .cta p{color:#a6b7d2;margin:0 auto 24px;position:relative;max-width:560px}
+    .cta-btn{position:relative;display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+      padding:15px 42px;border-radius:12px;font-size:1.08rem;font-weight:700;font-family:var(--f-display);
+      box-shadow:0 12px 30px rgba(20,184,166,.32);transition:transform .18s,box-shadow .18s}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(20,184,166,.42)}
+    .cta-note{position:relative;color:#8ea0bd;font-size:.85rem;margin-top:16px}
+    .cta-note a{color:#5eead4}
+
+    /* Footer */
+    footer{background:var(--night);color:#8ea0bd;padding:50px 20px 32px;text-align:center}
+    footer .logo{font-family:var(--f-display);font-weight:800;font-size:1.3rem;color:#fff;display:inline-block;margin-bottom:14px}
+    footer a{color:#c0cee2;text-decoration:none}
+    footer a:hover{color:#fff}
+    .footer-links{margin-bottom:12px;font-size:.9rem}
+    .footer-links a{margin:0 8px}
+    .footnote{color:#6f819e;font-size:.8rem;margin-top:18px;max-width:720px;margin-left:auto;margin-right:auto;line-height:1.7}
+    .copyright{font-size:.84rem;margin-top:16px;color:#6f819e;font-family:var(--f-mono)}
+
+    @media(max-width:640px){main{padding:44px 0}.hero-inner{padding:46px 22px 54px}}
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo"><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
-    <h1>iOS 定位模擬工具完整比較 2026</h1>
-    <p>市面上主流的 iPhone GPS 位置模擬工具，價格、iOS 相容性、連線方式、語言介面差很多。這篇用一張表幫你看懂差異，選對工具。</p>
-    <div class="updated">最後更新：2026 年 6 月</div>
+    <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
+    <div class="hero-inner">
+      <div class="brand"><span class="pin"></span><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
+      <h1>iOS 定位模擬工具完整比較 2026</h1>
+      <p class="sub">市面上主流的 iPhone GPS 位置模擬工具，價格、iOS 相容性、連線方式、語言介面差很多。這篇用一張表幫你看懂差異，選對工具。</p>
+      <div class="updated">最後更新：2026 年 6 月</div>
+    </div>
   </header>
 
   <main class="container">
@@ -177,7 +226,7 @@
         </tbody>
       </table>
     </div>
-    <p style="color:#94a3b8;font-size:0.82em;">※ 價格以各官網公告為準，外幣以 1 USD ≈ NT$32 換算，僅供參考；功能與相容性以實際版本為準。</p>
+    <p class="table-note">※ 價格以各官網公告為準，外幣以 1 USD ≈ NT$32 換算，僅供參考；功能與相容性以實際版本為準。</p>
 
     <h2>🎯 怎麼選？看你在意什麼</h2>
     <div class="grid">
@@ -189,7 +238,7 @@
       <div class="card">
         <div class="ico">📶</div>
         <h3>不想一直插著 USB 線</h3>
-        <p>TraceGo 支援 <strong>WiFi 無線連線</strong>：首次以 USB 配對一次後，手機與電腦連同一個 WiFi 即可無線使用，同類工具目前都需要全程接著 USB。<small style="color:#94a3b8;">（部分公司／學校／公共 WiFi 會封鎖裝置互連，這類環境可隨時改回 USB 連線。）</small></p>
+        <p>TraceGo 支援 <strong>WiFi 無線連線</strong>：首次以 USB 配對一次後，手機與電腦連同一個 WiFi 即可無線使用，同類工具目前都需要全程接著 USB。<small style="color:var(--ink-3);">（部分公司／學校／公共 WiFi 會封鎖裝置互連，這類環境可隨時改回 USB 連線。）</small></p>
       </div>
       <div class="card">
         <div class="ico">🍎</div>
@@ -228,15 +277,15 @@
       <h2>先免費試試，再決定要不要付費</h2>
       <p>免費版永久可用、不限使用天數，不需註冊、不綁信用卡。</p>
       <a href="https://github.com/weien0610/tracego/releases/download/v1.1.10/TraceGo-Setup-1.1.10.exe" class="cta-btn" rel="noopener">⬇️ 免費下載 TraceGo</a>
-      <div class="cta-note">Windows 10 / 11 · 支援 iOS 17 / 18 / 26 · <a href="/" style="color:#a78bfa;">看完整功能與方案</a></div>
+      <div class="cta-note">Windows 10 / 11 · 支援 iOS 17 / 18 / 26 · <a href="/">看完整功能與方案</a></div>
     </div>
 
   </main>
 
   <footer>
     <div class="container">
-      <div class="logo" style="color:white;">TraceGo<span class="logo-zh">足跡</span></div>
-      <div style="margin-top:18px;font-size:0.9em;">
+      <div class="logo">TraceGo<span class="logo-zh">足跡</span></div>
+      <div class="footer-links">
         <a href="/">首頁</a> ·
         <a href="/compare.html">工具比較</a> ·
         <a href="/faq.html">常見問題</a> ·
@@ -247,7 +296,7 @@
       <p class="footnote">
         本頁為功能與價格之客觀比較，所列競品名稱與商標均屬各該公司所有，僅供識別與比較參考之用。資料以各官方公告為準，如有更新請以官網為主。TraceGo 為合法 GPS 位置模擬與開發測試工具，請於符合各平台服務條款與當地法律的前提下使用。
       </p>
-      <p style="margin-top:14px;font-size:0.82em;">© 2026 TraceGo (足跡). Made with care in Taiwan 🇹🇼</p>
+      <p class="copyright">© 2026 TraceGo (足跡). Made with care in Taiwan 🇹🇼</p>
     </div>
   </footer>
 

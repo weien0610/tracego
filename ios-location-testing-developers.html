@@ -12,7 +12,114 @@
   <meta property="og:type" content="article">
   <meta property="og:locale" content="zh_TW">
   <link rel="canonical" href="https://tracego.tw/ios-location-testing-developers">
-  <link rel="stylesheet" href="/article.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f8fc; --surface:#ffffff; --ink:#0d1424; --ink-2:#46566e; --ink-3:#7c8ca6;
+      --line:#e7edf5; --teal:#14b8a6; --blue:#2563eb; --link:#0d9488;
+      --brand:linear-gradient(135deg,#2dd4bf 0%,#2563eb 100%);
+      --brand-soft:linear-gradient(135deg,rgba(45,212,191,.14),rgba(37,99,235,.12));
+      --night:#0a0f1d; --radius:16px;
+      --shadow:0 1px 2px rgba(13,20,36,.04),0 10px 30px rgba(13,20,36,.06);
+      --shadow-lg:0 24px 60px rgba(13,20,36,.14);
+      --f-display:'Sora','Noto Sans TC',sans-serif;
+      --f-body:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;
+      --f-mono:'Space Mono',ui-monospace,monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f-body);color:var(--ink);line-height:1.85;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:760px;margin:0 auto;padding:0 22px}
+    a{color:var(--link)}
+
+    /* Hero */
+    header{position:relative;overflow:hidden;background:var(--night);color:#fff;text-align:center}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-grid{position:absolute;inset:0;
+      background-image:linear-gradient(rgba(120,160,220,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.07) 1px,transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%);
+      mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%)}
+    .hero-glow{position:absolute;left:50%;top:-30%;width:min(900px,120%);height:520px;transform:translateX(-50%);
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.18),rgba(37,99,235,.12) 36%,transparent 70%);filter:blur(8px)}
+    .hero-inner{position:relative;max-width:720px;margin:0 auto;padding:50px 22px 64px}
+    .nav-back{display:inline-flex;align-items:center;gap:9px;margin-bottom:30px;font-family:var(--f-display);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none}
+    .nav-back .pin{width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);box-shadow:0 0 16px rgba(34,211,238,.5);position:relative}
+    .nav-back .pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#0a0f1d}
+    .nav-back:hover .breadcrumb-logo{opacity:.85}
+    .breadcrumb-logo{font-weight:800;color:#fff}
+    .logo-zh{color:#8499b8;font-weight:400;margin-left:6px;font-size:.82em}
+    header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,4.6vw,2.6rem);letter-spacing:-.5px;line-height:1.25;margin-bottom:18px;
+      background:linear-gradient(180deg,#fff 30%,#bcd0ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{color:#a6b7d2;font-size:1.08rem;max-width:620px;margin:0 auto 22px;line-height:1.7}
+    .meta-row{color:#7e91b0;font-size:.86rem;letter-spacing:.5px;font-family:var(--f-mono)}
+
+    /* Article body */
+    article{padding:54px 0 20px}
+    article h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.4rem,3vw,1.8rem);letter-spacing:-.4px;color:var(--ink);position:relative;padding-bottom:14px;margin:52px 0 22px}
+    article h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;border-radius:2px;background:var(--brand)}
+    article h2:first-child{margin-top:0}
+    article h3{font-family:var(--f-display);font-weight:700;font-size:1.18rem;margin:30px 0 10px;color:var(--ink)}
+    article p{color:var(--ink-2);margin-bottom:18px;font-size:1.04rem;line-height:1.85}
+    article ul,article ol{color:var(--ink-2);margin:0 0 22px 24px;font-size:1.04rem;line-height:1.8}
+    article li{margin-bottom:10px}
+    article strong{color:var(--ink)}
+    article a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(13,148,136,.32)}
+    article a:hover{border-bottom-color:var(--link)}
+    code{background:#eef3f9;padding:1px 7px;border-radius:5px;font-family:var(--f-mono);font-size:.86em;color:var(--blue)}
+
+    /* Callout */
+    .callout{background:var(--brand-soft);border:1px solid #cdeee7;border-left:4px solid var(--teal);border-radius:12px;padding:18px 24px;margin:26px 0;color:#0d6e63;font-size:1rem;line-height:1.75}
+    .callout strong{color:#0a564e}
+
+    /* Comparison table */
+    .cmp{width:100%;border-collapse:collapse;margin:26px 0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-size:.96rem}
+    .cmp th,.cmp td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+    .cmp tr:last-child td,.cmp tbody tr:last-child td{border-bottom:none}
+    .cmp th{background:var(--night);color:#fff;font-family:var(--f-display);font-weight:700;font-size:.92rem}
+    .cmp td{color:var(--ink-2)}
+    .cmp .yes{color:#0d9488;font-weight:700}
+    .cmp .no{color:#dc2626;font-weight:700}
+    .cmp .mid{color:#b45309;font-weight:700}
+
+    /* TraceGo CTA block — teal accent */
+    .tracego-block{position:relative;overflow:hidden;background:var(--night);color:#fff;padding:36px 34px;border-radius:var(--radius);margin:44px 0;box-shadow:var(--shadow-lg)}
+    .tracego-block::before{content:"";position:absolute;left:-30%;top:-60%;width:80%;height:200%;
+      background:radial-gradient(circle at 50% 50%,rgba(45,212,191,.22),transparent 70%);pointer-events:none}
+    .tracego-block::after{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:var(--brand)}
+    .tracego-block h3{position:relative;font-family:var(--f-display);font-weight:800;color:#fff;margin:0 0 12px;font-size:1.3rem}
+    .tracego-block p{position:relative;color:#b9c8e0;font-size:1rem;line-height:1.8;margin-bottom:14px}
+    .tracego-block a{color:#5eead4;border-bottom:1px solid rgba(94,234,212,.4);font-weight:600}
+    .tracego-block a:hover{border-bottom-color:#5eead4}
+
+    /* FAQ as cards */
+    h2.faq{margin-bottom:8px}
+    .faq h3{font-family:var(--f-display);font-weight:700;font-size:1.06rem;margin:0 0 8px;color:var(--ink)}
+    .faq>div,.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px;box-shadow:var(--shadow)}
+    .faq>div p{margin:0;color:var(--ink-2);font-size:.98rem}
+
+    /* English summary divider */
+    .lang-divider{text-align:center;padding:54px 0 6px;color:var(--ink-3);font-size:.82rem;letter-spacing:4px;font-family:var(--f-mono)}
+
+    /* Footer */
+    footer{background:var(--night);color:#8ea0bd;padding:48px 20px 34px;margin-top:54px;text-align:center}
+    footer a{color:#c0cee2;text-decoration:none}
+    footer a:hover{color:#fff}
+    footer p{margin-bottom:8px;font-size:.95rem}
+    .copyright{font-size:.84rem;margin-top:14px;color:#6f819e;font-family:var(--f-mono)}
+
+    @media(max-width:640px){
+      .hero-inner{padding:40px 20px 52px}
+      article{padding:40px 0 16px}
+      .tracego-block{padding:26px 22px}
+      .cmp{font-size:.86rem}
+      .cmp th,.cmp td{padding:10px 9px}
+    }
+  </style>
   <script type="application/ld+json">
 [
   {
@@ -70,13 +177,16 @@
 <body>
 
   <header>
-    <a class="nav-back" href="/"><span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span></a>
-    <h1>iOS 定位功能測試：開發者如何模擬 GPS</h1>
-    <p class="subtitle">
-      做地理圍欄、門市搜尋、導航類功能，總不能每次都開車到現場測。
-      這篇整理 iPhone 上模擬 GPS 位置的幾種方法，以及 iOS 17 後的變化。
-    </p>
-    <div class="meta-row">開發實務 · iOS · 定位測試</div>
+    <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
+    <div class="hero-inner">
+      <a class="nav-back" href="/"><span class="pin"></span><span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span></a>
+      <h1>iOS 定位功能測試：開發者如何模擬 GPS</h1>
+      <p class="subtitle">
+        做地理圍欄、門市搜尋、導航類功能，總不能每次都開車到現場測。
+        這篇整理 iPhone 上模擬 GPS 位置的幾種方法，以及 iOS 17 後的變化。
+      </p>
+      <div class="meta-row">開發實務 · iOS · 定位測試</div>
+    </div>
   </header>
 
   <article class="container">
@@ -141,12 +251,18 @@
 
     <h2 class="faq">常見問題</h2>
     <div class="faq">
-      <h3>一定要有 Mac 才能測 iOS 定位嗎？</h3>
-      <p>Xcode 那條路要 Mac；USB 桌面工具（如 TraceGo）在 Windows 上就能做。</p>
-      <h3>能測正式版 App，不是只有自己的 debug build？</h3>
-      <p>可以。USB 工具改的是整支裝置讀到的座標，任何定位類 App 都會跟著變。</p>
-      <h3>iOS 18 / 26 的相容性要注意什麼？</h3>
-      <p>確認工具或腳本支援 RemoteXPC 新連線層，否則會連線失敗。</p>
+      <div>
+        <h3>一定要有 Mac 才能測 iOS 定位嗎？</h3>
+        <p>Xcode 那條路要 Mac；USB 桌面工具（如 TraceGo）在 Windows 上就能做。</p>
+      </div>
+      <div>
+        <h3>能測正式版 App，不是只有自己的 debug build？</h3>
+        <p>可以。USB 工具改的是整支裝置讀到的座標，任何定位類 App 都會跟著變。</p>
+      </div>
+      <div>
+        <h3>iOS 18 / 26 的相容性要注意什麼？</h3>
+        <p>確認工具或腳本支援 RemoteXPC 新連線層，否則會連線失敗。</p>
+      </div>
     </div>
 
     <p style="margin-top:30px"><strong>延伸閱讀：</strong>

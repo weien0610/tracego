@@ -1,199 +1,143 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>退費政策 — TraceGo</title>
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      font-family: "Microsoft JhengHei", -apple-system, Segoe UI, sans-serif;
+    :root{
+      --bg:#f5f8fc; --surface:#ffffff; --ink:#0d1424; --ink-2:#46566e; --ink-3:#7c8ca6;
+      --line:#e7edf5; --teal:#14b8a6; --blue:#2563eb; --link:#0d9488;
+      --brand:linear-gradient(135deg,#2dd4bf 0%,#2563eb 100%);
+      --brand-soft:linear-gradient(135deg,rgba(45,212,191,.14),rgba(37,99,235,.12));
+      --night:#0a0f1d; --radius:16px;
+      --shadow:0 1px 2px rgba(13,20,36,.04),0 10px 30px rgba(13,20,36,.06);
+      --shadow-lg:0 24px 60px rgba(13,20,36,.14);
+      --f-display:'Sora','Noto Sans TC',sans-serif;
+      --f-body:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;
+      --f-mono:'Space Mono',ui-monospace,monospace;
     }
-    body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #e2e8f0;
-      min-height: 100vh;
-      padding: 40px 20px;
-      line-height: 1.7;
-    }
-    .wrap { max-width: 820px; margin: 0 auto; }
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #334155;
-    }
-    .brand {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 16px;
-    }
-    .brand img {
-      width: 36px; height: 36px; border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(99,102,241,0.25);
-    }
-    .brand span {
-      font-size: 24px; font-weight: 700;
-      background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    h1 {
-      font-size: 28px; margin: 0 0 8px;
-      color: #f1f5f9;
-    }
-    .meta {
-      font-size: 13px; color: #94a3b8;
-    }
-    .card {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid #334155; border-radius: 12px;
-      padding: 28px 32px; margin-bottom: 20px;
-    }
-    h2 {
-      font-size: 19px; color: #f1f5f9;
-      margin: 0 0 14px; padding-bottom: 10px;
-      border-bottom: 1px solid #334155;
-    }
-    h3 {
-      font-size: 16px; color: #cbd5e1;
-      margin: 18px 0 8px;
-    }
-    p, li { font-size: 14.5px; color: #cbd5e1; }
-    p { margin: 8px 0; }
-    ul, ol { padding-left: 24px; }
-    li { margin: 4px 0; }
-    strong { color: #f1f5f9; }
-    .highlight {
-      background: rgba(251, 191, 36, 0.08);
-      border-left: 3px solid #fbbf24;
-      padding: 12px 16px; margin: 14px 0;
-      border-radius: 4px;
-    }
-    .highlight p { color: #fde68a; margin: 0; }
-    .info-box {
-      background: rgba(96, 165, 250, 0.08);
-      border-left: 3px solid #60a5fa;
-      padding: 12px 16px; margin: 14px 0;
-      border-radius: 4px;
-    }
-    .info-box p { color: #bfdbfe; margin: 0; }
-    .danger-box {
-      background: rgba(239, 68, 68, 0.08);
-      border-left: 3px solid #ef4444;
-      padding: 12px 16px; margin: 14px 0;
-      border-radius: 4px;
-    }
-    .danger-box p { color: #fecaca; margin: 0; }
-    .toc {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid #334155; border-radius: 10px;
-      padding: 16px 24px; margin-bottom: 30px;
-    }
-    .toc h3 { margin-top: 0; color: #94a3b8; font-size: 13px; letter-spacing: 0.1em; }
-    .toc ol { margin: 0; padding-left: 20px; }
-    .toc a { color: #60a5fa; text-decoration: none; font-size: 14px; }
-    .toc a:hover { text-decoration: underline; }
-    .footer {
-      text-align: center; margin-top: 30px;
-      padding-top: 20px; border-top: 1px solid #334155;
-      font-size: 13px; color: #64748b;
-    }
-    .footer a { color: #60a5fa; text-decoration: none; margin: 0 10px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f-body);color:var(--ink);line-height:1.75;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:820px;margin:0 auto;padding:0 22px}
+    a{color:var(--link)}
 
-    .timeline {
-      position: relative;
-      padding-left: 28px;
-      margin: 16px 0;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 8px; top: 6px; bottom: 6px;
-      width: 2px;
-      background: linear-gradient(180deg, #60a5fa 0%, #a78bfa 100%);
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 16px;
-      padding-left: 8px;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -26px; top: 6px;
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: #60a5fa;
-      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
-    }
-    .timeline-item strong {
-      display: block;
-      color: #f1f5f9;
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-    .timeline-item p {
-      margin: 0;
-      font-size: 13.5px;
-      color: #94a3b8;
-    }
+    /* Hero */
+    header{position:relative;overflow:hidden;background:var(--night);color:#fff;text-align:center}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-grid{position:absolute;inset:0;
+      background-image:linear-gradient(rgba(120,160,220,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.07) 1px,transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%);
+      mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%)}
+    .hero-glow{position:absolute;left:50%;top:-30%;width:min(900px,120%);height:520px;transform:translateX(-50%);
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.18),rgba(37,99,235,.12) 36%,transparent 70%);filter:blur(8px)}
+    .hero-inner{position:relative;max-width:680px;margin:0 auto;padding:56px 22px 60px}
+    .brand{display:inline-flex;align-items:center;gap:9px;margin-bottom:24px;font-family:var(--f-display);font-weight:800;font-size:1.3rem}
+    .brand a{color:#fff;text-decoration:none}
+    .brand .pin{width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);box-shadow:0 0 16px rgba(34,211,238,.5);position:relative}
+    .brand .pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#0a0f1d}
+    .logo-zh{color:#8499b8;font-weight:400;margin-left:6px;font-size:.82em}
+    header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,4.5vw,2.7rem);letter-spacing:-.5px;margin-bottom:12px;
+      background:linear-gradient(180deg,#fff 30%,#bcd0ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+    header .meta{color:#a6b7d2;font-size:.95rem;font-family:var(--f-mono)}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 14px 0;
-      font-size: 14px;
-    }
-    th, td {
-      padding: 10px 12px;
-      text-align: left;
-      border-bottom: 1px solid #334155;
-    }
-    th {
-      background: rgba(15, 23, 42, 0.6);
-      color: #94a3b8;
-      font-weight: 600;
-      font-size: 13px;
-      letter-spacing: 0.03em;
-    }
-    td { color: #cbd5e1; }
-    .badge-no {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 12px;
-      background: rgba(239, 68, 68, 0.15);
-      color: #fca5a5;
-      font-size: 12px; font-weight: 600;
-    }
-    .badge-yes {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 12px;
-      background: rgba(34, 197, 94, 0.15);
-      color: #86efac;
-      font-size: 12px; font-weight: 600;
-    }
+    main{padding:48px 0 56px}
+
+    /* TOC */
+    .toc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:30px;box-shadow:var(--shadow)}
+    .toc h2{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin-bottom:12px;padding:0;border:0}
+    .toc h2::after{display:none}
+    .toc ol{columns:2;column-gap:28px;padding-left:20px;margin:0}
+    @media(max-width:560px){.toc ol{columns:1}}
+    .toc li{margin:5px 0;font-size:.92rem}
+    .toc a{color:var(--link);text-decoration:none}
+    .toc a:hover{text-decoration:underline}
+
+    /* Cards */
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 32px;margin-bottom:20px;box-shadow:var(--shadow);scroll-margin-top:24px}
+    @media(max-width:560px){.card{padding:24px 22px}}
+    h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.25rem,3vw,1.55rem);letter-spacing:-.4px;color:var(--ink);position:relative;padding-bottom:13px;margin-bottom:18px}
+    h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;border-radius:2px;background:var(--brand)}
+    h3{font-family:var(--f-display);font-weight:700;font-size:1.05rem;color:var(--ink);margin:20px 0 8px}
+    p,li{font-size:1rem;color:var(--ink-2);line-height:1.85}
+    p{margin:10px 0}
+    ul,ol{padding-left:24px;margin:8px 0}
+    li{margin:6px 0}
+    strong{color:var(--ink);font-weight:700}
+    a{font-weight:500}
+
+    /* Callout boxes */
+    .highlight{background:var(--brand-soft);border:1px solid #cdeee7;border-left:4px solid var(--teal);
+      padding:16px 20px;margin:16px 0;border-radius:10px}
+    .highlight p{color:#0d6e63;margin:0;font-size:.98rem}
+    .highlight strong{color:#0a564e}
+    .info-box{background:rgba(37,99,235,.06);border:1px solid #d4e2fb;border-left:4px solid var(--blue);
+      padding:16px 20px;margin:16px 0;border-radius:10px}
+    .info-box p{color:#1d4ed8;margin:0;font-size:.98rem}
+    .info-box strong{color:#1e3a8a}
+    .danger-box{background:rgba(239,68,68,.05);border:1px solid #f6d4d4;border-left:4px solid #ef4444;
+      padding:16px 20px;margin:16px 0;border-radius:10px}
+    .danger-box p{color:#b42318;margin:0;font-size:.98rem}
+    .danger-box strong{color:#912018}
+
+    /* Tables */
+    table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+    th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);line-height:1.65}
+    th{background:#eef4fb;color:var(--ink);font-weight:700;font-family:var(--f-display);font-size:.88rem}
+    td{color:var(--ink-2)}
+    tr:last-child td{border-bottom:0}
+    .table-wrap{overflow-x:auto}
+    .badge-no{display:inline-block;padding:3px 12px;border-radius:999px;background:rgba(239,68,68,.12);color:#c0392b;font-size:.8rem;font-weight:700;font-family:var(--f-display)}
+    .badge-yes{display:inline-block;padding:3px 12px;border-radius:999px;background:rgba(20,184,166,.14);color:#0a7c6f;font-size:.8rem;font-weight:700;font-family:var(--f-display)}
+
+    /* Timeline */
+    .timeline{position:relative;padding-left:30px;margin:18px 0}
+    .timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--brand)}
+    .timeline-item{position:relative;margin-bottom:20px;padding-left:8px}
+    .timeline-item:last-child{margin-bottom:0}
+    .timeline-item::before{content:'';position:absolute;left:-26px;top:5px;width:13px;height:13px;border-radius:50%;
+      background:var(--teal);box-shadow:0 0 0 4px rgba(20,184,166,.18)}
+    .timeline-item strong{display:block;color:var(--ink);font-size:1rem;font-family:var(--f-display);margin-bottom:4px}
+    .timeline-item p{margin:0;font-size:.95rem;color:var(--ink-2)}
+
+    /* Footer */
+    footer{background:var(--night);color:#8ea0bd;padding:50px 20px 32px;text-align:center}
+    footer .logo{font-family:var(--f-display);font-weight:800;font-size:1.3rem;color:#fff;display:inline-block;margin-bottom:14px}
+    footer a{color:#c0cee2;text-decoration:none}
+    .footer-links{margin-bottom:12px;font-size:.9rem}
+    .footer-links a{margin:0 8px}
+    .copyright{font-size:.84rem;margin-top:16px;color:#6f819e;font-family:var(--f-mono)}
+
+    @media(max-width:640px){main{padding:38px 0 48px}.hero-inner{padding:46px 22px 52px}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="header">
-      <div class="brand">
-        <img src="/static/tracego_512.png" alt="TraceGo">
-        <span>TraceGo</span>
-      </div>
+
+  <header>
+    <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
+    <div class="hero-inner">
+      <div class="brand"><span class="pin"></span><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
       <h1>退費政策</h1>
       <div class="meta">最後更新：2026 年 4 月 30 日　|　生效日：2026 年 4 月 30 日</div>
     </div>
+  </header>
+
+  <main class="container">
 
     <div class="info-box">
       <p><strong>請先閱讀：</strong>TraceGo 提供 <strong>7 天試用版（NT$99）</strong>，讓您於購買月卡 / 季卡 / 年卡前可完整體驗 Pro 功能、確認與您之 iOS 裝置相容。基於此預先評估機制，付款後 Pro 授權即時生效，<strong>原則上不予退費</strong>。本政策說明本服務之退費原則、極少數法定例外情形，以及申請方式。</p>
     </div>
 
-    <div class="toc">
-      <h3>目錄</h3>
+    <nav class="toc">
+      <h2>目錄</h2>
       <ol>
         <li><a href="#s1">適用範圍</a></li>
         <li><a href="#s2">數位內容性質聲明</a></li>
@@ -205,11 +149,11 @@
         <li><a href="#s8">爭議處理</a></li>
         <li><a href="#s9">聯絡方式</a></li>
       </ol>
-    </div>
+    </nav>
 
     <div class="card" id="s1">
       <h2>1. 適用範圍</h2>
-      <p>本《退費政策》適用於您透過 TraceGo 官方網站（<a href="https://tracego.tw" style="color:#60a5fa">https://tracego.tw</a>）或本軟體內建之購買流程，向 TraceGo 購買之下列付費方案：</p>
+      <p>本《退費政策》適用於您透過 TraceGo 官方網站（<a href="https://tracego.tw">https://tracego.tw</a>）或本軟體內建之購買流程，向 TraceGo 購買之下列付費方案：</p>
       <ul>
         <li>7 天試用版（NT$99）</li>
         <li>30 天月卡（NT$299）</li>
@@ -291,6 +235,7 @@
       <h2>5. 不適用退費情形</h2>
       <p>下表列出常見情形之退費適用結果，供您參考：</p>
 
+      <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -333,6 +278,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
 
       <div class="danger-box">
         <p><strong>提醒：</strong>本服務為定位模擬輔助工具。第三方平台（包含但不限於線上服務、定位類應用、社交軟體）採取之偵測、封鎖、停用、停權等措施，係該等平台依其服務條款所為之獨立行為，並非本服務之瑕疵，不構成退費事由。</p>
@@ -433,12 +379,23 @@
       </div>
     </div>
 
-    <div class="footer">
-      © 2026 TraceGo. 保留一切權利。
-      <br>
-      <a href="/legal/terms">服務條款</a> | <a href="/legal/privacy">隱私權政策</a> | <a href="/legal/refund">退費政策</a>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo">TraceGo<span class="logo-zh">足跡</span></div>
+      <div class="footer-links">
+        <a href="/">首頁</a> ·
+        <a href="/guides">使用教學</a> ·
+        <a href="/compare">工具比較</a> ·
+        <a href="/legal/terms">服務條款</a> ·
+        <a href="/legal/privacy">隱私權政策</a> ·
+        <a href="/legal/refund">退費政策</a>
+      </div>
+      <p class="copyright">© 2026 TraceGo. 保留一切權利。　Made with care in Taiwan 🇹🇼</p>
     </div>
-  </div>
+  </footer>
+
   <script src="/line-widget.js?v=2" defer></script>
 </body>
 </html>

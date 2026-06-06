@@ -1,98 +1,119 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>隱私權政策 — TraceGo</title>
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      font-family: "Microsoft JhengHei", -apple-system, Segoe UI, sans-serif;
+    :root{
+      --bg:#f5f8fc; --surface:#ffffff; --ink:#0d1424; --ink-2:#46566e; --ink-3:#7c8ca6;
+      --line:#e7edf5; --teal:#14b8a6; --blue:#2563eb; --link:#0d9488;
+      --brand:linear-gradient(135deg,#2dd4bf 0%,#2563eb 100%);
+      --brand-soft:linear-gradient(135deg,rgba(45,212,191,.14),rgba(37,99,235,.12));
+      --night:#0a0f1d; --radius:16px;
+      --shadow:0 1px 2px rgba(13,20,36,.04),0 10px 30px rgba(13,20,36,.06);
+      --shadow-lg:0 24px 60px rgba(13,20,36,.14);
+      --f-display:'Sora','Noto Sans TC',sans-serif;
+      --f-body:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;
+      --f-mono:'Space Mono',ui-monospace,monospace;
     }
-    body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #e2e8f0;
-      min-height: 100vh;
-      padding: 40px 20px;
-      line-height: 1.7;
-    }
-    .wrap { max-width: 820px; margin: 0 auto; }
-    .header {
-      text-align: center; margin-bottom: 40px;
-      padding-bottom: 24px; border-bottom: 1px solid #334155;
-    }
-    .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-    .brand img { width: 36px; height: 36px; border-radius: 8px; box-shadow: 0 2px 8px rgba(99,102,241,0.25); }
-    .brand span {
-      font-size: 24px; font-weight: 700;
-      background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    h1 { font-size: 28px; margin: 0 0 8px; color: #f1f5f9; }
-    .meta { font-size: 13px; color: #94a3b8; }
-    .card {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid #334155; border-radius: 12px;
-      padding: 28px 32px; margin-bottom: 20px;
-    }
-    h2 {
-      font-size: 19px; color: #f1f5f9;
-      margin: 0 0 14px; padding-bottom: 10px;
-      border-bottom: 1px solid #334155;
-    }
-    h3 { font-size: 16px; color: #cbd5e1; margin: 18px 0 8px; }
-    p, li { font-size: 14.5px; color: #cbd5e1; }
-    p { margin: 8px 0; }
-    ul, ol { padding-left: 24px; }
-    li { margin: 4px 0; }
-    strong { color: #f1f5f9; }
-    table {
-      width: 100%; border-collapse: collapse; margin: 14px 0;
-      font-size: 13.5px;
-    }
-    table th, table td {
-      border: 1px solid #334155; padding: 10px 12px; text-align: left;
-    }
-    table th { background: rgba(15, 23, 42, 0.6); color: #f1f5f9; }
-    table td { color: #cbd5e1; }
-    .highlight {
-      background: rgba(96, 165, 250, 0.08);
-      border-left: 3px solid #60a5fa;
-      padding: 12px 16px; margin: 14px 0; border-radius: 4px;
-    }
-    .highlight p { color: #bfdbfe; margin: 0; }
-    .toc {
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid #334155; border-radius: 10px;
-      padding: 16px 24px; margin-bottom: 30px;
-    }
-    .toc h3 { margin-top: 0; color: #94a3b8; font-size: 13px; letter-spacing: 0.1em; }
-    .toc ol { margin: 0; padding-left: 20px; }
-    .toc a { color: #60a5fa; text-decoration: none; font-size: 14px; }
-    .toc a:hover { text-decoration: underline; }
-    .footer {
-      text-align: center; margin-top: 30px;
-      padding-top: 20px; border-top: 1px solid #334155;
-      font-size: 13px; color: #64748b;
-    }
-    .footer a { color: #60a5fa; text-decoration: none; margin: 0 10px; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f-body);color:var(--ink);line-height:1.75;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:820px;margin:0 auto;padding:0 22px}
+    a{color:var(--link)}
+
+    /* Hero */
+    header{position:relative;overflow:hidden;background:var(--night);color:#fff;text-align:center}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-grid{position:absolute;inset:0;
+      background-image:linear-gradient(rgba(120,160,220,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.07) 1px,transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%);
+      mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%)}
+    .hero-glow{position:absolute;left:50%;top:-30%;width:min(900px,120%);height:520px;transform:translateX(-50%);
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.18),rgba(37,99,235,.12) 36%,transparent 70%);filter:blur(8px)}
+    .hero-inner{position:relative;max-width:680px;margin:0 auto;padding:56px 22px 60px}
+    .brand{display:inline-flex;align-items:center;gap:9px;margin-bottom:24px;font-family:var(--f-display);font-weight:800;font-size:1.3rem}
+    .brand a{color:#fff;text-decoration:none}
+    .brand .pin{width:20px;height:20px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);box-shadow:0 0 16px rgba(34,211,238,.5);position:relative}
+    .brand .pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#0a0f1d}
+    .logo-zh{color:#8499b8;font-weight:400;margin-left:6px;font-size:.82em}
+    header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,4.5vw,2.7rem);letter-spacing:-.5px;margin-bottom:12px;
+      background:linear-gradient(180deg,#fff 30%,#bcd0ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+    header .meta{color:#a6b7d2;font-size:.95rem;font-family:var(--f-mono)}
+
+    main{padding:48px 0 56px}
+
+    /* TOC */
+    .toc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:30px;box-shadow:var(--shadow)}
+    .toc h2{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin-bottom:12px;padding:0;border:0}
+    .toc h2::after{display:none}
+    .toc ol{columns:2;column-gap:28px;padding-left:20px;margin:0}
+    @media(max-width:560px){.toc ol{columns:1}}
+    .toc li{margin:5px 0;font-size:.92rem}
+    .toc a{color:var(--link);text-decoration:none}
+    .toc a:hover{text-decoration:underline}
+
+    /* Cards */
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 32px;margin-bottom:20px;box-shadow:var(--shadow);scroll-margin-top:24px}
+    @media(max-width:560px){.card{padding:24px 22px}}
+    h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.25rem,3vw,1.55rem);letter-spacing:-.4px;color:var(--ink);position:relative;padding-bottom:13px;margin-bottom:18px}
+    h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;border-radius:2px;background:var(--brand)}
+    h3{font-family:var(--f-display);font-weight:700;font-size:1.05rem;color:var(--ink);margin:20px 0 8px}
+    p,li{font-size:1rem;color:var(--ink-2);line-height:1.85}
+    p{margin:10px 0}
+    ul,ol{padding-left:24px;margin:8px 0}
+    li{margin:6px 0}
+    strong{color:var(--ink);font-weight:700}
+    a{font-weight:500}
+
+    /* Tables */
+    table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.92rem;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+    table th,table td{border-bottom:1px solid var(--line);padding:11px 14px;text-align:left;line-height:1.65}
+    table th{background:#eef4fb;color:var(--ink);font-weight:700;font-family:var(--f-display);font-size:.86rem}
+    table td{color:var(--ink-2)}
+    table tr:last-child td{border-bottom:0}
+    .table-wrap{overflow-x:auto}
+
+    /* Highlight */
+    .highlight{background:var(--brand-soft);border:1px solid #cdeee7;border-left:4px solid var(--teal);
+      padding:16px 20px;margin:16px 0;border-radius:10px}
+    .highlight p{color:#0d6e63;margin:0;font-size:.98rem}
+    .highlight strong{color:#0a564e}
+
+    /* Footer */
+    footer{background:var(--night);color:#8ea0bd;padding:50px 20px 32px;text-align:center}
+    footer .logo{font-family:var(--f-display);font-weight:800;font-size:1.3rem;color:#fff;display:inline-block;margin-bottom:14px}
+    footer a{color:#c0cee2;text-decoration:none}
+    .footer-links{margin-bottom:12px;font-size:.9rem}
+    .footer-links a{margin:0 8px}
+    .copyright{font-size:.84rem;margin-top:16px;color:#6f819e;font-family:var(--f-mono)}
+
+    @media(max-width:640px){main{padding:38px 0 48px}.hero-inner{padding:46px 22px 52px}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="header">
-      <div class="brand">
-        <img src="/static/tracego_512.png" alt="TraceGo">
-        <span>TraceGo</span>
-      </div>
+
+  <header>
+    <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
+    <div class="hero-inner">
+      <div class="brand"><span class="pin"></span><a href="/">TraceGo<span class="logo-zh">足跡</span></a></div>
       <h1>隱私權政策</h1>
       <div class="meta">最後更新：2026 年 4 月 30 日　|　生效日：2026 年 4 月 30 日</div>
     </div>
+  </header>
 
-    <div class="toc">
-      <h3>目錄</h3>
+  <main class="container">
+
+    <nav class="toc">
+      <h2>目錄</h2>
       <ol>
         <li><a href="#p1">適用範圍</a></li>
         <li><a href="#p2">我們蒐集哪些資料</a></li>
@@ -107,7 +128,7 @@
         <li><a href="#p11">政策變更</a></li>
         <li><a href="#p12">聯絡方式</a></li>
       </ol>
-    </div>
+    </nav>
 
     <div class="card" id="p1">
       <h2>1. 適用範圍</h2>
@@ -121,14 +142,17 @@
       <h2>2. 我們蒐集哪些資料</h2>
 
       <h3>2.1 您主動提供的資料</h3>
+      <div class="table-wrap">
       <table>
         <tr><th>類別</th><th>內容</th><th>提供時機</th></tr>
         <tr><td>身份資料</td><td>Google 帳號之 email、姓名、頭像 URL</td><td>登入時</td></tr>
         <tr><td>付款資料</td><td>付款金額、訂單編號（不含信用卡完整號碼）</td><td>購買 Pro 方案時</td></tr>
         <tr><td>書籤資料（僅 Pro 用戶）</td><td>您自行建立之書籤名稱、座標、分類、備註</td><td>Pro 用戶於本軟體建立書籤時，自動同步至雲端供跨裝置使用</td></tr>
       </table>
+      </div>
 
       <h3>2.2 系統自動蒐集的資料</h3>
+      <div class="table-wrap">
       <table>
         <tr><th>類別</th><th>內容</th><th>用途</th></tr>
         <tr><td>裝置識別碼</td><td>由 Windows MachineGuid 經 SHA-256 雜湊產生之匿名識別碼</td><td>抗濫用、跨裝置綁定</td></tr>
@@ -136,6 +160,7 @@
         <tr><td>技術日誌</td><td>錯誤訊息、Crash log、軟體版本、作業系統版本</td><td>除錯與品質改善</td></tr>
         <tr><td>連線資料</td><td>IP 位址（短期保留於 Cloudflare 網路日誌）</td><td>防範攻擊與濫用</td></tr>
       </table>
+      </div>
 
       <h3>2.3 我們不蒐集的資料</h3>
       <ul>
@@ -163,6 +188,7 @@
     <div class="card" id="p4">
       <h2>4. 資料儲存位置</h2>
       <p>您的資料儲存於 <strong>Cloudflare Workers KV</strong>（全球分散式儲存系統）。具體位置：</p>
+      <div class="table-wrap">
       <table>
         <tr><th>資料類別</th><th>儲存位置</th><th>說明</th></tr>
         <tr><td>License、配額、設備綁定</td><td>Cloudflare Workers KV</td><td>全球邊緣節點分散式儲存</td></tr>
@@ -170,18 +196,21 @@
         <tr><td>付款紀錄</td><td>金流服務商 系統</td><td>由 金流服務商 依其全球資料中心政策儲存</td></tr>
         <tr><td>Crash log</td><td>本機(您的電腦)</td><td>除非主動回報，否則不上傳</td></tr>
       </table>
+      </div>
       <p>由於 Cloudflare 為全球網路服務，您的資料可能會於我國境外處理，但僅以提供本服務之必要範圍為限。</p>
     </div>
 
     <div class="card" id="p5">
       <h2>5. 第三方服務商</h2>
       <p>為提供完整服務，我們使用下列第三方服務商。請另行參閱其各自之隱私政策：</p>
+      <div class="table-wrap">
       <table>
         <tr><th>服務商</th><th>用途</th><th>傳送之資料</th></tr>
-        <tr><td><a href="https://policies.google.com/privacy" style="color:#60a5fa">Google</a></td><td>OAuth 登入</td><td>身份驗證 token</td></tr>
+        <tr><td><a href="https://policies.google.com/privacy">Google</a></td><td>OAuth 登入</td><td>身份驗證 token</td></tr>
         <tr><td>第三方金流服務商</td><td>付款處理</td><td>訂單金額、Email、設備綁定碼</td></tr>
-        <tr><td><a href="https://www.cloudflare.com/privacypolicy/" style="color:#60a5fa">Cloudflare</a></td><td>後端、KV、DNS、網路防護</td><td>API 請求、IP 位址、KV 資料</td></tr>
+        <tr><td><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a></td><td>後端、KV、DNS、網路防護</td><td>API 請求、IP 位址、KV 資料</td></tr>
       </table>
+      </div>
       <p>我們僅將完成服務所需之最少資料傳送予前述服務商，不另行授權其用於其他用途。</p>
     </div>
 
@@ -198,6 +227,7 @@
 
     <div class="card" id="p7">
       <h2>7. 資料保留期限</h2>
+      <div class="table-wrap">
       <table>
         <tr><th>資料類別</th><th>保留期限</th></tr>
         <tr><td>身份資料（Email）</td><td>帳號有效期間</td></tr>
@@ -206,6 +236,7 @@
         <tr><td>抗濫用紀錄（試用購買、設備綁定）</td><td>長期保留（為防止重複濫用）</td></tr>
         <tr><td>Cloudflare 連線日誌</td><td>由 Cloudflare 控管，通常 7-30 天</td></tr>
       </table>
+      </div>
     </div>
 
     <div class="card" id="p8">
@@ -262,12 +293,23 @@
       </ul>
     </div>
 
-    <div class="footer">
-      © 2026 TraceGo. 保留一切權利。
-      <br>
-      <a href="/legal/terms">服務條款</a> | <a href="/legal/privacy">隱私權政策</a> | <a href="/legal/refund">退費政策</a>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo">TraceGo<span class="logo-zh">足跡</span></div>
+      <div class="footer-links">
+        <a href="/">首頁</a> ·
+        <a href="/guides">使用教學</a> ·
+        <a href="/compare">工具比較</a> ·
+        <a href="/legal/terms">服務條款</a> ·
+        <a href="/legal/privacy">隱私權政策</a> ·
+        <a href="/legal/refund">退費政策</a>
+      </div>
+      <p class="copyright">© 2026 TraceGo. 保留一切權利。　Made with care in Taiwan 🇹🇼</p>
     </div>
-  </div>
+  </footer>
+
   <script src="/line-widget.js?v=2" defer></script>
 </body>
 </html>
