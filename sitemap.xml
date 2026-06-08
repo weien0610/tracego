@@ -17,6 +17,12 @@
   <url><loc>https://tracego.tw/iphone-location-privacy</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://tracego.tw/iphone-location-changer-comparison</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
+  <!-- 交友軟體改定位（per-app 長尾）-->
+  <url><loc>https://tracego.tw/change-tinder-location</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tracego.tw/change-bumble-location</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tracego.tw/change-omi-location</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tracego.tw/change-tantan-location</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
   <!-- 法律文件 -->
   <url><loc>https://tracego.tw/legal/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tracego.tw/legal/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>

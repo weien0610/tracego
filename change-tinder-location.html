@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  <link rel="apple-touch-icon" href="/static/tracego_512.png">
+  <title>如何修改 Tinder 定位：免越獄、跨國護照替代方案（iOS 17 / 18 / 26）| TraceGo</title>
+  <meta name="description" content="想在出國或旅行前先認識當地人？本文教你如何用電腦在 iPhone 上修改系統定位，Tinder 就會讀到你設定的地點。免越獄、手機端不裝任何東西，支援 iOS 17、18、26。">
+
+  <meta property="og:title" content="如何修改 Tinder 定位：免越獄、跨國護照替代方案">
+  <meta property="og:description" content="Tinder 跨國護照是付費功能且只在 Tinder 內有效；用電腦改系統定位則免訂閱、跨所有 App。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="canonical" href="https://tracego.tw/change-tinder-location">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f5f8fc; --surface:#ffffff; --ink:#0d1424; --ink-2:#46566e; --ink-3:#7c8ca6;
+      --line:#e7edf5; --teal:#14b8a6; --blue:#2563eb; --link:#0d9488;
+      --brand:linear-gradient(135deg,#2dd4bf 0%,#2563eb 100%);
+      --brand-soft:linear-gradient(135deg,rgba(45,212,191,.14),rgba(37,99,235,.12));
+      --night:#0a0f1d; --radius:16px;
+      --shadow:0 1px 2px rgba(13,20,36,.04),0 10px 30px rgba(13,20,36,.06);
+      --shadow-lg:0 24px 60px rgba(13,20,36,.14);
+      --f-display:'Sora','Noto Sans TC',sans-serif;
+      --f-body:'Noto Sans TC',-apple-system,BlinkMacSystemFont,'PingFang TC','Microsoft JhengHei',sans-serif;
+      --f-mono:'Space Mono',ui-monospace,monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--f-body);color:var(--ink);line-height:1.85;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{max-width:760px;margin:0 auto;padding:0 22px}
+    a{color:var(--link)}
+
+    header{position:relative;overflow:hidden;background:var(--night);color:#fff;text-align:center}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-grid{position:absolute;inset:0;
+      background-image:linear-gradient(rgba(120,160,220,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(120,160,220,.07) 1px,transparent 1px);
+      background-size:46px 46px;
+      -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%);
+      mask-image:radial-gradient(ellipse 80% 70% at 50% 30%,#000 38%,transparent 100%)}
+    .hero-glow{position:absolute;left:50%;top:-30%;width:min(900px,120%);height:520px;transform:translateX(-50%);
+      background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.18),rgba(37,99,235,.12) 36%,transparent 70%);filter:blur(8px)}
+    .hero-inner{position:relative;max-width:720px;margin:0 auto;padding:50px 22px 64px}
+    .nav-back{display:inline-flex;align-items:center;gap:9px;margin-bottom:30px;font-family:var(--f-display);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none}
+    .nav-back .pin{width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);box-shadow:0 0 16px rgba(34,211,238,.5);position:relative}
+    .nav-back .pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#0a0f1d}
+    .breadcrumb-logo{font-weight:800;color:#fff}
+    .logo-zh{color:#8499b8;font-weight:400;margin-left:6px;font-size:.82em}
+    header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(1.9rem,4.6vw,2.6rem);letter-spacing:-.5px;line-height:1.25;margin-bottom:18px;
+      background:linear-gradient(180deg,#fff 30%,#bcd0ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{color:#a6b7d2;font-size:1.08rem;max-width:620px;margin:0 auto 22px;line-height:1.7}
+    .meta-row{color:#7e91b0;font-size:.86rem;letter-spacing:.5px;font-family:var(--f-mono)}
+
+    article{padding:54px 0 20px}
+    article h2{font-family:var(--f-display);font-weight:800;font-size:clamp(1.4rem,3vw,1.8rem);letter-spacing:-.4px;color:var(--ink);position:relative;padding-bottom:14px;margin:52px 0 22px}
+    article h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:3px;border-radius:2px;background:var(--brand)}
+    article h2:first-child{margin-top:0}
+    article h3{font-family:var(--f-display);font-weight:700;font-size:1.18rem;margin:30px 0 10px;color:var(--ink)}
+    article p{color:var(--ink-2);margin-bottom:18px;font-size:1.04rem;line-height:1.85}
+    article ul,article ol{color:var(--ink-2);margin:0 0 22px 24px;font-size:1.04rem;line-height:1.8}
+    article li{margin-bottom:10px}
+    article strong{color:var(--ink)}
+    article a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(13,148,136,.32)}
+    article a:hover{border-bottom-color:var(--link)}
+    code{background:#eef3f9;padding:1px 7px;border-radius:5px;font-family:var(--f-mono);font-size:.86em;color:var(--blue)}
+
+    .callout{background:var(--brand-soft);border:1px solid #cdeee7;border-left:4px solid var(--teal);border-radius:12px;padding:18px 24px;margin:26px 0;color:#0d6e63;font-size:1rem;line-height:1.75}
+    .callout strong{color:#0a564e}
+
+    .cmp{width:100%;border-collapse:collapse;margin:26px 0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-size:.96rem}
+    .cmp th,.cmp td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+    .cmp tr:last-child td,.cmp tbody tr:last-child td{border-bottom:none}
+    .cmp th{background:var(--night);color:#fff;font-family:var(--f-display);font-weight:700;font-size:.92rem}
+    .cmp td{color:var(--ink-2)}
+    .cmp .yes{color:#0d9488;font-weight:700}
+    .cmp .no{color:#dc2626;font-weight:700}
+    .cmp .mid{color:#b45309;font-weight:700}
+
+    .tracego-block{position:relative;overflow:hidden;background:var(--night);color:#fff;padding:36px 34px;border-radius:var(--radius);margin:44px 0;box-shadow:var(--shadow-lg)}
+    .tracego-block::before{content:"";position:absolute;left:-30%;top:-60%;width:80%;height:200%;
+      background:radial-gradient(circle at 50% 50%,rgba(45,212,191,.22),transparent 70%);pointer-events:none}
+    .tracego-block::after{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:var(--brand)}
+    .tracego-block h3{position:relative;font-family:var(--f-display);font-weight:800;color:#fff;margin:0 0 12px;font-size:1.3rem}
+    .tracego-block p{position:relative;color:#b9c8e0;font-size:1rem;line-height:1.8;margin-bottom:14px}
+    .tracego-block a{color:#5eead4;border-bottom:1px solid rgba(94,234,212,.4);font-weight:600}
+    .tracego-block a:hover{border-bottom-color:#5eead4}
+
+    h2.faq{margin-bottom:8px}
+    .faq h3{font-family:var(--f-display);font-weight:700;font-size:1.06rem;margin:0 0 8px;color:var(--ink)}
+    .faq>div,.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px;box-shadow:var(--shadow)}
+    .faq>div p{margin:0;color:var(--ink-2);font-size:.98rem}
+
+    footer{background:var(--night);color:#8ea0bd;padding:48px 20px 34px;margin-top:54px;text-align:center}
+    footer a{color:#c0cee2;text-decoration:none}
+    footer a:hover{color:#fff}
+    footer p{margin-bottom:8px;font-size:.95rem}
+    .copyright{font-size:.84rem;margin-top:14px;color:#6f819e;font-family:var(--f-mono)}
+
+    @media(max-width:640px){
+      .hero-inner{padding:40px 20px 52px}
+      article{padding:40px 0 16px}
+      .tracego-block{padding:26px 22px}
+      .cmp{font-size:.86rem}
+      .cmp th,.cmp td{padding:10px 9px}
+    }
+  </style>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "如何修改 Tinder 定位：免越獄、跨國護照替代方案",
+    "description": "Tinder 跨國護照（Passport）是什麼、有何限制，以及如何用電腦在 iPhone 上修改系統定位（免越獄、免訂閱、跨所有 App），支援 iOS 17、18、26。",
+    "inLanguage": "zh-Hant",
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "image": "https://tracego.tw/static/tracego_512.png",
+    "author": { "@type": "Organization", "name": "TraceGo", "url": "https://tracego.tw/" },
+    "publisher": { "@type": "Organization", "name": "TraceGo", "url": "https://tracego.tw/" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://tracego.tw/change-tinder-location" },
+    "url": "https://tracego.tw/change-tinder-location"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://tracego.tw/" },
+      { "@type": "ListItem", "position": 2, "name": "使用教學", "item": "https://tracego.tw/guides" },
+      { "@type": "ListItem", "position": 3, "name": "如何修改 Tinder 定位", "item": "https://tracego.tw/change-tinder-location" }
+    ]
+  }
+]
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
+    <div class="hero-inner">
+      <a class="nav-back" href="/"><span class="pin"></span><span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span></a>
+      <h1>如何修改 Tinder 定位（免越獄）</h1>
+      <p class="subtitle">
+        出國前想先認識當地人、或不想讓配對對象從「距離」反推你住哪？
+        本文教你在電腦上修改 iPhone 的系統定位，Tinder 就會讀到你設定的地點。支援 iOS 17、18、26。
+      </p>
+      <div class="meta-row">教學 · 交友軟體 · 定位</div>
+    </div>
+  </header>
+
+  <article class="container">
+
+    <h2>為什麼有人想修改 Tinder 定位</h2>
+    <p>
+      Tinder 是以「地理位置」為核心的交友軟體——它會把你附近的人推給你，也會在你的個人檔案上
+      顯示「距離對方幾公里」。修改定位最常見的正當理由有三個：
+    </p>
+    <ul>
+      <li><strong>出國／旅行前先認識當地人</strong>：下週要飛東京、或準備打工度假，先把定位設到目的地，
+          抵達前就能先聊、安排見面。</li>
+      <li><strong>跨區交友</strong>：在地的人都滑完了、或住在用戶較少的地方，想擴大認識的範圍。</li>
+      <li><strong>隱私保護</strong>：不想讓陌生配對對象從「距離 1.2 公里」這種精準數字，反推出你大概住哪。</li>
+    </ul>
+
+    <div class="callout">
+      <strong>怎麼改：</strong>修改 Tinder 定位最直接的方式，是改 iPhone 的<strong>「系統定位」</strong>——
+      改好之後，Tinder 讀到的就是你設定的新位置。以下說明做法。
+    </div>
+
+    <h2>修改 Tinder 定位的原理：改「系統定位」</h2>
+    <p>
+      Tinder 顯示的位置，來自 iPhone 回報的 GPS。只要修改手機的<strong>系統 GPS 定位</strong>，
+      Tinder 自然就會讀到你設定的地點。做法是用電腦透過 Apple 官方的開發者通道，把模擬座標送進
+      iPhone——手機端不裝任何東西、<strong>不越獄</strong>、iOS 本身也不被改動。
+    </p>
+    <p>
+      （Tinder 本身也有「跨國護照（Passport）」可在 App 內切換城市；本文說明的是改系統定位的做法，
+      改一次之後，地圖等其他 App 也會讀到相同位置。）
+    </p>
+
+    <h2>修改系統定位的步驟（免越獄）</h2>
+    <p>以 TraceGo 為例：</p>
+    <ol>
+      <li><strong>USB 連線</strong>：用原廠線把 iPhone 接上 Windows 電腦，解鎖手機，第一次接會跳「信任此電腦」→ 按信任。</li>
+      <li><strong>選地點</strong>：在地圖上點目的地，或直接輸入 <code>緯度, 經度</code>。</li>
+      <li><strong>傳送</strong>：模擬座標送到 iPhone，定位類 App（含 Tinder）就會讀到新位置。</li>
+      <li><strong>隨時還原</strong>：按暫停或拔線，iPhone 立刻回到真實 GPS。</li>
+    </ol>
+
+    <div class="tracego-block">
+      <h3>用 TraceGo 修改 iPhone 定位</h3>
+      <p>
+        TraceGo 是一款 Windows 桌面工具，透過 USB 在你自己的 iPhone 上修改系統 GPS 定位。
+        免越獄、手機端不裝任何東西、原生支援 iOS 17 / 18 / 26，並提供永久免費版讓你先試。
+        改一次，Tinder、地圖等所有定位類 App 都會讀到相同位置。
+      </p>
+      <p style="margin-bottom:0;"><a href="/">了解更多 TraceGo →</a></p>
+    </div>
+
+    <h2 class="faq">常見問題</h2>
+    <div class="faq">
+      <div>
+        <h3>改定位對方看得出來嗎？</h3>
+        <p>如果你把位置設得離你「目前所在地」很遠（例如人在台灣、定位設在首爾），對方看到的距離會超出常理，可能會察覺。若是「你即將前往的城市」或「鄰近區域」，就自然得多。</p>
+      </div>
+      <div>
+        <h3>需要越獄或裝任何程式嗎？</h3>
+        <p>不需要。系統定位是透過 Apple 官方開發者通道設定，手機維持原廠狀態，不必越獄、不裝任何東西。</p>
+      </div>
+      <div>
+        <h3>支援 iOS 18 / 26 嗎？</h3>
+        <p>支援——前提是工具已重寫新的 RemoteXPC 連線層。只支援 iOS 16 以下的舊工具會卡在連線階段。</p>
+      </div>
+      <div>
+        <h3>這樣做合法嗎？</h3>
+        <p>修改自己手機的系統定位本身是技術性操作；但各交友軟體有自己的服務條款，部分平台不允許以第三方工具更改定位。使用前請先了解並遵守該 App 的服務條款與當地法律。</p>
+      </div>
+    </div>
+
+    <p style="margin-top:30px"><strong>延伸閱讀：</strong>
+      <a href="/change-iphone-location">iPhone 定位修改教學：免越獄修改 GPS</a> ·
+      <a href="/iphone-location-privacy">iPhone 定位隱私指南</a> ·
+      <a href="/compare">定位工具比較</a>
+    </p>
+
+  </article>
+
+  <footer>
+    <p><a href="/">← TraceGo 首頁</a> · <a href="/guides">全部教學</a> · <a href="/compare">工具比較</a></p>
+    <p class="copyright">© 2026 TraceGo 足跡　·　請於符合各 App 服務條款與當地法律的前提下使用</p>
+  </footer>
+
+  <script src="/line-widget.js?v=2" defer></script>
+</body>
+</html>
