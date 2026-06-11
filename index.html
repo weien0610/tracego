@@ -190,6 +190,9 @@
     .use-cases{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
     @media(max-width:760px){.use-cases{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:440px){.use-cases{grid-template-columns:1fr}}
+    .use-cases.trust6{grid-template-columns:repeat(3,1fr)}
+    @media(max-width:760px){.use-cases.trust6{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:440px){.use-cases.trust6{grid-template-columns:1fr}}
     .use-cases li{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:12px;padding:20px 22px;box-shadow:var(--shadow)}
     .use-cases strong{display:block;margin-bottom:5px;color:var(--ink);font-family:var(--f-display);font-weight:700}
     .use-cases span{color:var(--ink-2);font-size:.94rem}
@@ -277,7 +280,7 @@
         </p>
         <div class="badges">
           <span class="badge">🍎 iOS 17 / 18 / 26</span>
-          <span class="badge">📡 WiFi 無線連線</span>
+          <span class="badge">📡 WiFi 免插線（家用網路）</span>
           <span class="badge">🔓 免越獄</span>
         </div>
         <div class="download-cta">
@@ -350,8 +353,8 @@
       </div>
       <div class="feature">
         <div class="feature-icon">📡</div>
-        <h3>WiFi 無線連線</h3>
-        <p>首次以 USB 配對後即可改走 WiFi，日常使用免插線，比同類工具更方便。</p>
+        <h3>USB / WiFi 連線</h3>
+        <p>穩定 USB 連線；在一般家用網路下還可改走 WiFi、免插線操作。部分公司／公共網路因防火牆限制，建議改用 USB。</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🗺️</div>
@@ -385,6 +388,37 @@
       <li>
         <strong>🌐 跨地區應用測試</strong>
         <span>驗證 App 在不同國家 / 城市的行為差異，協助 QA 與本地化測試流程。</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============== 安心 / 信任 ============== -->
+  <section class="container">
+    <h2>為什麼可以安心用 TraceGo</h2>
+    <ul class="use-cases trust6">
+      <li>
+        <strong>🆓 永久免費先試</strong>
+        <span>免費版每天都能用、無需註冊、不綁信用卡。先確認能連、能用，再決定要不要升級 —— 你幾乎不會買到不能用的東西。</span>
+      </li>
+      <li>
+        <strong>🔐 安裝檔可驗證 · 防竄改</strong>
+        <span>每個版本都附 SHA256 雜湊，可自行驗證安裝檔未被動過手腳、無夾帶 —— 這是多數同類工具不會給的。</span>
+      </li>
+      <li>
+        <strong>🏠 本機運作 · 不蒐集定位</strong>
+        <span>完全在你的 Windows 電腦上運作，我們不蒐集、不上傳、不儲存任何定位資料。</span>
+      </li>
+      <li>
+        <strong>🛡️ 安心退費，不玩文字遊戲</strong>
+        <span>先用免費版試到能用再付費；萬一付費後真的遇到無法解決的技術問題，可依退費政策辦理退款。</span>
+      </li>
+      <li>
+        <strong>🛎️ 台灣在地服務</strong>
+        <span>繁體中文介面、台灣合規金流、LINE 官方帳號真人客服 —— 有問題找得到人。</span>
+      </li>
+      <li>
+        <strong>🔄 天數制 · 絕不自動扣款</strong>
+        <span>所有方案都是買斷天數，到期就停，不會自動續訂、不會偷扣款，沒有訂閱陷阱。</span>
       </li>
     </ul>
   </section>
@@ -474,13 +508,31 @@
 
     <div class="pricing-note">
       <strong>📌 重要消費資訊：</strong><br>
-      • 本商品為 <strong>數位內容服務</strong>，依《消費者保護法》第 19 條第 2 項及《通訊交易解除權合理例外情事適用準則》第 5 條規定，
-      經消費者於購買時主動同意「提前提供且開始下載 / 使用後不得解除契約」者，無 7 天鑑賞期。<br>
-      • 7 天試用版僅限同一帳號 / 同一裝置首次購買。<br>
-      • 退費條件詳見 <a href="/legal/refund">退費政策</a>。
+      • 本商品為數位內容服務，<strong>付費後可依退費政策申請退款（設有退款條件）</strong>，完整條款請見 <a href="/legal/refund">退費政策</a>。<br>
+      • 7 天試用版僅限同一帳號 / 同一裝置首次購買。
     </div>
   </section>
 
+
+  <!-- ============== 比較表 ============== -->
+  <section class="container">
+    <h2>TraceGo 跟其他定位工具差在哪</h2>
+    <p class="lead">只列我們真的有優勢的地方 —— 沒有的功能不會假裝有。</p>
+    <table class="cmp">
+      <thead>
+        <tr><th>比較項目</th><th class="pro cmp-col">TraceGo</th><th class="cmp-col">常見海外工具</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>永久免費版</td><td class="pro"><span class="yes">✓</span> 每天都能用</td><td class="free">多為限時試用 / 試用 1 次</td></tr>
+        <tr><td>月方案價格</td><td class="pro">NT$299</td><td class="free">約 NT$590</td></tr>
+        <tr><td>年方案價格</td><td class="pro">NT$2399</td><td class="free">約 NT$2499</td></tr>
+        <tr><td>付款模式</td><td class="pro"><span class="yes">✓</span> 天數買斷，絕不自動扣</td><td class="free">部分為訂閱自動續訂</td></tr>
+        <tr><td>下載可驗證（SHA256）</td><td class="pro"><span class="yes">✓</span></td><td class="free"><span class="no">—</span></td></tr>
+        <tr><td>繁中 / 台灣金流 / 真人客服</td><td class="pro"><span class="yes">✓</span></td><td class="free">多為海外、機器客服</td></tr>
+      </tbody>
+    </table>
+    <p class="free-note">✦ 我們不拿「無線連線」「遊戲專屬功能」來灌水比較 —— 那些各家互有強弱，誠實比較才有意義。</p>
+  </section>
 
   <!-- ============== FAQ ============== -->
   <section class="container">
@@ -508,7 +560,7 @@
 
     <div class="faq-item">
       <strong>我可以申請退費嗎？</strong>
-      <p>本商品為數位內容服務，依《消費者保護法》第 19 條第 2 項規定，於下載 / 使用後原則上不適用 7 天無條件退費。但若遇技術問題（如功能無法使用）或當期未啟用，可依退費政策辦理退款。完整條款請見<a href="/legal/refund">退費政策</a>。</p>
+      <p>可以，但設有條件。建議<strong>先用永久免費版確認能連、能用再付費</strong>；付費後若遇技術問題（功能無法使用）或當期未啟用，可依退費政策辦理退款。（數位內容服務不適用 7 天無條件退貨，完整條款見<a href="/legal/refund">退費政策</a>）</p>
     </div>
 
     <div class="faq-item">
