@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "updated": "2026-09-10",
+  "note": "TraceGo 解鎖流程的功能展示池 + 底部橫幅。改這份檔案 deploy 官網即生效，App 不需重發版。logo=該功能 16:9 縮圖(640x360 jpg，放 website/promo/thumb/)。文案紅線：不得出現遊戲名/遊戲用語（見 docs/specs/2026-09-10-sponsor-pool-pro-promo-design.md §5.4）。",
+  "pool": [
+    {
+      "key": "speed",
+      "name": "自由調速",
+      "tagline": "免費版固定 60 km/h · Pro 可自由調速 1–200",
+      "url": "https://tracego.tw/promo/speed",
+      "logo": "https://tracego.tw/promo/thumb/speed.jpg",
+      "bg": "#fff7ed",
+      "icon": "🚄"
+    },
+    {
+      "key": "route",
+      "name": "路線自動巡航",
+      "tagline": "多點路線 · 藍點沿線自動移動 · 免動手",
+      "url": "https://tracego.tw/promo/route",
+      "logo": "https://tracego.tw/promo/thumb/route.jpg",
+      "bg": "#eff6ff",
+      "icon": "🛣️"
+    },
+    {
+      "key": "wasd",
+      "name": "鍵盤即時操控",
+      "tagline": "按 WASD / 方向鍵 · 即時移動定位",
+      "url": "https://tracego.tw/promo/wasd",
+      "logo": "https://tracego.tw/promo/thumb/wasd.jpg",
+      "bg": "#f5f3ff",
+      "icon": "⌨️"
+    },
+    {
+      "key": "util",
+      "name": "收藏無上限",
+      "tagline": "免費版收藏 5 個 · Pro 無上限 + 雲端同步",
+      "url": "https://tracego.tw/promo/util",
+      "logo": "https://tracego.tw/promo/thumb/util.jpg",
+      "bg": "#ecfdf5",
+      "icon": "⭐"
+    },
+    {
+      "key": "tutorial",
+      "name": "完整教學",
+      "tagline": "3 分鐘看懂 TraceGo 怎麼用",
+      "url": "https://tracego.tw/promo/tutorial",
+      "logo": "https://tracego.tw/promo/thumb/tutorial.jpg",
+      "bg": "#fef2f2",
+      "icon": "🎬"
+    },
+    {
+      "key": "montage",
+      "name": "功能總覽",
+      "tagline": "TraceGo 能做的事 · 一次看完",
+      "url": "https://tracego.tw/promo/montage",
+      "logo": "https://tracego.tw/promo/thumb/montage.jpg",
+      "bg": "#f0f9ff",
+      "icon": "🗺️"
+    },
+    {
+      "key": "free",
+      "name": "免費版介紹",
+      "tagline": "永久免費版能做什麼 · 一次搞懂",
+      "url": "https://tracego.tw/promo/free",
+      "logo": "https://tracego.tw/promo/thumb/free.jpg",
+      "bg": "#fffbeb",
+      "icon": "🆓"
+    }
+  ],
+  "banner": {
+    "enabled": true,
+    "id": "wesh-2026-09",
+    "name": "Wesh 手作蛋糕",
+    "tagline": "在地友情推薦 · 旅行回來犒賞自己",
+    "url": "https://www.wesh.tw/",
+    "logo": "/static/sponsors/wesh.png",
+    "label": "贊助"
+  }
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>免費版介紹 — TraceGo</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin:0; min-height:100%; font-family:"Microsoft JhengHei",-apple-system,"Segoe UI",sans-serif; }
+  body {
+    background: linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+    color:#e2e8f0; display:flex; align-items:center; justify-content:center;
+    padding:20px; min-height:100vh;
+  }
+  .wrap { max-width:560px; width:100%; text-align:center; }
+  .kicker { font-size:12px; letter-spacing:.18em; color:#60a5fa; font-weight:800; text-transform:uppercase; margin-bottom:8px; }
+  h1 { font-size:26px; font-weight:800; color:#f1f5f9; margin:0 0 16px; }
+  .video-shell {
+    position:relative; border-radius:16px; overflow:hidden;
+    box-shadow:0 14px 40px rgba(0,0,0,.55); border:1px solid #334155;
+    background:#0b1220; aspect-ratio:16/9;
+  }
+  .video-shell video { width:100%; height:100%; object-fit:cover; display:block; }
+  /* 影片載入失敗 → 顯示純文字卡（不擋 launcher 的 10 秒計時） */
+  .fallback {
+    display:none; position:absolute; inset:0;
+    flex-direction:column; align-items:center; justify-content:center;
+    padding:24px; text-align:center; background:linear-gradient(135deg,#1e293b,#0f172a);
+  }
+  .fallback .fb-title { font-size:22px; font-weight:800; color:#f1f5f9; margin-bottom:10px; }
+  .fallback .fb-sub { font-size:14px; color:#cbd5e1; line-height:1.7; }
+  .video-shell.failed video { display:none; }
+  .video-shell.failed .fallback { display:flex; }
+  .caption { font-size:15px; color:#cbd5e1; line-height:1.7; margin:18px 8px 24px; }
+  .cta {
+    display:inline-block; width:100%; max-width:360px;
+    padding:15px 24px; font-size:16px; font-weight:800;
+    background:linear-gradient(135deg,#f97316,#ea580c); color:#fff;
+    border:none; border-radius:12px; text-decoration:none; cursor:pointer;
+    box-shadow:0 6px 20px rgba(249,115,22,.45); transition:transform .1s,box-shadow .2s;
+  }
+  .cta:hover { transform:translateY(-1px); box-shadow:0 8px 24px rgba(249,115,22,.6); }
+  .cta:active { transform:translateY(0); }
+  .foot { margin-top:16px; font-size:12px; color:#64748b; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">TraceGo</div>
+    <h1>免費版介紹</h1>
+    <div class="video-shell" id="shell">
+      <video autoplay muted loop playsinline preload="auto"
+             onerror="document.getElementById('shell').classList.add('failed')">
+        <source src="/promo/vid/free.mp4" type="video/mp4">
+      </video>
+      <div class="fallback">
+        <div class="fb-title">免費版介紹</div>
+        <div class="fb-sub">永久免費版能做什麼，一次搞懂</div>
+      </div>
+    </div>
+    <div class="caption">永久免費版能做什麼，一次搞懂</div>
+    <a class="cta" href="https://tracego.tw/pricing?utm_source=app&utm_medium=promo&utm_content=promo-free">看 Pro 方案 →</a>
+    <div class="foot">TraceGo · 免越獄 iPhone 定位工具</div>
+  </div>
+</body>
+</html>
