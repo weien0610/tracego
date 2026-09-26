@@ -75,5 +75,25 @@
     "url": "https://www.wesh.tw/",
     "logo": "/static/sponsors/wesh.png",
     "label": "贊助"
+  },
+  "map": {
+    "_note": "App 地圖底圖候選(依優先序)。App 啟動時逐一健康檢查,挑第一個健康的;使用中圖磚連續出錯會自動換下一個。改這裡 deploy 官網即生效(免重發版)。每筆要有 id + https:// url。拿到正式金鑰時把它插到最前面即可,金鑰錯了會自動退回下一個。",
+    "providers": [
+      {
+        "id": "osm",
+        "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "subdomains": "",
+        "maxZoom": 19,
+        "attribution": "© OpenStreetMap contributors"
+      },
+      {
+        "id": "esri",
+        "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+        "subdomains": "",
+        "maxZoom": 19,
+        "maxNativeZoom": 18,
+        "attribution": "Tiles © Esri"
+      }
+    ]
   }
 }
