@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
   <link rel="apple-touch-icon" href="/static/tracego_512.png">
-  <title>iPhone 假定位怎麼用？虛擬定位設定教學（免越獄，iOS 17/18/26）| TraceGo</title>
-  <meta name="description" content="iPhone 假定位（虛擬定位）完整教學：什麼是模擬 GPS、合法用途、為什麼舊工具在 iOS 17 後失效，以及免越獄設定虛擬定位的方法。">
-  <meta property="og:title" content="iPhone 假定位怎麼用？虛擬定位設定教學（免越獄）">
-  <meta property="og:description" content="iPhone 虛擬定位完整教學：合法用途、iOS 17 後的變化、免越獄設定方法。">
+  <title>iPhone 虛擬定位怎麼設定？免越獄假定位教學（iOS 17/18/26）| TraceGo</title>
+  <meta name="description" content="iPhone 虛擬定位怎麼設定？免越獄假定位完整教學：設定前準備、步驟、為什麼 App Store 的虛擬定位 App 改不了、和 VPN 的差別、沒生效怎麼排查。">
+  <meta property="og:title" content="iPhone 虛擬定位怎麼設定？免越獄假定位教學">
+  <meta property="og:description" content="iPhone 虛擬定位完整教學：設定步驟、和 VPN 的差別、iOS 17 後的變化、沒生效怎麼排查。">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="zh_TW">
   <link rel="canonical" href="https://tracego.tw/fake-gps-iphone">
@@ -125,11 +125,11 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "iPhone 假定位怎麼用？虛擬定位設定教學",
-    "description": "iPhone 假定位（虛擬定位）完整教學：什麼是模擬 GPS、合法用途、為什麼舊工具在 iOS 17 後失效，以及免越獄設定虛擬定位的方法。",
+    "headline": "iPhone 虛擬定位怎麼設定？假定位教學",
+    "description": "iPhone 虛擬定位怎麼設定？免越獄假定位完整教學：設定前準備、步驟、為什麼 App Store 的虛擬定位 App 改不了、和 VPN 的差別、沒生效怎麼排查。",
     "inLanguage": "zh-Hant",
     "datePublished": "2026-06-05",
-    "dateModified": "2026-06-05",
+    "dateModified": "2026-10-16",
     "image": "https://tracego.tw/static/tracego_512.png",
     "author": {
       "@type": "Organization",
@@ -166,8 +166,94 @@
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "iPhone 假定位怎麼用？虛擬定位設定教學",
+        "name": "iPhone 虛擬定位怎麼設定？假定位教學",
         "item": "https://tracego.tw/fake-gps-iphone"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "iPhone 可以設定虛擬定位嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以。iPhone 不需要越獄，用電腦透過 Apple 官方的開發者通道，就能幫手機設定一個模擬 GPS 座標；定位類 App 會讀到你設定的位置。iOS 17 以上要先開啟「開發者模式」。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "有不用電腦、直接裝在 iPhone 上的虛擬定位 App 嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在 App Store 上沒有能改「系統定位」的 App。iOS 的沙盒機制不允許一般 App 更改其他 App 讀到的位置，所以標榜虛擬定位的 App 多半只是在自己的畫面裡顯示假地點，或其實是改 IP 的 VPN。要讓所有定位類 App 一起讀到新位置，目前仍需要透過電腦設定。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "虛擬定位和 VPN 一樣嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不一樣。VPN 改的是網路 IP 所在地區，影響的是串流、網站內容等「看 IP」的服務；地圖、交友、外送這類 App 看的是 GPS 定位，開 VPN 不會讓你在地圖上移動。虛擬定位改的才是 GPS。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "假定位需要越獄嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不需要。USB 桌面工具在原廠 iPhone 上就能用，不改動 iOS，也不需要輸入 Apple ID 密碼。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "iOS 18 / iOS 26 還能設虛擬定位嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以，前提是工具已支援 iOS 17 起的新版連線層（RemoteXPC）。只支援 iOS 16 以下的舊工具會卡在連線階段。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "需要 Mac 嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不需要。TraceGo 在 Windows 10 / 11 上執行，只要安裝 Microsoft Store 的 Apple Devices（或 iTunes）讓電腦認得 iPhone，不需要 Mac、Xcode 或開發者帳號。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "可以不插線、用 WiFi 設定虛擬定位嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以。先用 USB 成功配對一次，之後 iPhone 與電腦連在同一個家用 WiFi 就能免插線操作。公司、學校或公共 WiFi 常封鎖裝置互連，這種環境請改用 USB。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "怎麼關掉虛擬定位、恢復真實位置？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在 TraceGo 按「暫停模擬」即可回到真實 GPS。若定位仍停在模擬的位置，把 iPhone 重新開機一定會恢復。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "設定虛擬定位要錢嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TraceGo 有永久免費版，無需註冊，每日可傳送 3 次，夠你先確認自己的 iPhone 能連、能用；需要無限傳送、自訂速度或多點路線再升級 Pro。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "會不會被某個 App 偵測到？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "偵測與否取決於各 App 自己的政策與機制，跟設定虛擬定位的技術本身無關。請務必遵守你使用的 App 服務條款。"
+        }
       }
     ]
   }
@@ -180,36 +266,53 @@
     <div class="hero-bg" aria-hidden="true"><div class="hero-grid"></div><div class="hero-glow"></div></div>
     <div class="hero-inner">
       <a class="nav-back" href="/"><span class="pin"></span><span class="breadcrumb-logo">TraceGo<span class="logo-zh">足跡</span></span></a>
-      <h1>iPhone 假定位怎麼用？虛擬定位設定教學</h1>
+      <h1>iPhone 虛擬定位怎麼設定？假定位教學</h1>
       <p class="subtitle">
-        「假定位」聽起來很技術，其實就是給 iPhone 設定一個模擬 GPS 座標。
-        這篇說明它的合法用途、運作原理，以及免越獄的設定方法。
+        「虛擬定位」聽起來很技術，其實就是給 iPhone 設定一個模擬 GPS 座標。
+        這篇從設定前準備、免越獄步驟，到沒生效怎麼排查，一次講完。
       </p>
-      <div class="meta-row">教學 · iOS · 虛擬定位</div>
+      <div class="meta-row">教學 · iOS 17 / 18 / 26 · 虛擬定位 · 更新 2026-10</div>
     </div>
   </header>
 
   <article class="container">
 
-    <h2>什麼是 iPhone 假定位 / 虛擬定位？</h2>
+    <div class="callout">
+      <strong>先講結論：</strong>iPhone 可以設定虛擬定位，而且不用越獄——
+      用電腦透過 Apple 官方的開發者通道，把模擬座標送進手機即可。
+      App Store 上的 App 做不到這件事（原因見下文），VPN 也不行（它改的是 IP，不是 GPS）。
+    </div>
+
+    <h2>什麼是 iPhone 虛擬定位 / 假定位？</h2>
     <p>
-      所謂「假定位」或「虛擬定位」，就是讓 iPhone 的定位類 App 讀到一個
+      所謂「虛擬定位」或「假定位」，就是讓 iPhone 的定位類 App 讀到一個
       <strong>你指定的模擬座標</strong>，而不是手機 GPS 偵測到的真實位置。
       它不是駭客手法，也不需要改動 iOS——本質上跟 App 開發者用 Xcode
       測試定位功能是同一件事。
     </p>
+    <p>
+      設定一次之後，地圖、交友、天氣、外送等<strong>所有讀取系統定位的 App 都會看到同一個新位置</strong>，
+      不必逐一設定；停止之後，手機就回到真實 GPS。
+    </p>
 
     <div class="callout">
-      <strong>名詞釐清：</strong>假定位、虛擬定位、模擬定位、fake GPS
-      指的都是同一件事——把一個自訂座標餵給裝置。差別只在不同工具的說法。
+      <strong>名詞釐清：</strong>虛擬定位、假定位、模擬定位、虛擬 GPS、蘋果虛擬定位，
+      英文常稱 fake GPS（iPhone fake GPS / iOS fake GPS）——指的都是同一件事：
+      把一個自訂座標餵給裝置。差別只在不同工具與地區的說法。
     </div>
 
     <h2>哪些情況會用到虛擬定位（合法用途）</h2>
     <ul>
       <li><strong>App 開發 / 測試</strong>：驗證地理圍欄、門市搜尋、導航、
-          外送範圍等功能，不必親自跑到每個地點。</li>
-      <li><strong>隱私保護</strong>：不想讓每個 App 都拿到你的真實座標。</li>
-      <li><strong>旅遊規劃</strong>：出國前先看目的地的地圖、交通、店家資訊。</li>
+          外送範圍等功能，不必親自跑到每個地點。（開發者細節見
+          <a href="/ios-location-testing-developers">開發者如何測試 iOS 定位功能</a>）</li>
+      <li><strong>隱私保護</strong>：不想讓每個 App 都拿到你的真實座標，
+          或不想讓陌生人從「距離 0.8 公里」反推出你住哪。</li>
+      <li><strong>旅遊規劃</strong>：出國前先把定位設到目的地，看當地的地圖、交通、店家資訊，
+          或先認識當地朋友。</li>
+      <li><strong>跨區交友</strong>：住在用戶少的地區，把定位設到別的城市擴大認識範圍——
+          例如 <a href="/change-ping-location">Ping!</a>、<a href="/change-tantan-location">探探</a>、
+          <a href="/change-omi-location">Omi</a> 都是依定位推薦附近的人。</li>
       <li><strong>展示與教學</strong>：在受控環境示範定位相關功能。</li>
     </ul>
     <p>
@@ -217,7 +320,40 @@
       並遵守你所使用的每個 App 服務條款的前提下使用。
     </p>
 
-    <h2>iPhone 設定假定位的常見方法</h2>
+    <h2>為什麼 App Store 找不到能用的虛擬定位 App？</h2>
+    <p>
+      很多人第一個反應是去 App Store 搜「虛擬定位 App」，裝了才發現沒用。這不是你找錯 App，
+      而是 iOS 的設計：<strong>每個 App 都被關在自己的沙盒裡，無權更改其他 App 讀到的位置</strong>。
+      所以 App Store 上標榜虛擬定位的 App，通常是下面兩種之一：
+    </p>
+    <ul>
+      <li>只在<strong>自己的畫面裡</strong>顯示一個假地點，其他 App 完全不受影響；</li>
+      <li>其實是 <strong>VPN</strong>——改的是網路 IP，不是 GPS。</li>
+    </ul>
+    <p>
+      要讓整支 iPhone 的系統定位改變，只能走 Apple 給開發者的定位模擬通道，而這個通道必須從
+      <strong>電腦</strong>連進手機。這就是為什麼現在能用的 iPhone 虛擬定位方案，幾乎都是「電腦軟體 + 傳輸線」。
+    </p>
+
+    <h2>虛擬定位和 VPN 有什麼不一樣？</h2>
+    <table class="cmp">
+      <thead>
+        <tr><th></th><th>虛擬定位</th><th>VPN</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>改的是什麼</td><td>GPS 定位（系統定位）</td><td>網路 IP 所在地區</td></tr>
+        <tr><td>地圖上的藍點會動嗎</td><td class="yes">會</td><td class="no">不會</td></tr>
+        <tr><td>依定位推薦附近的人 / 店家</td><td class="yes">跟著變</td><td class="no">不變</td></tr>
+        <tr><td>串流、網站的地區內容</td><td class="no">不變</td><td class="yes">跟著變</td></tr>
+        <tr><td>能否在 iPhone 上單獨完成</td><td class="mid">需要電腦</td><td class="yes">裝 App 即可</td></tr>
+      </tbody>
+    </table>
+    <p>
+      簡單說：<strong>App 看的是 GPS，就要用虛擬定位；看的是 IP，才是 VPN 的事。</strong>
+      交友、地圖、外送、天氣這類 App 幾乎都看 GPS。
+    </p>
+
+    <h2>iPhone 設定虛擬定位的常見方法</h2>
     <table class="cmp">
       <thead>
         <tr><th>方法</th><th>要越獄？</th><th>iOS 17/18/26</th><th>難易度</th></tr>
@@ -225,32 +361,72 @@
       <tbody>
         <tr><td>越獄 + 定位修改套件</td><td class="no">要</td><td class="no">不穩</td><td class="no">高 + 風險</td></tr>
         <tr><td>Xcode 模擬定位</td><td class="yes">不用</td><td class="mid">部分</td><td class="no">需 Mac + 開發設定</td></tr>
+        <tr><td>App Store 上的 App</td><td class="yes">不用</td><td class="no">改不了系統定位</td><td class="mid">—</td></tr>
         <tr><td>USB 桌面工具</td><td class="yes">不用</td><td class="yes">支援</td><td class="yes">低（接線即用）</td></tr>
       </tbody>
     </table>
     <p>
       多數人想要的是「不越獄、又能用」，那答案就是 USB 桌面工具：用一般
       傳輸線把 iPhone 接上電腦，軟體建立跟 Xcode 一樣的開發者通道，把
-      模擬座標送到手機。手機端不裝任何東西。
+      模擬座標送到手機。手機端不裝任何東西。各家工具的差異可以看
+      <a href="/compare">iOS 定位模擬工具比較</a>。
     </p>
 
-    <h2>為什麼很多假定位 App 在 iOS 17 後不能用了</h2>
+    <h2>為什麼很多假定位工具在 iOS 17 後不能用了</h2>
     <p>
       iOS 17 把裝置通訊搬到新的安全通道（RemoteXPC），舊版工具仰賴的
-      Developer Disk Image 方式整個失效。所以你會看到很多舊的假定位 App
+      Developer Disk Image 方式整個失效。所以你會看到很多舊的假定位工具
       卡在「連線中」、或只敢標榜支援 iOS 16 以下。要支援 iOS 17、18、26，
-      工具必須把連線層重寫。
+      工具必須把連線層重寫。升級 iOS 後連不上的情況，見
+      <a href="/iphone-location-tool-ios17-not-working">iOS 17 後定位工具連不上怎麼辦</a>。
     </p>
 
-    <h2>免越獄設定虛擬定位的步驟</h2>
+    <h2>設定虛擬定位前，先準備好這些</h2>
+    <ul>
+      <li><strong>一台 Windows 10 / 11 電腦</strong>（不需要 Mac）。</li>
+      <li><strong>Apple Devices 或 iTunes</strong>：從 Microsoft Store 安裝，讓 Windows 認得 iPhone。</li>
+      <li><strong>原廠或品質可靠的傳輸線</strong>：第一次一定要用 USB 配對；劣質線常只能充電、不能傳資料。</li>
+      <li><strong>iPhone 開啟「開發者模式」（iOS 17 以上）</strong>：Apple 規定要用定位模擬必須先開啟。
+          這個選項預設隱藏，接上電腦後才會出現在「設定 → 隱私權與安全性」最下方，開啟後手機會重新開機。</li>
+      <li><strong>定位服務保持開啟</strong>：「設定 → 隱私權與安全性 → 定位服務」，App 才讀得到模擬位置。</li>
+    </ul>
+
+    <h2>免越獄設定 iPhone 虛擬定位的步驟</h2>
     <p>以 TraceGo 為例：</p>
     <ol>
-      <li>用原廠線把 iPhone 接上 Windows 電腦，解鎖、按「信任此電腦」。</li>
-      <li>在地圖點選地點，或輸入 <code>緯度, 經度</code>。</li>
-      <li>按傳送，定位類 App 就會讀到新座標。</li>
-      <li>拔線或按暫停，iPhone 回到真實 GPS。</li>
+      <li><strong>連線</strong>：用傳輸線把 iPhone 接上 Windows 電腦，解鎖手機，
+          第一次接會跳「信任此電腦」→ 按信任並輸入手機密碼。</li>
+      <li><strong>開啟開發者模式</strong>（iOS 17 以上，只需做一次）：依軟體引導喚出選項，
+          到 iPhone「設定 → 隱私權與安全性 → 開發者模式」開啟，重新開機後確認。</li>
+      <li><strong>選地點</strong>：在地圖上點選目的地、搜尋地名，或直接輸入 <code>緯度, 經度</code>。</li>
+      <li><strong>傳送</strong>：按傳送，模擬座標送進 iPhone，打開地圖就能看到藍點跳到新位置。</li>
+      <li><strong>（選用）改用 WiFi</strong>：USB 配對成功一次後，手機和電腦在同一個家用 WiFi 下就能免插線操作。</li>
+      <li><strong>恢復</strong>：按「暫停模擬」，iPhone 回到真實 GPS。</li>
     </ol>
 
+    <h2>設定後 App 的位置沒變？依序檢查</h2>
+    <ol>
+      <li><strong>先開 Apple 地圖確認</strong>：地圖的藍點有跳過去，就代表系統定位已改好，問題出在個別 App。</li>
+      <li><strong>把該 App 完全關掉再打開</strong>：很多 App 只在啟動時抓一次位置，或有快取，需要重新整理。</li>
+      <li><strong>檢查該 App 的定位權限</strong>：「設定 → 隱私權與安全性 → 定位服務 → 該 App」，設為「使用 App 期間」並開啟「精確位置」。</li>
+      <li><strong>連不上 iPhone</strong>：TraceGo 內建連線診斷，會自動偵測 Apple Devices、iPhone 是否被認到；
+          找客服時按「複製診斷」貼上，最快找出原因。</li>
+    </ol>
+
+    <h2>怎麼恢復真實定位？</h2>
+    <p>
+      在 TraceGo 按「暫停模擬」，iPhone 就回到真實 GPS。若因為中途斷線等原因，定位仍停在模擬位置，
+      <strong>把 iPhone 重新開機一定會恢復</strong>。虛擬定位不會改動 iOS 本身，
+      不會留下任何設定在手機裡。
+    </p>
+
+    <h2>進階：讓虛擬定位沿路線移動</h2>
+    <p>
+      除了瞬間移到一個點，也可以讓定位<strong>沿著路線以設定的速度移動</strong>——
+      適合測試導航、運動紀錄、外送追蹤這類需要「移動中」的功能。
+      免費版即可做雙點路徑模擬，Pro 版可多點路線、自訂速度與匯入 GPX。
+      做法見 <a href="/simulate-gps-route-iphone">iPhone 模擬 GPS 路線教學</a>。
+    </p>
 
     <h2>虛擬定位安全嗎？會被封嗎？</h2>
     <p>
@@ -258,36 +434,61 @@
       密碼、手機端不裝任何東西</strong>，這比越獄安全得多。至於「會不會被
       某個 App 封」——那取決於該 App 自己的服務條款與偵測機制，跟設定虛擬
       定位的技術本身無關。使用任何 App 前，請先了解並遵守它的規則。
+      想更了解手機定位資料怎麼被 App 使用，可參考
+      <a href="/iphone-location-privacy">iPhone 定位隱私指南</a>。
     </p>
-
 
     <div class="tracego-block">
       <h3>免越獄設定 iPhone 虛擬定位 — TraceGo</h3>
       <p>
-        TraceGo 是 Windows 桌面工具，透過 USB 在你自己的 iPhone 上設定模擬
-        GPS。免越獄、手機端不裝東西，原生支援 iOS 17 / 18 / 26，並提供 7 天
-        試用版讓你先確認相容。
+        TraceGo 是 Windows 桌面工具，透過 USB 或 WiFi 在你自己的 iPhone 上設定模擬
+        GPS。免越獄、手機端不裝東西，原生支援 iOS 17 / 18 / 26。
+        <strong style="color:#fff">永久免費版無需註冊、每日可傳送 3 次</strong>，先確認能連、能用再決定要不要升級。
       </p>
-      <p style="margin-bottom: 0;"><a href="/">了解更多 TraceGo →</a></p>
+      <p style="margin-bottom: 0;"><a href="/">免費下載 TraceGo →</a></p>
     </div>
 
     <h2 class="faq">常見問題</h2>
     <div class="faq">
       <div>
+        <h3>iPhone 可以設定虛擬定位嗎？</h3>
+        <p>可以。iPhone 不需要越獄，用電腦透過 Apple 官方的開發者通道，就能幫手機設定一個模擬 GPS 座標；定位類 App 會讀到你設定的位置。iOS 17 以上要先開啟「開發者模式」。</p>
+      </div>
+      <div>
+        <h3>有不用電腦、直接裝在 iPhone 上的虛擬定位 App 嗎？</h3>
+        <p>在 App Store 上沒有能改「系統定位」的 App。iOS 的沙盒機制不允許一般 App 更改其他 App 讀到的位置，所以標榜虛擬定位的 App 多半只是在自己的畫面裡顯示假地點，或其實是改 IP 的 VPN。要讓所有定位類 App 一起讀到新位置，目前仍需要透過電腦設定。</p>
+      </div>
+      <div>
+        <h3>虛擬定位和 VPN 一樣嗎？</h3>
+        <p>不一樣。VPN 改的是網路 IP 所在地區，影響的是串流、網站內容等「看 IP」的服務；地圖、交友、外送這類 App 看的是 GPS 定位，開 VPN 不會讓你在地圖上移動。虛擬定位改的才是 GPS。</p>
+      </div>
+      <div>
         <h3>假定位需要越獄嗎？</h3>
-        <p>不需要。USB 桌面工具在原廠 iPhone 上就能用，不改動 iOS。</p>
+        <p>不需要。USB 桌面工具在原廠 iPhone 上就能用，不改動 iOS，也不需要輸入 Apple ID 密碼。</p>
       </div>
       <div>
         <h3>iOS 18 / iOS 26 還能設虛擬定位嗎？</h3>
-        <p>可以，前提是工具已支援新版連線層（RemoteXPC）。舊工具會卡連線。</p>
+        <p>可以，前提是工具已支援 iOS 17 起的新版連線層（RemoteXPC）。只支援 iOS 16 以下的舊工具會卡在連線階段。</p>
       </div>
       <div>
         <h3>需要 Mac 嗎？</h3>
-        <p>TraceGo 在 Windows 上跑，不需要 Mac、Xcode 或開發者帳號。</p>
+        <p>不需要。TraceGo 在 Windows 10 / 11 上執行，只要安裝 Microsoft Store 的 Apple Devices（或 iTunes）讓電腦認得 iPhone，不需要 Mac、Xcode 或開發者帳號。</p>
+      </div>
+      <div>
+        <h3>可以不插線、用 WiFi 設定虛擬定位嗎？</h3>
+        <p>可以。先用 USB 成功配對一次，之後 iPhone 與電腦連在同一個家用 WiFi 就能免插線操作。公司、學校或公共 WiFi 常封鎖裝置互連，這種環境請改用 USB。</p>
+      </div>
+      <div>
+        <h3>怎麼關掉虛擬定位、恢復真實位置？</h3>
+        <p>在 TraceGo 按「暫停模擬」即可回到真實 GPS。若定位仍停在模擬的位置，把 iPhone 重新開機一定會恢復。</p>
+      </div>
+      <div>
+        <h3>設定虛擬定位要錢嗎？</h3>
+        <p>TraceGo 有永久免費版，無需註冊，每日可傳送 3 次，夠你先確認自己的 iPhone 能連、能用；需要無限傳送、自訂速度或多點路線再升級 Pro。</p>
       </div>
       <div>
         <h3>會不會被某個 App 偵測到？</h3>
-        <p>偵測與否取決於各 App 自己的政策。請務必遵守你使用的 App 服務條款。</p>
+        <p>偵測與否取決於各 App 自己的政策與機制，跟設定虛擬定位的技術本身無關。請務必遵守你使用的 App 服務條款。</p>
       </div>
     </div>
 
